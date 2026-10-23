@@ -83,7 +83,13 @@ if (-not (Test-Path web\dist\index.html)) {
 } else { Write-Host '    already built' }
 
 Step 'Agent package (the executable that administrators download for their DCS server PC)'
-if ($SkipAgentBuild) { Write-Host '    skipped (-SkipAgentBuild): the download button will say the agent is not built' } else {
+$prebuilt = Join-Path $root 'prebuilt\agent'
+if ($SkipAgentBuild) { Write-Host '    skipped (-SkipAgentBuild): the download button will say the agent is not built' } elseif (Test-Path (Join-Path $prebuilt 'fox3-agent.exe')) {
+    Run "copy the prebuilt agent from $prebuilt to $ConfigDir\agent (release package; check the .sha256 files first)" {
+        New-Item -ItemType Directory -Force -Path "$ConfigDir\agent" | Out-Null
+        Copy-Item (Join-Path $prebuilt '*') "$ConfigDir\agent" -Force
+    }
+} else {
     Run 'pip install ".[build]" ; python tools\build_agent.py --out "$ConfigDir\agent"  (takes about a minute)' {
         & .\.venv\Scripts\python.exe -m pip install --quiet ".[build]"
         & .\.venv\Scripts\python.exe tools\build_agent.py --out "$ConfigDir\agent"

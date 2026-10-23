@@ -4,6 +4,11 @@ El central és el PC que té la web, la base de dades i l'adreça pública. Els 
 connexions sortints). **Estat:** les peces estan provades (configuració, migracions sobre PostgreSQL 16, servidor); l'instal·lador
 sencer (inclosos els comptes de servei i els permisos) encara no s'ha executat en un Windows net.
 
+**Paquet de la release (recomanat):** a la pàgina de *Releases* de GitHub baixa `FOX3-<versió>-windows.zip` i comprova el seu `.sha256`
+(`Get-FileHash fitxer.zip -Algorithm SHA256`). Ja porta la web i l'agent compilats (`prebuilt/agent`, `web/dist`), de manera que
+**no cal Node.js ni PyInstaller**; l'instal·lador els fa servir tal com són. Els executables no estan signats: Windows SmartScreen
+avisarà. Si prefereixes compilar-ho tot tu mateix, usa el codi font de la release i el procés de sota.
+
 ## 1. Què necessites
 | Cosa | Per a què | On |
 |---|---|---|
