@@ -1,0 +1,29 @@
+# FOX3 central - example configuration. Copy to central.toml (NOT committed). Unknown keys are errors.
+# Secrets are NOT stored here: the file names the ENVIRONMENT VARIABLES that hold them.
+#
+# HTTPS is terminated by a reverse proxy in front of this server (the installer sets up Caddy, which gets and renews the
+# Let's Encrypt certificate for your DNS name). FOX3 itself listens on localhost only.
+
+[server]
+bind = "127.0.0.1"
+port = 8000
+public_base_url = "https://CHANGE-ME.example.org"   # the DNS name entered in the installer; used for Discord login and agents
+
+[database]
+url_env = "FOX3_DATABASE_URL"        # e.g. postgresql+psycopg://fox3:***@localhost:5432/fox3
+
+[discord]
+client_id = ""                       # Discord developer application; leave empty to disable Discord login
+client_secret_env = "FOX3_DISCORD_CLIENT_SECRET"
+admin_ids = []                       # Discord user ids that are administrators, e.g. ["123456789012345678"]
+
+[security]
+session_ttl_hours = 168
+max_raw_bytes = 262144
+
+[elevation]
+url = "https://api.open-meteo.com/v1/elevation"   # set to "" to disable automatic elevation in the DTC generator
+
+[paths]
+# web_dir = "C:/FOX3/web/dist"       # built web interface (defaults to web/dist next to the code)
+# agent_dir = "C:/ProgramData/FOX3/agent"   # built fox3-agent.exe offered as a personalised download (defaults to dist/agent)

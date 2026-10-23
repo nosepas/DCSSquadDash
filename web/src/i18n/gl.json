@@ -1,0 +1,821 @@
+{
+  "common": {
+    "loading": "Cargando…",
+    "retry": "Tentar de novo",
+    "empty": "Aínda non hai nada que amosar.",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Gardar",
+    "close": "Pechar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "loadMore": "Cargar máis",
+    "noMore": "Non hai máis entradas",
+    "yes": "Si",
+    "no": "Non",
+    "never": "Nunca",
+    "actions": "Accións",
+    "name": "Nome",
+    "status": "Estado",
+    "live": "En directo",
+    "stale": "Reconectando…",
+    "saved": "Gardado",
+    "dirty": "Cambios sen gardar",
+    "back": "Volver",
+    "all": "Todos",
+    "details": "Detalles",
+    "online": "En liña",
+    "offline": "Sen conexión",
+    "optional": "opcional"
+  },
+  "errors": {
+    "generic": "Algo foi mal.",
+    "network": "Non se pode contactar co servidor. Revisa a túa conexión.",
+    "unauthorized": "A túa sesión caducou. Volve iniciar sesión.",
+    "forbidden": "Non tes permiso para facer isto.",
+    "not_found": "Non atopamos o que buscabas.",
+    "rate_limited": "Demasiadas peticións. Agarda un momento e tenta de novo.",
+    "server": "O servidor tivo un problema. Tenta de novo máis tarde."
+  },
+  "nav": {
+    "main": "Navegación principal",
+    "dashboard": "Panel",
+    "map": "Mapa en directo",
+    "missions": "Misións",
+    "objectives": "Obxectivos",
+    "ranking": "Clasificación",
+    "kills": "Rexistro de derrubamentos",
+    "players": "Pilotos",
+    "profile": "O meu perfil",
+    "admin": "Administración",
+    "tacview": "Tacview",
+    "dtc": "DTC"
+  },
+  "header": {
+    "skip": "Saltar ao contido",
+    "language": "Idioma",
+    "server": "Servidor",
+    "noServers": "Non hai servidores dispoñibles",
+    "userMenu": "Menú de usuario",
+    "login": "Iniciar sesión",
+    "logout": "Pechar sesión",
+    "offline": "sen conexión"
+  },
+  "auth": {
+    "title": "Inicia sesión en FOX3",
+    "intro": "O mapa e as misións son públicos. Todo o demais (estatísticas, clasificación, rexistro de derrubamentos, pilotos) require iniciar sesión.",
+    "needLogin": "Inicia sesión para ver esta sección.",
+    "discord": "Entrar con Discord",
+    "discordUnavailable": "O acceso con Discord non está configurado nesta instalación.",
+    "demoTitle": "Acceso de demostración",
+    "demoNote": "Só demo: este acceso sen contrasinal existe para a demostración local e non está dispoñible en produción.",
+    "demoPilot": "Piloto demo",
+    "demoAdmin": "Admin demo",
+    "role": {
+      "user": "Piloto",
+      "admin": "Administrador"
+    }
+  },
+  "coalition": {
+    "red": "Vermello",
+    "blue": "Azul",
+    "neutral": "Neutral"
+  },
+  "missionType": {
+    "foothold": "Foothold",
+    "generic": "Xenérica"
+  },
+  "dashboard": {
+    "title": "Resumo da situación",
+    "kpi": {
+      "online": "En liña",
+      "airborne": "En voo",
+      "objectives": "Obxectivos",
+      "atRisk": "En risco",
+      "kills1h": "Derrubamentos (1 h)",
+      "pilots": "Pilotos"
+    },
+    "weather": "Meteoroloxía",
+    "temperature": "Temperatura",
+    "qnh": "QNH",
+    "wind": "Vento",
+    "visibility": "Visibilidade",
+    "noWeather": "Non hai datos meteorolóxicos.",
+    "frontMap": "Mapa táctico",
+    "openMap": "Abrir o mapa completo",
+    "topShooters": "Top 5 tiradores",
+    "feed": "Actividade de combate",
+    "news": "Novas de guerra",
+    "noNews": "Aínda non hai novas.",
+    "noKills": "Aínda non hai combates rexistrados."
+  },
+  "news": {
+    "zone_captured": "{{coalition}} capturou {{zone}}",
+    "zone_lost": "{{coalition}} perdeu {{zone}}",
+    "mission_start": "Comezou unha nova misión",
+    "mission_end": "A misión rematou",
+    "unknown": "Evento: {{type}}",
+    "by": "por {{actor}}"
+  },
+  "map": {
+    "title": "Mapa en directo",
+    "aria": "Mapa táctico do teatro de operacións",
+    "notCalibrated": "Este terreo aínda non está calibrado, polo que non se poden amosar as posicións das zonas no mapa.",
+    "noZones": "Este servidor aínda non comunicou ningunha zona.",
+    "legend": "Lenda",
+    "hq": "Cuartel xeral",
+    "atRisk": "En risco",
+    "front": "Liña de fronte",
+    "link": "Conexión",
+    "level": "Nivel",
+    "terrain": "Terreo",
+    "zones": "{{count}} zonas"
+  },
+  "missions": {
+    "title": "Misións",
+    "current": "Misión actual",
+    "terrain": "Terreo",
+    "type": "Tipo",
+    "started": "Inicio",
+    "none": "Non hai ningunha misión activa neste servidor."
+  },
+  "objectives": {
+    "title": "Obxectivos",
+    "zone": "Zona",
+    "coalition": "Coalición",
+    "level": "Nivel",
+    "state": "Estado",
+    "hq": "CX",
+    "atRisk": "En risco",
+    "safe": "Asegurada"
+  },
+  "ranking": {
+    "title": "Clasificación",
+    "sortBy": "Ordenar por",
+    "points": "Puntos",
+    "kills": "Derrubamentos",
+    "kd": "K/D",
+    "deaths": "Mortes",
+    "rank": "N.º",
+    "pilot": "Piloto"
+  },
+  "kills": {
+    "title": "Rexistro de derrubamentos",
+    "time": "Hora",
+    "killer": "Tirador",
+    "victim": "Obxectivo",
+    "weapon": "Arma",
+    "ai": "IA",
+    "player": "Piloto",
+    "killed": "{{killer}} derrubou a {{victim}}",
+    "unknownActor": "Descoñecido"
+  },
+  "players": {
+    "title": "Pilotos",
+    "search": "Buscar pilotos polo nome",
+    "placeholder": "Escribe polo menos 2 caracteres…",
+    "minChars": "Escribe polo menos 2 caracteres para buscar.",
+    "noResults": "Ningún piloto coincide coa túa busca.",
+    "lastSeen": "Visto por última vez"
+  },
+  "profile": {
+    "title": "Perfil de piloto",
+    "myTitle": "O meu perfil",
+    "firstSeen": "Visto por primeira vez",
+    "lastSeen": "Visto por última vez",
+    "discordLinked": "Discord vinculado",
+    "discordNotLinked": "Discord sen vincular",
+    "serverStats": "Estatísticas por servidor",
+    "noStats": "Non hai estatísticas rexistradas para este piloto.",
+    "linkedAccounts": "As miñas contas de DCS vinculadas",
+    "noLinked": "Aínda non vinculaches ningunha conta de DCS.",
+    "link": {
+      "title": "Vincular a miña conta de DCS",
+      "intro": "Conecta a túa identidade de Discord co teu piloto de DCS para ver as túas propias estatísticas.",
+      "generate": "Xerar código de vinculación",
+      "regenerate": "Xerar un código novo",
+      "code": "O teu código",
+      "expiresIn": "Caduca en {{time}}",
+      "expired": "Este código caducou.",
+      "instructions": "Entra nun dos nosos servidores de DCS e escribe este código no chat do xogo. Cando se reciba, recarga esta páxina para ver a túa conta vinculada."
+    }
+  },
+  "admin": {
+    "title": "Administración",
+    "tabs": {
+      "servers": "Servidores",
+      "agents": "Axentes",
+      "users": "Usuarios"
+    },
+    "servers": {
+      "type": "Tipo de misión",
+      "enabled": "Activo",
+      "new": "Novo servidor",
+      "deleteTitle": "Eliminar servidor",
+      "deleteConfirm": "Eliminar \"{{name}}\" e todos os seus datos? Esta acción non se pode desfacer.",
+      "empty": "Non hai servidores configurados.",
+      "address": "Enderezo público",
+      "configure": "Configurar",
+      "newTitle": "Novo servidor",
+      "newIntro": "Crea o servidor cun nome e un tipo. Despois configuras todo na súa páxina.",
+      "create": "Crear servidor",
+      "namePlaceholder": "Ex.: FOX3 Foothold Cáucaso"
+    },
+    "agents": {
+      "agent": "Axente",
+      "server": "Servidor",
+      "version": "Versión",
+      "lastSeen": "Última actividade",
+      "state": "Estado",
+      "active": "Activo",
+      "pending": "Emparellamento pendente",
+      "revoked": "Revogado",
+      "revoke": "Revogar",
+      "revokeTitle": "Revogar axente",
+      "revokeConfirm": "Revogar o axente \"{{name}}\"? Deixará de enviar datos a FOX3.",
+      "empty": "Non hai axentes rexistrados."
+    },
+    "users": {
+      "user": "Usuario",
+      "role": "Rol",
+      "lastLogin": "Último acceso",
+      "empty": "Aínda non hai usuarios.",
+      "changeRole": "Cambiar o rol de {{name}}"
+    },
+    "server": {
+      "back": "Servidores",
+      "saveError": "Non se gardou. Revisa os campos marcados.",
+      "saveFailed": "Non se puido gardar. Téntao de novo.",
+      "unsaved": {
+        "title": "Cambios sen gardar",
+        "message": "Tes cambios sen gardar nesta páxina. Se saes, perderanse.",
+        "leave": "Saír sen gardar",
+        "stay": "Seguir editando"
+      },
+      "general": {
+        "title": "Xeral",
+        "intro": "Datos básicos do servidor.",
+        "name": "Nome",
+        "nameHelp": "Como se mostra o servidor na web.",
+        "type": "Tipo de misión",
+        "typeHelp": "Foothold activa o panel, os obxectivos, a clasificación e os derribos. Xenérica só mostra o mapa e as misións, para servidores sen Foothold.",
+        "address": "Enderezo público",
+        "addressHelp": "IP e porto cos que se conectan os xogadores, por exemplo 203.0.113.5:10308. Só é informativa.",
+        "description": "Descrición",
+        "descriptionHelp": "Texto breve opcional para presentar o servidor.",
+        "enabled": "Servidor activo",
+        "enabledHelp": "Se o desactivas, o servidor deixa de mostrarse na web, pero non se borra nada."
+      },
+      "status": {
+        "title": "Estado da conexión",
+        "intro": "Actualízase soa cada poucos segundos. Aquí ves se o axente do PC do servidor está conectado e se precisa atención.",
+        "agentVersion": "Versión do axente",
+        "lastSeen": "Último sinal",
+        "queue": "Mensaxes en cola",
+        "queueHelp": "Datos que o axente aínda non puido enviar. Debería ser 0 ou moi baixo.",
+        "noAgent": "Aínda non se conectou ningún axente. Usa «Conectar un axente» máis abaixo.",
+        "noWarnings": "Todo en orde: o axente non comunicou ningún aviso.",
+        "warnings": "Avisos do axente",
+        "whatToDo": "Que facer",
+        "technical": "Mensaxe técnica"
+      },
+      "foothold": {
+        "title": "Foothold",
+        "intro": "Progreso da campaña (zonas, obxectivos). Lese do ficheiro de gardado de Foothold no PC do servidor.",
+        "enabled": "Ler datos de Foothold",
+        "enabledHelp": "Desactívao se este servidor non usa Foothold.",
+        "dir": "Cartafol de gardados",
+        "dirHelp": "Adoita ser Saved Games\\<servidor>\\Missions\\Saves no PC do servidor."
+      },
+      "tacview": {
+        "title": "Tacview",
+        "intro": "Os ficheiros quedan no PC do servidor; FOX3 só indexa en que gravacións aparece cada piloto e descárgaos baixo demanda cando alguén os pide.",
+        "enabled": "Indexar gravacións de Tacview",
+        "enabledHelp": "Permite buscar pilotos e descargar as súas gravacións desde a web.",
+        "folder": "Cartafol de gravacións",
+        "folderHelp": "Cartafol cos ficheiros .acmi ou .zip.acmi, no PC do servidor."
+      },
+      "missions": {
+        "title": "Misións",
+        "intro": "Reservado para unha función futura (lista de misións). Podes deixalo en branco.",
+        "reserved": "Reservado para unha próxima función",
+        "folder": "Cartafol de misións",
+        "folderHelp": "Cartafol cos ficheiros .miz do servidor. Aínda non se usa."
+      },
+      "dcsbot": {
+        "title": "DCSServerBot",
+        "intro": "Conexión con DCSServerBot para saber quen está conectado e en que avión.",
+        "secrets": "A chave de API e o contrasinal da base de datos NON se configuran aquí: por seguridade quedan no PC do servidor.",
+        "secretsWhere": "Onde configuralas: docs/FASE2-PROVES-REALS.md",
+        "restEnabled": "Usar a API REST de DCSServerBot",
+        "restEnabledHelp": "Necesaria para ver xogadores en liña e os seus avións.",
+        "restUrl": "URL da API REST",
+        "restUrlHelp": "Enderezo da API de DCSServerBot visto desde o PC do servidor, por exemplo http://localhost:9876.",
+        "restPrefix": "Prefixo da API",
+        "restPrefixHelp": "Déixao en branco salvo que a túa instalación use un prefixo (só letras, números, / _ -).",
+        "serverName": "Nome do servidor no bot",
+        "serverNameHelp": "Debe ser exactamente igual que en DCSServerBot, maiúsculas incluídas.",
+        "dbEnabled": "Usar eventos da base de datos",
+        "dbEnabledHelp": "Le os eventos (despegues, derribos…) da base de datos de DCSServerBot. O contrasinal configúrase no PC do servidor.",
+        "detected": "DCSServerBot detectado no servidor"
+      },
+      "detected": {
+        "title": "Detectado no servidor",
+        "none": "O axente aínda non detectou cartafoles para este campo.",
+        "pick": "Usar {{path}}"
+      },
+      "connect": {
+        "title": "Conectar un axente",
+        "intro": "O axente é un programa pequeno que se instala no PC do servidor DCS e envía os datos a FOX3. Só precisa conexións saíntes por HTTPS: non hai que abrir portos.",
+        "generate": "Crear código de emparellamento",
+        "codeWarning": "Copia este código agora. Só se mostra unha vez e non se pode recuperar.",
+        "expires": "Válido durante {{minutes}} minutos.",
+        "stepsTitle": "No PC do servidor, executa:",
+        "stepPair": "1. Emparellar (só unha vez)",
+        "stepRun": "2. Iniciar o axente",
+        "copyCommands": "Copiar comandos",
+        "agents": "Axentes deste servidor",
+        "noAgents": "Este servidor aínda non ten axentes.",
+        "revokeConfirm": "Revogar o axente «{{name}}»? Deixará de enviar datos a FOX3 e terás que emparellar un novo."
+      },
+      "danger": {
+        "title": "Zona de perigo",
+        "intro": "Eliminar o servidor tamén borra as súas estatísticas, eventos, índice de Tacview e axentes. Non se pode desfacer.",
+        "button": "Eliminar este servidor…",
+        "confirmTitle": "Eliminar servidor",
+        "typeName": "Para confirmar, escribe o nome do servidor: {{name}}",
+        "confirm": "Eliminar definitivamente"
+      },
+      "wizard": {
+        "title": "Conectar un axente",
+        "help": "O axente é un programa pequeno que se instala no PC do servidor de DCS e envía os seus datos a FOX3. Esta guía lévate paso a paso; non fai falta saber de informática.",
+        "showGuide": "Ver a guía completa",
+        "hideGuide": "Ocultar a guía",
+        "done": {
+          "title": "Axente conectado",
+          "info": "Versión {{version}} · visto por última vez {{seen}}",
+          "more": "Instalar noutro PC ou volver emparellar",
+          "moveNote": "Para mover o axente a outro PC, descarga o instalador de novo: o axente antigo seguirá funcionando ata que o revogues na lista de máis abaixo."
+        },
+        "s1": {
+          "title": "Descarga o instalador",
+          "help": "É un ficheiro ZIP feito á medida para este servidor. Descárgalo aquí e lévao ao PC onde corre DCS.",
+          "what": "O instalador é un programa pequeno que envía os datos deste servidor a FOX3. Xa inclúe todo o necesario, non hai que instalar nada máis.",
+          "safe1": "Só fai conexións de saída a internet.",
+          "safe2": "Non precisa abrir portos no router nin no devasa.",
+          "safe3": "Non precisa permisos de administrador de Windows."
+        },
+        "dl": {
+          "button": "Descargar o instalador para este servidor",
+          "busy": "Preparando a descarga…",
+          "again": "Descargar de novo",
+          "version": "Versión {{version}}",
+          "code": "O ficheiro contén un código dun só uso, válido durante {{minutes}} minutos desde a descarga. Non o compartas.",
+          "started": "Descarga iniciada: {{name}}. Busca o ficheiro no cartafol de Descargas.",
+          "countdown": "O código caduca en",
+          "expired": "O código caducou. Preme «Descargar de novo» para obter un novo."
+        },
+        "nb": {
+          "title": "O instalador aínda non está preparado neste servidor FOX3.",
+          "body": "Non é culpa túa. Quen instalou FOX3 debe executar esta orde no servidor de FOX3 e, despois, premer «Comprobar de novo»:",
+          "check": "Comprobar de novo"
+        },
+        "s2": {
+          "title": "Instálao no PC do servidor de DCS",
+          "help": "Faise unha soa vez e leva un par de minutos.",
+          "step1": "Copia o ZIP no PC onde corre DCS.",
+          "hint1": "Serve un pendrive, un cartafol compartido ou envialo por correo a ti mesmo. Entra nese PC co usuario de Windows co que se executa DCS.",
+          "step2": "Descomprímeo.",
+          "hint2": "Clic dereito sobre o ZIP, «Extraer todo…» e «Extraer». Non executes nada desde dentro do ZIP.",
+          "step3": "Fai dobre clic en INSTALAR.cmd.",
+          "hint3": "Está dentro do cartafol que acabas de descomprimir, xunto co resto de ficheiros.",
+          "step4": "Se Windows di «Windows protexeu o seu PC»: preme «Máis información» e despois «Executar de todos os xeitos».",
+          "hint4": "O programa aínda non está asinado dixitalmente, por iso Windows avisa con calquera programa novo. É normal e esperado.",
+          "step5": "Agarda a que a xanela negra remate con «OK».",
+          "hint5": "Verás como avanza. Non a peches ata que diga «OK»; despois xa podes pechala.",
+          "whatTitle": "Que fai o instalador?",
+          "what1": "Empareilla o axente con este servidor FOX3 co código dun só uso.",
+          "what2": "Copia o axente a un cartafol do teu usuario de Windows (non toca nada do sistema).",
+          "what3": "Crea unha tarefa programada do teu usuario para que o axente arranque só ao iniciar sesión.",
+          "what4": "Arranca o axente e comproba que pode conectar con FOX3. Despois aparecerá aquí como «En liña».",
+          "problemsTitle": "Algo foi mal?",
+          "p1": "O código caducou (pasados 15 minutos): descarga o instalador de novo e repite.",
+          "p2": "O PC non ten internet ou un devasa bloquea a saída: abre calquera páxina web nese PC para comprobalo.",
+          "p3": "O antivirus bloqueou o programa: permítao (ou engade unha excepción para o cartafol) e volve executar INSTALAR.cmd.",
+          "p4": "Instaláchelo cun usuario de Windows distinto do que executa DCS: inicia sesión co usuario de DCS e repite a instalación."
+        },
+        "s3": {
+          "title": "Agardando polo axente",
+          "help": "Esta pantalla actualízase soa cada poucos segundos. Non fai falta recargar a páxina.",
+          "waiting": "Agardando a que o axente se conecte…",
+          "waitingHelp": "Tarda uns segundos desde que a xanela negra remata con «OK».",
+          "idle": "Este paso comeza cando descargas o instalador.",
+          "timeoutTitle": "Pasaron máis de 3 minutos e o axente non se conectou.",
+          "timeoutBody": "Pode que aínda non rematases a instalación, e non pasa nada: seguimos agardando. Se xa a fixeches, revisa estas causas habituais:"
+        },
+        "s4": {
+          "title": "Escolle os cartafoles",
+          "help": "O axente atopa só os cartafoles de DCS. Ti só tes que confirmalos.",
+          "idle": "Aparecerá aquí en canto o axente estea conectado.",
+          "cta": "Preme o cartafol de partidas gardadas de Foothold e o cartafol de Tacview, e despois «Gardar».",
+          "found": "Estes son os cartafoles que detectou o axente. Ao premer un, levámoste ao seu apartado, onde o escolles e gardas.",
+          "none": "O axente non detectou ningún cartafol. Non pasa nada: vai aos apartados de abaixo e escribe a ruta a man (por exemplo C:\\Users\\OTeuUsuario\\Saved Games\\DCS\\Missions\\Saves), despois preme «Gardar».",
+          "goFoothold": "Ir ás partidas gardadas de Foothold",
+          "goTacview": "Ir ao cartafol de Tacview"
+        },
+        "guide": {
+          "title": "Guía completa para administradores",
+          "intro": "Resumo de todo o proceso, pensado para quen administra o escuadrón sen ser o propietario do servidor.",
+          "g1t": "1. Que é o axente",
+          "g1": "Un programa pequeno que se executa no PC do servidor de DCS, le os cartafoles de Foothold e Tacview e envía os datos a FOX3 por internet. Só fai conexións de saída: non abre portos nin precisa permisos de administrador.",
+          "g2t": "2. Antes de comezar",
+          "g2": "Precisas acceso ao PC onde corre DCS (co usuario de Windows que o executa) e que ese PC teña internet. Se aquí aparece que o instalador non está preparado, avisa a quen instalou FOX3.",
+          "g3t": "3. Instalar",
+          "g3": "Descarga o instalador, cópiao no PC de DCS, descomprímeo e fai dobre clic en INSTALAR.cmd. Se Windows avisa, preme «Máis información» e «Executar de todos os xeitos». Agarda a que a xanela remate con «OK». O código do ficheiro é dun só uso e caduca aos 15 minutos.",
+          "g4t": "4. Comprobar que conecta",
+          "g4": "En poucos segundos o servidor pasará a «En liña» e verás a versión do axente. Se non ocorre en 3 minutos, revisa: código caducado, sen internet, antivirus ou usuario de Windows distinto.",
+          "g5t": "5. Escoller os cartafoles",
+          "g5": "Cando o axente conecte, preme o cartafol de partidas gardadas de Foothold e o de Tacview que detectou e garda cada apartado. Se non detectou ningún, escribe a ruta a man.",
+          "g6t": "6. Cambiar de PC ou dar de baixa un axente",
+          "g6": "Para mover o axente a outro PC, descarga o instalador de novo e instálao alí; o axente antigo segue funcionando ata que o revogues na lista «Axentes deste servidor». Un axente revogado deixa de enviar datos."
+        },
+        "errors": {
+          "generic": "Non se puido completar a acción. Téntao de novo.",
+          "network": "Non hai conexión co servidor. Comproba a túa conexión a internet.",
+          "unauthorized": "A túa sesión caducou. Volve iniciar sesión.",
+          "not_found": "Non se atopou este servidor. Pode que se eliminase.",
+          "rate_limited": "Pediches demasiadas descargas seguidas. Agarda un minuto e téntao de novo.",
+          "agent_not_built": "O instalador aínda non está preparado neste servidor FOX3. Avisa a quen o instalou."
+        }
+      }
+    }
+  },
+  "notFound": {
+    "title": "404 – Fóra de carta",
+    "text": "A páxina que buscas non existe.",
+    "home": "Volver ao inicio"
+  },
+  "warnings": {
+    "FOOTHOLD_FILE_STALE": {
+      "title": "O ficheiro de Foothold non se actualiza",
+      "fix": "Comproba que a misión de Foothold segue en marcha e gardando o progreso. Se o servidor está parado, é normal."
+    },
+    "FOOTHOLD_FOLDER_MISSING": {
+      "title": "O cartafol de gardados de Foothold non existe",
+      "fix": "Revisa a ruta na sección Foothold. Podes premer un dos cartafoles detectados no servidor."
+    },
+    "FOOTHOLD_FILE_MISSING": {
+      "title": "Non se atopa o ficheiro de progreso de Foothold",
+      "fix": "O cartafol existe pero non contén o ficheiro de gardado. Inicia unha misión Foothold para que se xere ou comproba que o cartafol é o correcto."
+    },
+    "FOOTHOLD_FILE_UNREADABLE": {
+      "title": "Non se pode ler o ficheiro de Foothold",
+      "fix": "Comproba os permisos do cartafol e que ningún outro programa teña o ficheiro bloqueado."
+    },
+    "FOOTHOLD_FILE_INVALID": {
+      "title": "O ficheiro de Foothold ten un formato inesperado",
+      "fix": "Pode estar a medio escribir ou danado. Agarda ao seguinte gardado; se persiste, revisa a versión de Foothold."
+    },
+    "FOOTHOLD_FOLDER_NOT_SET": {
+      "title": "Falta o cartafol de gardados de Foothold",
+      "fix": "Indica o cartafol na sección Foothold (ou preme un dos detectados) e garda."
+    },
+    "DCSBOT_UNREACHABLE": {
+      "title": "Non se pode contactar coa API de DCSServerBot",
+      "fix": "Comproba que DCSServerBot está en marcha e que a URL e o prefixo da sección DCSServerBot son correctos."
+    },
+    "DCSBOT_AUTH_FAILED": {
+      "title": "DCSServerBot rexeitou a chave de API",
+      "fix": "A chave configúrase no PC do servidor, non aquí. Revísaa na configuración local do axente (docs/FASE2-PROVES-REALS.md)."
+    },
+    "DCSBOT_SERVER_NOT_FOUND": {
+      "title": "DCSServerBot non coñece ese nome de servidor",
+      "fix": "Escribe o nome do servidor exactamente igual que en DCSServerBot, incluídas maiúsculas e espazos."
+    },
+    "DCSBOT_DB_ERROR": {
+      "title": "Erro ao ler a base de datos de DCSServerBot",
+      "fix": "O contrasinal da base de datos configúrase no PC do servidor. Comproba que PostgreSQL está activo e que as credenciais locais do axente son correctas."
+    },
+    "DCSBOT_UCID_UNRESOLVED": {
+      "title": "Non se puido identificar algún piloto",
+      "fix": "DCSServerBot non devolveu o identificador (UCID) dalgún xogador. Adoita resolverse só; se persiste, revisa a versión de DCSServerBot."
+    },
+    "DCSBOT_CONFIG_INVALID": {
+      "title": "A configuración de DCSServerBot non é válida",
+      "fix": "Revisa a sección DCSServerBot: URL, prefixo e nome do servidor."
+    },
+    "TACVIEW_FOLDER_MISSING": {
+      "title": "O cartafol de Tacview non existe",
+      "fix": "Revisa a ruta na sección Tacview. Podes premer un dos cartafoles detectados no servidor."
+    },
+    "TACVIEW_FOLDER_UNREADABLE": {
+      "title": "Non se pode ler o cartafol de Tacview",
+      "fix": "Comproba os permisos do cartafol para o usuario que executa o axente."
+    },
+    "TACVIEW_FILE_FAILED": {
+      "title": "Non se puido ler unha gravación de Tacview",
+      "fix": "Esa gravación omítese e o resto segue funcionando. Pode estar danada ou aínda aberta por DCS."
+    },
+    "TACVIEW_FORMAT_UNSUPPORTED": {
+      "title": "Formato de Tacview non compatible",
+      "fix": "Algunhas gravacións usan un formato que FOX3 aínda non entende e omítense. Usa gravacións .acmi ou .zip.acmi estándar."
+    },
+    "TACVIEW_INDEXING": {
+      "title": "Indexando gravacións de Tacview",
+      "fix": "É normal tras activar Tacview: a busca estará completa en uns minutos. Non hai que facer nada."
+    },
+    "TACVIEW_APPEARANCES_CAPPED": {
+      "title": "Limitáronse as aparicións dunha gravación",
+      "fix": "Unha gravación ten tantos pilotos que só se gardan as primeiras aparicións, así que algunha busca pode non mostralo todo."
+    },
+    "SOURCE_CRASHED": {
+      "title": "Un módulo do axente detívose",
+      "fix": "Reinicia o axente no PC do servidor. Se se repite, copia a mensaxe técnica e avisa ao desenvolvedor."
+    },
+    "CENTRAL_REJECTED_MESSAGES": {
+      "title": "FOX3 rexeitou mensaxes do axente",
+      "fix": "Adoita indicar que o axente e FOX3 teñen versións distintas. Actualiza o axente no PC do servidor."
+    }
+  },
+  "tacview": {
+    "title": "Tacview",
+    "intro": "Busca un piloto para ver en que gravacións aparece e descarga o ficheiro desde o servidor onde se gravou.",
+    "search": "Nome do piloto",
+    "placeholder": "Escribe polo menos 2 caracteres…",
+    "minChars": "Escribe polo menos 2 caracteres para buscar.",
+    "server": "Servidor",
+    "noResults": "Non hai gravacións que coincidan coa busca.",
+    "file": "Ficheiro",
+    "pilot": "Piloto",
+    "aircraft": "Avión",
+    "utc": "Hora UTC (inicio – fin)",
+    "offset": "Desfase na gravación",
+    "partial": "Gravación parcial",
+    "partialHint": "A gravación está incompleta (pode que aínda se estea gravando ou se cortase).",
+    "download": "Descargar",
+    "asking": "Preguntando ao servidor… pode tardar ata 30 segundos.",
+    "downloading": "Descargando… {{percent}}",
+    "downloadingUnknown": "Descargando…",
+    "cancel": "Cancelar",
+    "errors": {
+      "server_unreachable": "O axente do servidor non respondeu. Pode que o servidor estea apagado ou desconectado; téntao máis tarde.",
+      "not_found": "A gravación xa non está dispoñible no servidor (pode que se movese ou borrase).",
+      "transfer_busy": "O servidor xa está enviando outra descarga. Agarda un momento e téntao de novo.",
+      "unauthorized": "A túa sesión caducou. Volve iniciar sesión.",
+      "network": "Cortouse a conexión durante a descarga. Revisa a túa rede e téntao de novo.",
+      "generic": "Non se puido descargar a gravación."
+    }
+  },
+  "aircraft": {
+    "layer": "Avións aliados",
+    "side": "Bando",
+    "both": "Ambos",
+    "count": "{{count}} avións",
+    "none": "Non hai avións visibles agora mesmo.",
+    "pilot": "Piloto",
+    "type": "Avión",
+    "altitude": "Altitude",
+    "altValue": "{{m}} m / {{ft}} ft",
+    "onGround": "En terra",
+    "linkAccount": "Vincula a túa conta de DCS para ver os teus avións aliados.",
+    "linkAction": "Ir ao meu perfil para vinculala",
+    "notOnline": "Tes que estar conectado a este servidor para ver os avións aliados."
+  },
+  "dtc": {
+    "title": "Xerador de DTC",
+    "intro": "Crea un ficheiro DTC (cartucho de transferencia de datos) para DCS facendo clic no mapa. Escolle o avión e o mapa, engade puntos, axústaos e descarga o ficheiro .dtc.",
+    "steps": {
+      "title": "Preparación",
+      "aircraft": "1. Avión",
+      "pickAircraft": "Escolle un avión…",
+      "soon": "en breve",
+      "terrain": "2. Mapa de DCS",
+      "pickTerrain": "Escolle un mapa…",
+      "terrainHelp": "Escolle o mapa de DCS onde vas voar. As coordenadas conviértense coa proxección deste mapa.",
+      "import": "3. Importar un .dtc (opcional)",
+      "name": "Nome do ficheiro (opcional)",
+      "switchTitle": "Cambiar de avión",
+      "switchAsk": "Cambiar de avión comeza un borrador novo e perdes os puntos actuais. Continuar?",
+      "starting": "Cargando os axustes por defecto deste avión…"
+    },
+    "calibration": {
+      "exact": "Verificado",
+      "plausible": "Plausible",
+      "airports": "Só aeroportos",
+      "exactHint": "Proxección verificada cun ficheiro real de DCS.",
+      "plausibleHint": "Proxección coherente cun ficheiro real de DCS, pero non verificada de todo.",
+      "airportsHint": "Comprobado con posicións reais de aeroportos, pero aínda non confirmado no xogo. Revisa os puntos dentro de DCS."
+    },
+    "import": {
+      "button": "Importar un .dtc existente",
+      "busy": "Lendo o ficheiro…",
+      "drop": "ou arrastra aquí un ficheiro .dtc",
+      "loaded": "Cargado: {{name}}",
+      "rejected": "Non se puido ler este ficheiro como .dtc compatible.",
+      "warnings": "Avisos do ficheiro importado ({{count}})"
+    },
+    "preserved": {
+      "title": "Consérvanse como no teu ficheiro",
+      "body": "Estas partes existen no ficheiro pero non se poden editar aquí. Gárdanse tal cal ao descargar:",
+      "parts": {
+        "threat_points": "Puntos de ameaza",
+        "destinations": "Destinos",
+        "additional_points": "Puntos adicionais",
+        "routes": "Rutas",
+        "zones": "Zonas",
+        "areas": "Áreas",
+        "lines": "Liñas",
+        "adf": "ADF"
+      }
+    },
+    "map": {
+      "aria": "Mapa do editor de DTC",
+      "needAircraft": "Escolle primeiro un avión para comezar.",
+      "needTerrain": "Escolle o mapa de DCS para poder engadir puntos.",
+      "help": "Fai clic no mapa para engadir un punto á lista activa. Arrastra un punto para movelo; clic dereito (ou pulsación longa) para borralo.",
+      "unnamed": "Sen nome",
+      "noElevation": "descoñecida"
+    },
+    "lists": {
+      "aria": "Lista de puntos activa",
+      "steerpoints": "Steerpoints",
+      "route": "Ruta {{n}}",
+      "routeNamed": "Ruta {{n}} · {{name}}",
+      "line": "Liña {{n}}",
+      "f14line": "Liña {{n}} (ruta {{route}})",
+      "ah64": {
+        "TGT": "Misión {{mission}} · Obxectivos",
+        "WPTHZ": "Misión {{mission}} · Waypoints/perigos",
+        "CTRLM": "Misión {{mission}} · Medidas de control"
+      }
+    },
+    "f14": {
+      "routeName": "Nome da ruta",
+      "asLine": "Debuxar a ruta como liña",
+      "asLineHelp": "Ademais dos waypoints, a ruta aparece como liña no mapa do avión.",
+      "lineOf": "Esta liña pertence á ruta {{route}}.",
+      "closed": "Liña pechada (une o último punto co primeiro)",
+      "deleteLine": "Borrar esta liña",
+      "addLine": "Engadir liña"
+    },
+    "points": {
+      "title": "Puntos",
+      "pickFirst": "Escolle un avión para comezar a engadir puntos.",
+      "empty": "Esta lista está baleira. Fai clic no mapa ou escribe unhas coordenadas.",
+      "up": "Subir o punto {{n}}",
+      "down": "Baixar o punto {{n}}",
+      "delete": "Borrar punto",
+      "deleteN": "Borrar o punto {{n}}",
+      "addTyped": "Engadir punto"
+    },
+    "fields": {
+      "name": "Nome",
+      "note": "Nota",
+      "lat": "Latitude",
+      "lon": "Lonxitude",
+      "elevation": "Elevación (m)",
+      "approx": "aproximada",
+      "unknown": "descoñecida",
+      "autoName": "automático",
+      "speed": "Velocidade",
+      "tot": "Hora (TOT)",
+      "errors": {
+        "required": "Obrigatorio.",
+        "invalid": "Escribe un número decimal, por exemplo 41.5.",
+        "range": "Fóra de rango (latitude ±90, lonxitude ±180).",
+        "time": "Usa o formato HH:MM:SS."
+      }
+    },
+    "issues": {
+      "fix": "Corrixe isto antes de descargar:",
+      "noAircraft": "Escolle un avión.",
+      "noTerrain": "Escolle o mapa de DCS.",
+      "tooManyWaypoints": "Hai {{count}} steerpoints e o máximo é {{limit}}.",
+      "tooManyRoutes": "Hai {{count}} rutas e o máximo é {{limit}}.",
+      "tooManyLines": "Hai {{count}} liñas e o máximo é {{limit}}.",
+      "badLat": "Punto {{n}}: latitude non válida.",
+      "badLon": "Punto {{n}}: lonxitude non válida.",
+      "badElevation": "Punto {{n}}: elevación non válida.",
+      "noPoints": "Aínda non hai puntos: o ficheiro sairía baleiro.",
+      "unknownElevation": "{{count}} punto(s) sen elevación: escribirase 0 m no ficheiro.",
+      "radioBadFrequency": "{{count}} frecuencia(s) de radio non son un número maior que 0.",
+      "radioRange": "{{count}} frecuencia(s) de radio están fóra do rango habitual (só un aviso, non bloquea a descarga).",
+      "radioInvalidInput": "{{count}} campo(s) de radio teñen un texto que aínda non é válido."
+    },
+    "server": {
+      "rejected": "O servidor non aceptou o ficheiro:"
+    },
+    "download": {
+      "button": "Descargar .dtc",
+      "busy": "Xerando…",
+      "disabled": "Descarga desactivada: hai {{count}} problema(s) por corrixir.",
+      "done": "Ficheiro descargado. Avisos da xeración, se os hai:",
+      "expired": "O ficheiro importado caducou no servidor (gárdase unha hora). Impórtao de novo ou continúa coa plantilla do avión.",
+      "useBuiltin": "Usar a plantilla do avión"
+    },
+    "draft": {
+      "clear": "Borrar borrador",
+      "clearAsk": "Borraranse todos os puntos e o ficheiro importado. Continuar?",
+      "saved": "O teu borrador gárdase automaticamente neste navegador."
+    },
+    "howto": {
+      "title": "Como o uso en DCS?",
+      "body": "Copia o ficheiro .dtc ao cartafol de DTC do avión dentro de Saved Games de DCS, ou impórtao desde o diálogo de importación de DTC do xogo. Non estamos seguros da ruta exacta na túa instalación: comproba o diálogo de importación de DTC dentro de DCS."
+    },
+    "elevation": {
+      "attribution": "Elevacións aproximadas: Copernicus DEM GLO-90 vía Open-Meteo.com (non é o terreo de DCS). Revísaas se precisas exactitude.",
+      "loading": "Consultando elevacións…",
+      "disabled": "A consulta de elevación non está dispoñible: escribe a elevación a man.",
+      "failed": "Non se puido consultar a elevación: escríbea a man."
+    },
+    "layers": {
+      "title": "Capas do mapa",
+      "airports": "Aeroportos",
+      "front": "Liña da fronte e zonas",
+      "farps": "FARPs",
+      "server": "Servidor de referencia",
+      "noServer": "Ningún servidor Foothold está xogando este mapa agora mesmo; os aeroportos móstranse igualmente.",
+      "note": "As capas son só de orientación e non se escriben no arquivo DTC.",
+      "addPoint": "Engadir como punto",
+      "civil": "Aeródromo civil",
+      "military": "Aeródromo militar",
+      "farp": "FARP",
+      "airportsError": "Non se puideron cargar os aeroportos deste mapa.",
+      "stateError": "Non se puido actualizar o estado do servidor de referencia."
+    },
+    "radios": {
+      "title": "Radios",
+      "intro": "Frecuencias de radio que se escriben no DTC. Só se modifica o que cambies; o resto queda como no ficheiro ou por defecto.",
+      "none": "O DTC deste avión non inclúe radios.",
+      "empty": "Este borrador non ten datos de radio.",
+      "changed": "Cambiado respecto ao orixinal",
+      "reset": "Restablecer valores por defecto",
+      "resetFile": "Restaurar os valores do teu ficheiro",
+      "band": "Rango habitual {{band}}: {{min}}-{{max}} MHz (documentado, non verificado no xogo).",
+      "channel": "Can. {{n}}",
+      "channelName": "{{radio}} canle {{n}}",
+      "freqAria": "Frecuencia de {{name}}, MHz",
+      "outOfRange": "Fóra do rango habitual {{min}}-{{max}} MHz.",
+      "fraction": "Aínda non confirmado en DCS: sábese que os MHz enteiros funcionan.",
+      "errors": {
+        "required": "Obrigatorio.",
+        "invalid": "Escribe un número en MHz, por exemplo 251 ou 127,5.",
+        "positive": "A frecuencia debe ser maior que 0.",
+        "int": "Número enteiro de {{min}} a {{max}}."
+      },
+      "f16": {
+        "aria": "Radio",
+        "COMM1": "COMM1 (UHF)",
+        "COMM2": "COMM2 (VHF)"
+      },
+      "ah64": {
+        "tabsAria": "Parte das radios",
+        "tabPresets": "Presets",
+        "tabInitial": "Axustes iniciais",
+        "presetPick": "Preset",
+        "presetN": "Preset {{n}}",
+        "unit_id": "Unit ID",
+        "call_sign": "Indicativo",
+        "unit_idAria": "Unit ID do preset {{n}}",
+        "call_signAria": "Indicativo do preset {{n}}",
+        "frequency": "Frecuencia, MHz",
+        "modulation": "Modulación",
+        "modAria": "Modulación de {{name}}",
+        "encryption": "Cifrado",
+        "encAria": "Código de cifrado de {{name}}",
+        "encryptionHint": "Código DCS en bruto. 0 = ningún.",
+        "hfModulationHint": "Código en bruto. O seu significado non está verificado, por iso móstrase como número.",
+        "codesHelp": "Modulación e cifrado son códigos DCS en bruto: AM = 0, FM = 1 (valores estándar de DCS); cifrado 0 = ningún.",
+        "mod": {
+          "0": "AM (0)",
+          "1": "FM (1)",
+          "other": "Código {{code}}"
+        },
+        "presetRadioName": "preset {{n}} {{radio}}",
+        "initialName": "inicial {{radio}}",
+        "initialHelp": "Como está cada radio ao arrincar o helicóptero: a súa frecuencia e o número de preset co que comeza.",
+        "startPreset": "Comeza no preset",
+        "startPresetAria": "{{name}}, preset inicial",
+        "guard": "Receptor de garda UHF activado",
+        "guardHelp": "Escoita ademais a frecuencia de garda UHF.",
+        "radio": {
+          "FM1": "FM1",
+          "FM2": "FM2",
+          "UHF": "UHF",
+          "VHF": "VHF",
+          "HF": "HF",
+          "HF_RX": "HF Rx",
+          "HF_TX": "HF Tx"
+        }
+      },
+      "missing": "Este borrador creouse antes de que existisen as radios e non ten datos de radio.",
+      "loading": "Cargando as radios por defecto…",
+      "loadDefaults": "Cargar as radios por defecto",
+      "missingFile": "Este borrador vén dun ficheiro importado antes de que existisen as radios. Importa de novo o teu ficheiro para editar as súas radios, ou carga as radios por defecto (substituirán as do teu ficheiro ao descargar).",
+      "loadDefaultsFile": "Cargar radios por defecto (substitúe as do ficheiro)"
+    }
+  }
+}

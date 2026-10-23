@@ -1,0 +1,191 @@
+/* Forms: label + control + help line + inline error */
+.field-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.field-optional {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.field-help {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.field-help-indented {
+  margin-left: 26px;
+}
+
+.field-error {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--danger);
+}
+
+.field-invalid input,
+.field-invalid textarea,
+.field-invalid select {
+  border-color: var(--danger);
+}
+
+textarea {
+  padding: 8px 10px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font: inherit;
+  resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.section-intro {
+  margin-top: 0;
+}
+
+.section-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.section-foot .tag {
+  margin-left: 0;
+}
+
+/* Server detail page */
+.server-sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.server-sections > section {
+  scroll-margin-top: 80px;
+}
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.status-on {
+  color: var(--ok);
+}
+
+.status-on .dot {
+  background: var(--ok);
+}
+
+.status-off {
+  color: var(--muted);
+}
+
+.warnings {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.warning {
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+.warning p {
+  margin: 4px 0 0;
+}
+
+.card-danger {
+  border-color: var(--danger);
+}
+
+/* Detected-folder suggestions */
+.detected {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 14px;
+}
+
+.detected-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  padding: 4px 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px dashed var(--border-strong);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chip .mono {
+  overflow-wrap: anywhere;
+}
+
+.chip small {
+  color: var(--muted);
+}
+
+.chip:hover,
+.chip-active {
+  border-color: var(--accent);
+}
+
+/* Pairing wizard */
+.pairing-code {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.cmd {
+  margin: 4px 0 12px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+}
+
+.list li .btn {
+  margin-left: auto;
+}

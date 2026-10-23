@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/players.json",
+  "title": "players payload (full snapshot of connected players)",
+  "type": "object",
+  "required": ["snapshot_at", "players"],
+  "properties": {
+    "snapshot_at": { "$ref": "common.json#/$defs/utc" },
+    "players": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ucid", "name"],
+        "properties": {
+          "ucid": { "$ref": "common.json#/$defs/ucid" },
+          "name": { "type": "string" },
+          "coalition": { "$ref": "common.json#/$defs/coalition" },
+          "aircraft": { "type": ["string", "null"] },
+          "slot": { "type": ["string", "null"] },
+          "in_air": { "type": "boolean" },
+          "position": {
+            "type": ["object", "null"],
+            "description": "Only with DCS-gRPC (Phase 6) or an equivalent source.",
+            "properties": {
+              "lat": { "$ref": "common.json#/$defs/lat" },
+              "lon": { "$ref": "common.json#/$defs/lon" },
+              "alt_m": { "type": "number" },
+              "heading_deg": { "type": "number" }
+            },
+            "required": ["lat", "lon"]
+          },
+          "connected_at": { "$ref": "common.json#/$defs/utc" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

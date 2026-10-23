@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/heartbeat.json",
+  "title": "heartbeat payload",
+  "type": "object",
+  "required": [
+    "agent_version",
+    "uptime_s",
+    "queue_depth"
+  ],
+  "properties": {
+    "agent_version": {
+      "type": "string"
+    },
+    "uptime_s": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "queue_depth": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Messages waiting in the agent's local queue."
+    },
+    "dcs_running": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "last_success": {
+      "type": "object",
+      "description": "Last successful read per source name (foothold, dcsbot, tacview, ...).",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "common.json#/$defs/utc"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "e.g. GRPC_SCRIPT_REVERTED, FOOTHOLD_FILE_STALE, DCSBOT_UNREACHABLE"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "detected": {
+      "type": "object",
+      "description": "Folders found on the server PC, offered to the admin as suggestions (never trusted or used automatically).",
+      "propertyNames": {
+        "enum": [
+          "saved_games",
+          "foothold_saves",
+          "dcsserverbot",
+          "tacview"
+        ]
+      },
+      "additionalProperties": {
+        "type": "array",
+        "maxItems": 10,
+        "items": {
+          "type": "object",
+          "required": [
+            "path"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "maxLength": 260
+            },
+            "note": {
+              "type": "string",
+              "maxLength": 120
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

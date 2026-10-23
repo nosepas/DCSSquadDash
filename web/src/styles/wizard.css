@@ -1,0 +1,189 @@
+/* "Connect an agent" wizard */
+.wizard-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wizard-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.wizard-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+.wizard-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.wizard-step-title {
+  margin: 4px 0 2px;
+  font-size: 1.1rem;
+}
+
+.wizard-help {
+  margin: 0 0 10px;
+}
+
+.wizard-list {
+  margin: 6px 0 12px;
+  padding-left: 20px;
+}
+
+.wizard-list li {
+  margin-bottom: 4px;
+}
+
+.wizard-sub {
+  margin: 8px 0 12px;
+  padding-left: 22px;
+}
+
+.wizard-sub li {
+  margin-bottom: 10px;
+}
+
+.wizard-sub li > span {
+  display: block;
+}
+
+.wizard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.wizard-label {
+  margin: 10px 0 4px;
+  font-weight: 600;
+}
+
+.wizard-details {
+  margin: 8px 0;
+  padding: 8px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.wizard-details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.wizard-details[open] summary {
+  margin-bottom: 8px;
+}
+
+.wizard-wait {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.wizard-wait p {
+  margin: 2px 0 0;
+}
+
+.wizard-done {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--ok);
+  border-radius: var(--radius);
+  background: rgb(74 222 128 / 10%);
+}
+
+.wizard-done p {
+  margin: 2px 0 0;
+}
+
+.wizard-check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ok);
+  color: #04130a;
+  font-weight: 700;
+}
+
+.wizard-more {
+  display: block;
+}
+
+.wizard-guide {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.wizard-guide-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.wizard-guide h3,
+.wizard-guide h4 {
+  margin: 0;
+}
+
+.wizard-guide h4 {
+  margin-top: 12px;
+}
+
+.wizard-guide p {
+  margin: 4px 0 0;
+}
+
+.wizard-agents {
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .wizard-step {
+    gap: 10px;
+  }
+
+  .wizard-num {
+    width: 28px;
+    height: 28px;
+  }
+
+  .wizard-actions .btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+.wizard .card-head {
+  flex-wrap: wrap;
+}

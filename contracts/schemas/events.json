@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/events.json",
+  "title": "events payload (batch of kills and other events)",
+  "type": "object",
+  "required": ["events"],
+  "properties": {
+    "events": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["event_id", "type", "time_utc"],
+        "properties": {
+          "event_id": { "type": "string", "maxLength": 128, "description": "Stable per source event so re-sending is idempotent (unique per server in central)." },
+          "type": {
+            "type": "string",
+            "enum": ["kill", "death", "takeoff", "landing", "crash", "eject", "zone_captured", "zone_lost", "mission_start", "mission_end", "connect", "disconnect"]
+          },
+          "time_utc": { "$ref": "common.json#/$defs/utc" },
+          "mission_time_s": { "type": ["number", "null"] },
+          "actor": { "$ref": "#/$defs/party" },
+          "target": { "$ref": "#/$defs/party" },
+          "weapon": { "type": ["string", "null"] },
+          "zone": { "type": ["string", "null"] },
+          "round_id": { "type": ["string", "null"], "description": "Foothold campaign/round identifier if known." },
+          "data": { "type": "object" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "party": {
+      "type": ["object", "null"],
+      "properties": {
+        "ucid": { "oneOf": [{ "$ref": "common.json#/$defs/ucid" }, { "type": "null" }], "description": "Null for AI units." },
+        "name": { "type": ["string", "null"] },
+        "coalition": { "$ref": "common.json#/$defs/coalition" },
+        "unit_type": { "type": ["string", "null"] },
+        "is_player": { "type": "boolean" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

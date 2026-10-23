@@ -1,0 +1,264 @@
+.dtc-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 16px;
+}
+
+.dtc-drop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 8px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.dtc-drop-over {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.dtc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr);
+  gap: var(--gap);
+  align-items: start;
+}
+
+.dtc-layout > .card {
+  margin-bottom: 0;
+}
+
+.dtc-map-wrap {
+  position: relative;
+}
+
+.dtc-map {
+  height: min(74vh, 760px);
+  min-height: 380px;
+}
+
+.dtc-map-hint {
+  position: absolute;
+  inset: auto 12px 12px;
+  z-index: 500;
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
+.dtc-pin-wrap {
+  background: none;
+  border: 0;
+}
+
+.dtc-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--pin);
+  color: #0b1019;
+  border: 2px solid rgb(255 255 255 / 85%);
+  box-shadow: 0 0 6px rgb(0 0 0 / 70%);
+  font: 700 11px/1 var(--font-sans);
+}
+
+.dtc-pin-active {
+  font-size: 13px;
+  cursor: grab;
+}
+
+.dtc-lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.dtc-lists .chip {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.dtc-lists .chip-active {
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.dtc-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 60%);
+}
+
+.dtc-settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+}
+
+.dtc-points {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.dtc-point {
+  padding: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.dtc-point-bad {
+  border-color: var(--danger);
+}
+
+.dtc-point-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.dtc-point-n {
+  min-width: 28px;
+  text-align: center;
+  padding: 2px 6px;
+  background: var(--bg);
+  border-radius: 999px;
+}
+
+.dtc-point-actions {
+  display: flex;
+  gap: 2px;
+}
+
+.dtc-point-actions .btn {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 4px 8px;
+}
+
+.dtc-text,
+.dtc-num {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  margin-bottom: 6px;
+}
+
+.dtc-num-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dtc-num input,
+.dtc-text input {
+  width: 100%;
+  min-width: 0;
+}
+
+.dtc-num.field-invalid input {
+  border-color: var(--danger);
+}
+
+.dtc-coords {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 8px;
+}
+
+.dtc-coords:has(> :nth-child(2):last-child) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dtc-approx {
+  color: var(--accent);
+}
+
+.dtc-add {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.dtc-add .btn {
+  margin-bottom: 6px;
+  min-height: 40px;
+}
+
+.dtc-empty {
+  padding: 12px 0;
+}
+
+.notice-error {
+  border-left-color: var(--danger);
+}
+
+.dtc-download-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.dtc-howto {
+  margin-top: 12px;
+}
+
+.dtc-footer {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .dtc-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dtc-map {
+    height: 60vh;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dtc-coords {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dtc-add {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dtc-add .btn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 901px) {
+  .dtc-map-card {
+    position: sticky;
+    top: 12px;
+  }
+}

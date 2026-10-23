@@ -1,0 +1,329 @@
+openapi: 3.1.0
+info:
+  title: FOX3 Web API
+  version: 1.0.0
+  description: |
+    API consumed by the web frontend.
+
+    Access levels (`x-access`), enforced SERVER-SIDE on every endpoint:
+    - `public`: no login. ONLY the map and the missions.
+    - `user`: logged in with Discord. Everything else (overview, ranking, players, kills, rounds, Tacview, DTC generator).
+    - `admin`: Discord id in the configured admin list, or role `admin` in DB.
+
+    Everything server-scoped lives under `/servers/{server_id}`. Player identity is the UCID; stats are per server.
+    Session: HttpOnly cookie. State-changing requests require header `X-CSRF-Token`.
+    Errors: `{ "error": { "code": "...", "message": "..." } }`.
+    "Missions" (public) = the current mission of a server and the list of missions seen, with name, terrain and type;
+    this reading is an interpretation to be confirmed with the owner.
+servers:
+  - url: /api/v1
+paths:
+  /auth/discord/login:
+    get:
+      x-access: public
+      summary: Redirect to Discord OAuth2 (state + PKCE)
+      responses: { '302': { description: Redirect to Discord } }
+  /auth/discord/callback:
+    get:
+      x-access: public
+      summary: OAuth2 callback; creates the session, redirects to the app
+      parameters:
+        - { name: code, in: query, required: true, schema: { type: string } }
+        - { name: state, in: query, required: true, schema: { type: string } }
+      responses: { '302': { description: Session set }, '400': { description: Bad state }, '403': { description: Discord user not allowed } }
+  /auth/logout:
+    post:
+      x-access: user
+      responses: { '204': { description: Logged out } }
+  /me:
+    get:
+      x-access: user
+      summary: Current user, role and linked UCIDs
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Me' }
+  /servers:
+    get:
+      x-access: public
+      summary: Server selector (id, name, mission type, online flag only)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/ServerSummary' } }
+  /servers/{server_id}/map:
+    get:
+      x-access: public
+      summary: "Map data: Foothold zones, connections, coalition and state (generic missions: terrain only)"
+      parameters: [{ $ref: '#/components/parameters/ServerId' }]
+      responses:
+        '200':
+          description: Zones are given as lat/lon already converted by central
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MapData' }
+  /servers/{server_id}/missions:
+    get:
+      x-access: public
+      summary: Current mission and missions seen
+      parameters: [{ $ref: '#/components/parameters/ServerId' }]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/Mission' } }
+  /servers/{server_id}/overview:
+    get:
+      x-access: user
+      summary: Home page KPIs (online, airborne, objectives per side, at risk, kills 1h, pilots), weather, front line
+      parameters: [{ $ref: '#/components/parameters/ServerId' }]
+      responses: { '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Overview' } } } } }
+  /servers/{server_id}/stream:
+    get:
+      x-access: user
+      summary: Server-Sent Events - live updates (players, zones, events, war news)
+      parameters: [{ $ref: '#/components/parameters/ServerId' }]
+      responses: { '200': { description: text/event-stream, content: { text/event-stream: { schema: { type: string } } } } }
+  /servers/{server_id}/objectives:
+    get:
+      x-access: user
+      parameters: [{ $ref: '#/components/parameters/ServerId' }]
+      responses: { '200': { description: OK } }
+  /servers/{server_id}/ranking:
+    get:
+      x-access: user
+      parameters:
+        - { $ref: '#/components/parameters/ServerId' }
+        - { name: sort, in: query, schema: { type: string, enum: [points, kills, kd, flight_time], default: points } }
+        - { $ref: '#/components/parameters/Limit' }
+      responses: { '200': { description: OK } }
+  /servers/{server_id}/kills:
+    get:
+      x-access: user
+      summary: Engagement log (paged)
+      parameters:
+        - { $ref: '#/components/parameters/ServerId' }
+        - { $ref: '#/components/parameters/Limit' }
+        - { name: before, in: query, schema: { type: string, format: date-time } }
+      responses: { '200': { description: OK } }
+  /servers/{server_id}/rounds:
+    get:
+      x-access: user
+      parameters: [{ $ref: '#/components/parameters/ServerId' }]
+      responses: { '200': { description: OK } }
+  /servers/{server_id}/rounds/{round_id}:
+    get:
+      x-access: user
+      summary: Result, territory over time, kill exchange, MVP, most contested bases
+      parameters:
+        - { $ref: '#/components/parameters/ServerId' }
+        - { name: round_id, in: path, required: true, schema: { type: integer } }
+      responses: { '200': { description: OK }, '404': { description: Not found } }
+  /servers/{server_id}/players:
+    get:
+      x-access: user
+      summary: Pilot search
+      parameters:
+        - { $ref: '#/components/parameters/ServerId' }
+        - { name: q, in: query, schema: { type: string, minLength: 2 } }
+        - { $ref: '#/components/parameters/Limit' }
+      responses: { '200': { description: OK } }
+  /players/{ucid}:
+    get:
+      x-access: user
+      summary: Profile - single identity across servers
+      parameters: [{ name: ucid, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/PlayerProfile' } } } }, '404': { description: Not found } }
+  /players/{ucid}/servers/{server_id}/stats:
+    get:
+      x-access: user
+      summary: Stats for that player on that server only
+      parameters:
+        - { name: ucid, in: path, required: true, schema: { type: string } }
+        - { $ref: '#/components/parameters/ServerId' }
+      responses: { '200': { description: OK } }
+  /link/start:
+    post:
+      x-access: user
+      summary: Create a short-lived code to type in the DCS chat (or use the DCSServerBot mechanism)
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: object, properties: { code: { type: string }, expires_at: { type: string, format: date-time } } } } } } }
+  /link/status:
+    get:
+      x-access: user
+      responses: { '200': { description: Linked UCIDs } }
+  /tacview/search:
+    get:
+      x-access: user
+      summary: Find a pilot in indexed ACMI files -> server, file, aircraft, UTC time, offset. No replay.
+      parameters:
+        - { name: pilot, in: query, required: true, schema: { type: string, minLength: 2 } }
+        - { name: server_id, in: query, schema: { type: string, format: uuid } }
+        - { $ref: '#/components/parameters/Limit' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/TacviewHit' } }
+  /dtc/terrains:
+    get:
+      x-access: user
+      summary: Terrains with a calibrated projection (others listed as uncalibrated and disabled)
+      responses: { '200': { description: OK } }
+  /dtc/aircraft:
+    get:
+      x-access: user
+      summary: Supported aircraft and which parts of the model each supports (FA-18C hidden until a sample exists)
+      responses: { '200': { description: OK } }
+  /dtc/elevation:
+    get:
+      x-access: user
+      summary: Ground elevation (m) for a point; null if the source is unavailable (user edits manually)
+      parameters:
+        - { name: terrain, in: query, required: true, schema: { type: string } }
+        - { name: lat, in: query, required: true, schema: { type: number } }
+        - { name: lon, in: query, required: true, schema: { type: number } }
+      responses: { '200': { description: OK } }
+  /dtc/generate:
+    post:
+      x-access: user
+      summary: Serialise the neutral mission model to a native .dtc file
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: 'schemas/dtc_mission.json' }
+      responses:
+        '200':
+          description: The .dtc (JSON) file
+          content: { application/json: { schema: { type: object } } }
+        '422': { description: Model invalid or unsupported for that aircraft/terrain }
+  /admin/servers:
+    get:    { x-access: admin, responses: { '200': { description: OK } } }
+    post:   { x-access: admin, summary: Create server, responses: { '201': { description: Created } } }
+  /admin/servers/{server_id}:
+    patch:  { x-access: admin, summary: "Edit name, mission_type, tacview_folder, tacview_enabled", parameters: [{ $ref: '#/components/parameters/ServerId' }], responses: { '200': { description: OK } } }
+    delete: { x-access: admin, parameters: [{ $ref: '#/components/parameters/ServerId' }], responses: { '204': { description: Deleted } } }
+  /admin/servers/{server_id}/pairing-code:
+    post:   { x-access: admin, summary: Create a one-time pairing code for an agent, parameters: [{ $ref: '#/components/parameters/ServerId' }], responses: { '201': { description: Code shown once } } }
+  /admin/agent-package:
+    get:
+      x-access: admin
+      summary: Is the agent executable built on this central (offered for download)?
+      responses:
+        '200':
+          description: OK
+          content: { application/json: { schema: { type: object, properties: { available: { type: boolean }, version: { type: [string, 'null'] }, size_bytes: { type: [integer, 'null'] }, reason: { type: [string, 'null'], enum: [not_built, null] } } } } }
+  /admin/servers/{server_id}/agent-package:
+    post:
+      x-access: admin
+      summary: Download a personalised agent ZIP (exe, agent.toml, a NEW 15-minute pairing code, INSTALAR.cmd, LEEME.txt); at most 10 per 10 minutes per admin
+      parameters:
+        - $ref: '#/components/parameters/ServerId'
+        - { name: language, in: query, schema: { type: string, enum: [es, ca, en, gl, eu], default: es } }
+      responses:
+        '200':
+          description: ZIP (Content-Disposition attachment, X-Pairing-Expires-Minutes 15, Cache-Control no-store)
+          content: { application/zip: { schema: { type: string, format: binary } } }
+        '404': { description: Unknown server }
+        '429': { description: Rate limited }
+        '503': { description: "agent_not_built: the executable has not been built on this central" }
+  /admin/agents:
+    get:    { x-access: admin, responses: { '200': { description: OK } } }
+  /admin/agents/{agent_id}/revoke:
+    post:
+      x-access: admin
+      parameters: [{ name: agent_id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses: { '204': { description: Revoked } }
+  /admin/users:
+    get:    { x-access: admin, responses: { '200': { description: OK } } }
+  /admin/users/{user_id}/role:
+    put:
+      x-access: admin
+      parameters: [{ name: user_id, in: path, required: true, schema: { type: integer } }]
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [role], properties: { role: { type: string, enum: [user, admin] } } } } } }
+      responses: { '204': { description: Updated } }
+components:
+  parameters:
+    ServerId: { name: server_id, in: path, required: true, schema: { type: string, format: uuid } }
+    Limit: { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 200, default: 50 } }
+  schemas:
+    Me:
+      type: object
+      properties:
+        user_id: { type: integer }
+        discord_name: { type: string }
+        role: { type: string, enum: [user, admin] }
+        linked_ucids: { type: array, items: { type: string } }
+    ServerSummary:
+      type: object
+      properties:
+        server_id: { type: string, format: uuid }
+        name: { type: string }
+        mission_type: { type: string, enum: [foothold, generic] }
+        online: { type: boolean }
+    Mission:
+      type: object
+      properties:
+        name: { type: string }
+        terrain: { type: string }
+        mission_type: { type: string, enum: [foothold, generic] }
+        current: { type: boolean }
+        started_at: { type: [string, 'null'], format: date-time }
+    MapData:
+      type: object
+      properties:
+        terrain: { type: string }
+        calibrated: { type: boolean }
+        zones:
+          type: array
+          items:
+            type: object
+            properties:
+              name: { type: string }
+              coalition: { type: string }
+              lat: { type: number }
+              lon: { type: number }
+              is_hq: { type: boolean }
+              at_risk: { type: boolean }
+              level: { type: [integer, 'null'] }
+        connections:
+          type: array
+          items: { type: object, properties: { from: { type: string }, to: { type: string } } }
+    Overview:
+      type: object
+      properties:
+        online: { type: integer }
+        airborne: { type: integer }
+        objectives: { type: object, properties: { red: { type: integer }, blue: { type: integer }, neutral: { type: integer } } }
+        at_risk: { type: integer }
+        kills_1h: { type: integer }
+        pilots: { type: integer }
+        weather: { type: [object, 'null'] }
+        top_shooters: { type: array, items: { type: object } }
+        news: { type: array, items: { type: object } }
+    PlayerProfile:
+      type: object
+      properties:
+        ucid: { type: string }
+        name: { type: string }
+        names: { type: array, items: { type: string } }
+        discord_linked: { type: boolean }
+        servers: { type: array, items: { type: object, properties: { server_id: { type: string }, points: { type: number }, stats: { type: object } } } }
+    TacviewHit:
+      type: object
+      properties:
+        server_id: { type: string, format: uuid }
+        server_name: { type: string }
+        file: { type: string }
+        pilot: { type: string }
+        aircraft: { type: [string, 'null'] }
+        first_utc: { type: [string, 'null'], format: date-time }
+        last_utc: { type: [string, 'null'], format: date-time }
+        first_offset_s: { type: number }
+        last_offset_s: { type: number }

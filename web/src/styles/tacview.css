@@ -1,0 +1,21 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  margin-top: 8px;
+}
+
+.filters .grow {
+  flex: 1 1 260px;
+}
+
+.dl-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.wrap-anywhere {
+  overflow-wrap: anywhere;
+}

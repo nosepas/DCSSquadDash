@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/server_info.json",
+  "title": "server_info payload",
+  "type": "object",
+  "required": ["mission_type", "agent_version", "capabilities"],
+  "properties": {
+    "server_name": { "type": "string" },
+    "dcs_version": { "type": ["string", "null"] },
+    "terrain": { "$ref": "common.json#/$defs/terrain" },
+    "mission_name": { "type": ["string", "null"] },
+    "mission_started_at": { "oneOf": [{ "$ref": "common.json#/$defs/utc" }, { "type": "null" }] },
+    "mission_time_utc": { "oneOf": [{ "$ref": "common.json#/$defs/utc" }, { "type": "null" }], "description": "In-sim date/time of day." },
+    "mission_type": { "type": "string", "enum": ["foothold", "generic"] },
+    "max_players": { "type": ["integer", "null"] },
+    "dcsserverbot_version": { "type": ["string", "null"] },
+    "foothold_version": { "type": ["string", "null"] },
+    "agent_version": { "type": "string" },
+    "capabilities": {
+      "type": "object",
+      "required": ["foothold", "tacview", "grpc", "dcsbot_rest", "dcsbot_db"],
+      "properties": {
+        "foothold": { "type": "boolean" },
+        "tacview": { "type": "boolean" },
+        "grpc": { "type": "boolean" },
+        "dcsbot_rest": { "type": "boolean" },
+        "dcsbot_db": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "weather": {
+      "type": ["object", "null"],
+      "description": "Mission weather, best effort. All fields optional.",
+      "properties": {
+        "temperature_c": { "type": "number" },
+        "qnh_hpa": { "type": "number" },
+        "wind_dir_deg": { "type": "number" },
+        "wind_speed_ms": { "type": "number" },
+        "visibility_m": { "type": "number" },
+        "cloud_base_m": { "type": "number" },
+        "clouds_preset": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

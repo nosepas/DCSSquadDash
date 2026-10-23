@@ -1,0 +1,248 @@
+openapi: 3.1.0
+info:
+  title: FOX3 Agent API
+  version: 1.0.0
+  description: |
+    API used by the Windows agent (outbound only: agent -> central, HTTPS).
+
+    Rules:
+    - Auth: `Authorization: Bearer <api_key>` on everything except `/pair`. One key per agent, stored hashed, revocable.
+    - `server_id` is derived from the key, never sent in the body.
+    - Every message uses the envelope in `schemas/common.json#/$defs/envelope`; `message_id` is an idempotency key
+      (a repeated id returns 200 with `duplicate: true` and is not applied twice).
+    - Agents queue locally and retry with exponential backoff on network error / 5xx / 429. 4xx (except 429) is NOT retried.
+    - Payloads are untrusted input and validated against the JSON Schemas.
+    - Payload schemas are in `schemas/`. `schema_version` currently 1; central rejects unknown major versions with 422.
+servers:
+  - url: https://{host}/agent/v1
+    variables:
+      host: { default: example.invalid }
+security:
+  - agentKey: []
+paths:
+  /pair:
+    post:
+      summary: Exchange a one-time pairing code for an API key
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [pairing_code, agent_name, agent_version]
+              properties:
+                pairing_code: { type: string, description: "Single use, short-lived, created in the admin panel." }
+                agent_name: { type: string }
+                agent_version: { type: string }
+                host_os: { type: string }
+      responses:
+        '200':
+          description: Paired. The key is shown only once.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [agent_id, api_key, server_id]
+                properties:
+                  agent_id: { type: string, format: uuid }
+                  api_key: { type: string }
+                  server_id: { type: string, format: uuid }
+        '400': { description: "Invalid, used or expired code" }
+        '429': { description: Rate limited }
+  /config:
+    get:
+      summary: Settings edited in the web admin panel
+      description: |
+        The agent polls this (about once a minute). `revision` changes whenever the admin changes something; the agent then
+        applies `settings` live (no restart). Secrets are never part of it.
+      responses:
+        '200':
+          description: Current settings of this agent's server
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [revision, mission_type, settings, intervals]
+                properties:
+                  revision: { type: string }
+                  mission_type: { type: string, enum: [foothold, generic] }
+                  settings: { $ref: '#/components/schemas/ServerSettings' }
+                  intervals: { type: object }
+                  max_raw_bytes: { type: integer }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /file-requests:
+    get:
+      summary: Long poll for recordings that browser users are waiting for
+      parameters:
+        - { name: wait, in: query, schema: { type: number, minimum: 0, maximum: 30, default: 25 } }
+      responses:
+        '200':
+          description: Requests nobody has claimed yet (possibly empty after `wait` seconds)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties: { request_id: { type: string }, relative_path: { type: string } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /file-requests/{request_id}/content:
+    put:
+      summary: Stream the requested recording (central relays it to the browser, nothing is stored)
+      description: Send `X-File-Size`. If the stream ends before that many bytes, the browser download is aborted (never silently truncated).
+      parameters:
+        - { name: request_id, in: path, required: true, schema: { type: string } }
+        - { name: X-File-Size, in: header, schema: { type: integer, minimum: 0 } }
+      requestBody: { required: true, content: { application/octet-stream: { schema: { type: string, format: binary } } } }
+      responses:
+        '200': { description: Fully relayed }
+        '410': { description: "Unknown, foreign, already started or cancelled transfer, or the file is too large" }
+  /file-requests/{request_id}/fail:
+    post:
+      summary: Tell central the file cannot be served (the browser gets a clear 404)
+      parameters: [{ name: request_id, in: path, required: true, schema: { type: string } }]
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [reason], properties: { reason: { type: string } } } } } }
+      responses: { '204': { description: Recorded } }
+  /heartbeat:
+    post:
+      summary: Liveness + queue depth + warnings
+      requestBody: { $ref: '#/components/requestBodies/Heartbeat' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /server-info:
+    post:
+      summary: Replace the server description
+      requestBody: { $ref: '#/components/requestBodies/ServerInfo' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /foothold-state:
+    post:
+      summary: Full Foothold snapshot (replaces current state; history kept by central)
+      requestBody: { $ref: '#/components/requestBodies/FootholdState' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /players:
+    post:
+      summary: Full snapshot of connected players
+      requestBody: { $ref: '#/components/requestBodies/Players' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /events:
+    post:
+      summary: Batch of events (kills, takeoffs, captures...)
+      requestBody: { $ref: '#/components/requestBodies/Events' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /tacview-index:
+    post:
+      summary: Index of one .acmi file (upsert by relative_path + sha256/mtime)
+      requestBody: { $ref: '#/components/requestBodies/TacviewIndex' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /discord-links:
+    post:
+      summary: Discord <-> UCID pairs already verified by DCSServerBot (claimed pairs, trusted because the agent is authenticated)
+      requestBody: { $ref: '#/components/requestBodies/DiscordLinks' }
+      responses: { '200': { $ref: '#/components/responses/Accepted' }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /link-codes:
+    post:
+      summary: Report an in-game Discord link code typed by a player
+      description: Used for the Discord <-> UCID link (code typed in DCS chat or taken from DCSServerBot).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code, ucid]
+              properties:
+                code: { type: string }
+                ucid: { $ref: 'schemas/common.json#/$defs/ucid' }
+                player_name: { type: string }
+      responses:
+        '200': { description: Matched and linked }
+        '404': { description: Unknown or expired code }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+components:
+  securitySchemes:
+    agentKey: { type: http, scheme: bearer }
+  schemas:
+    ServerSettings:
+      type: object
+      description: Edited per server in the admin panel (validated by central, see central/fox3_central/models/settings.py)
+      properties:
+        foothold: { type: object, properties: { enabled: { type: boolean }, saves_dir: { type: [string, 'null'] } } }
+        tacview: { type: object, properties: { enabled: { type: boolean }, folder: { type: [string, 'null'] } } }
+        missions: { type: object, properties: { folder: { type: [string, 'null'] } } }
+        dcsbot:
+          type: object
+          properties:
+            rest_enabled: { type: boolean }
+            rest_url: { type: string }
+            rest_prefix: { type: string }
+            server_name: { type: [string, 'null'] }
+            db_enabled: { type: boolean }
+  responses:
+    Accepted:
+      description: Stored (or ignored as duplicate)
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [ok]
+            properties:
+              ok: { type: boolean }
+              duplicate: { type: boolean }
+    Unauthorized: { description: "Missing, invalid or revoked key" }
+  requestBodies:
+    Heartbeat:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/heartbeat.json' } }
+    ServerInfo:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/server_info.json' } }
+    FootholdState:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/foothold_state.json' } }
+    Players:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/players.json' } }
+    Events:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/events.json' } }
+    TacviewIndex:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/tacview_index.json' } }
+    DiscordLinks:
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: 'schemas/common.json#/$defs/envelope'
+              - properties: { payload: { $ref: 'schemas/discord_links.json' } }

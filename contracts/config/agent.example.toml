@@ -1,0 +1,35 @@
+# FOX3 agent - example configuration. Normally you do NOT write this by hand: `fox3-agent init --central-url URL --out DIR`
+# (or scripts/install-agent.ps1) creates it. Copy to agent.toml (NOT committed).
+#
+# Almost everything is configured in the web admin panel (folders, Tacview, Foothold, DCSServerBot address...): the agent
+# downloads those settings from central and applies them live, no restart. What is set here is only the bootstrap plus the
+# SECRETS, which deliberately never travel through central. Values set in the admin panel win over the optional fallbacks below.
+#
+# The agent API key is not stored here either: `fox3-agent pair --code-stdin` saves it protected (Windows DPAPI) in state_dir.
+
+[central]
+url = "https://CHANGE-ME.example.org" # https is required (plain http only for localhost)
+verify_tls = true
+# ca_file = "C:/FOX3/central-ca.pem"  # only for a private CA / self-signed certificate
+
+[paths]
+state_dir = "C:/ProgramData/FOX3Agent/state"   # queue, state and credentials live here
+
+# --- Secrets of DCSServerBot (only if you enabled it in the admin panel) ---------------------------------------------------
+# Give the NAME of an environment variable, not the value. scripts/install-agent.ps1 stores the key in the Windows service
+# environment, so it never touches a file. (`api_key = "..."` still works but puts the key in this file: avoid it.)
+[sources.dcsserverbot]
+api_key_env = "FOX3_DCSBOT_API_KEY"   # same key as `api_key` in DCSServerBot config/plugins/restapi.yaml (sent as X-API-Key)
+# db_url_env = "FOX3_DCSBOT_DB_URL"   # name of an env var holding e.g. postgresql+psycopg://fox3ro:***@localhost/dcsserverbot
+#                                     # (create a READ-ONLY database user: SELECT on missionstats, missions, players)
+# allowed_rest_hosts = ["bot.lan"]   # extra hosts the admin panel may use as REST URL (localhost/127.0.0.1/::1 are always
+#                                     # allowed); any other host sent by central is ignored so the API key cannot leak
+
+# --- Tacview options that stay local (the folder itself is set in the admin panel) --------------------------------------
+# [sources.tacview]
+# cloud_files = "read"   # recordings in a cloud folder (Google Drive for desktop) that are "online-only":
+#                        #   "read" = index them one at a time (reading downloads them first), "skip" = leave them alone
+
+# --- Optional fallbacks, used only until central has answered or when the admin panel leaves a value empty ---------------
+# [sources.foothold]
+# saves_dir = "C:/Users/USER/Saved Games/DCS.server/Missions/Saves"

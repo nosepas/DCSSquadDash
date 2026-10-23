@@ -1,0 +1,191 @@
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--gap);
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  border-top: 2px solid var(--accent);
+}
+
+.kpi-wide {
+  grid-column: span 2;
+}
+
+.kpi-warn {
+  border-top-color: var(--danger);
+}
+
+.kpi-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cbar {
+  display: flex;
+  height: 10px;
+  margin-top: 6px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--surface-2);
+}
+
+.cbar-red {
+  background: var(--red);
+}
+
+.cbar-blue {
+  background: var(--blue);
+}
+
+.cbar-neutral {
+  background: var(--neutral);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin: 0;
+}
+
+.facts dt,
+.stat dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.facts dd,
+.stat dd {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.stat dd {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.mission-name {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.login {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.demo-box {
+  padding: 14px;
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius);
+}
+
+.demo-title {
+  font-size: 0.95rem;
+}
+
+.code {
+  display: block;
+  width: fit-content;
+  margin: 8px 0;
+  padding: 10px 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  user-select: all;
+}
+
+.not-found {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.modal {
+  width: min(520px, calc(100vw - 32px));
+  padding: 0;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.modal::backdrop {
+  background: rgb(3 6 12 / 75%);
+}
+
+.modal-body {
+  padding: 18px;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.modal-head h2 {
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+@media (max-width: 560px) {
+  .kpi-wide {
+    grid-column: span 1;
+  }
+
+  .kpi-value {
+    font-size: 1.6rem;
+  }
+
+  .tmap-full {
+    height: 60vh;
+  }
+}

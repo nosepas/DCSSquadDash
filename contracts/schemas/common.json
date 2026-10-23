@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/common.json",
+  "title": "Common definitions",
+  "$defs": {
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "uuid": { "type": "string", "format": "uuid" },
+    "utc": { "type": "string", "format": "date-time", "description": "RFC 3339, always UTC (suffix Z)." },
+    "ucid": { "type": "string", "minLength": 8, "maxLength": 64, "description": "DCS unique client id. Player identity across servers." },
+    "coalition": { "type": "string", "enum": ["red", "blue", "neutral", "unknown"] },
+    "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+    "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+    "dcs_xy": {
+      "type": "object",
+      "description": "DCS map coordinates in metres. x = northing, y = easting (Transverse Mercator per map).",
+      "required": ["x", "y"],
+      "properties": { "x": { "type": "number" }, "y": { "type": "number" } },
+      "additionalProperties": false
+    },
+    "terrain": {
+      "type": "string",
+      "description": "DCS terrain id as in the .dtc 'terrain' field. Verified projections: Caucasus, Syria. Others are accepted but flagged uncalibrated server-side."
+    },
+    "envelope": {
+      "type": "object",
+      "description": "Wrapper for every agent->central message. server_id is NOT sent: it is derived from the API key.",
+      "required": ["schema_version", "message_id", "sent_at", "payload"],
+      "properties": {
+        "schema_version": { "$ref": "#/$defs/schema_version" },
+        "message_id": { "$ref": "#/$defs/uuid", "description": "Idempotency key. Central ignores a repeated message_id." },
+        "sent_at": { "$ref": "#/$defs/utc" },
+        "payload": { "type": "object" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

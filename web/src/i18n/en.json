@@ -1,0 +1,821 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "retry": "Retry",
+    "empty": "Nothing to show yet.",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "close": "Close",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "copy": "Copy",
+    "copied": "Copied",
+    "loadMore": "Load more",
+    "noMore": "No more entries",
+    "yes": "Yes",
+    "no": "No",
+    "never": "Never",
+    "actions": "Actions",
+    "name": "Name",
+    "status": "Status",
+    "live": "Live",
+    "stale": "Reconnecting…",
+    "saved": "Saved",
+    "dirty": "Unsaved changes",
+    "back": "Back",
+    "all": "All",
+    "details": "Details",
+    "online": "Online",
+    "offline": "Offline",
+    "optional": "optional"
+  },
+  "errors": {
+    "generic": "Something went wrong.",
+    "network": "Cannot reach the server. Check your connection.",
+    "unauthorized": "Your session has expired. Please sign in again.",
+    "forbidden": "You do not have permission to do this.",
+    "not_found": "We could not find what you were looking for.",
+    "rate_limited": "Too many requests. Wait a moment and try again.",
+    "server": "The server had a problem. Try again later."
+  },
+  "nav": {
+    "main": "Main navigation",
+    "dashboard": "Dashboard",
+    "map": "Live map",
+    "missions": "Missions",
+    "objectives": "Objectives",
+    "ranking": "Ranking",
+    "kills": "Kill log",
+    "players": "Pilots",
+    "profile": "My profile",
+    "admin": "Admin",
+    "tacview": "Tacview",
+    "dtc": "DTC"
+  },
+  "header": {
+    "skip": "Skip to content",
+    "language": "Language",
+    "server": "Server",
+    "noServers": "No servers available",
+    "userMenu": "User menu",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "offline": "offline"
+  },
+  "auth": {
+    "title": "Sign in to FOX3",
+    "intro": "The map and missions are public. Everything else (statistics, ranking, kill log, pilots) requires signing in.",
+    "needLogin": "Sign in to see this section.",
+    "discord": "Sign in with Discord",
+    "discordUnavailable": "Discord sign-in is not configured on this installation.",
+    "demoTitle": "Demo access",
+    "demoNote": "Demo only: this passwordless login exists for the local demo and is not available in production.",
+    "demoPilot": "Demo pilot",
+    "demoAdmin": "Demo admin",
+    "role": {
+      "user": "Pilot",
+      "admin": "Administrator"
+    }
+  },
+  "coalition": {
+    "red": "Red",
+    "blue": "Blue",
+    "neutral": "Neutral"
+  },
+  "missionType": {
+    "foothold": "Foothold",
+    "generic": "Generic"
+  },
+  "dashboard": {
+    "title": "Situation overview",
+    "kpi": {
+      "online": "Online",
+      "airborne": "Airborne",
+      "objectives": "Objectives",
+      "atRisk": "At risk",
+      "kills1h": "Kills (1 h)",
+      "pilots": "Pilots"
+    },
+    "weather": "Weather",
+    "temperature": "Temperature",
+    "qnh": "QNH",
+    "wind": "Wind",
+    "visibility": "Visibility",
+    "noWeather": "No weather data reported.",
+    "frontMap": "Tactical map",
+    "openMap": "Open full map",
+    "topShooters": "Top 5 shooters",
+    "feed": "Engagement feed",
+    "news": "War news",
+    "noNews": "No news yet.",
+    "noKills": "No engagements recorded yet."
+  },
+  "news": {
+    "zone_captured": "{{coalition}} captured {{zone}}",
+    "zone_lost": "{{coalition}} lost {{zone}}",
+    "mission_start": "A new mission has started",
+    "mission_end": "The mission has ended",
+    "unknown": "Event: {{type}}",
+    "by": "by {{actor}}"
+  },
+  "map": {
+    "title": "Live map",
+    "aria": "Tactical map of the theatre",
+    "notCalibrated": "This terrain is not calibrated yet, so zone positions cannot be shown on the map.",
+    "noZones": "No zones reported for this server yet.",
+    "legend": "Legend",
+    "hq": "Headquarters",
+    "atRisk": "At risk",
+    "front": "Front line",
+    "link": "Connection",
+    "level": "Level",
+    "terrain": "Terrain",
+    "zones": "{{count}} zones"
+  },
+  "missions": {
+    "title": "Missions",
+    "current": "Current mission",
+    "terrain": "Terrain",
+    "type": "Type",
+    "started": "Started",
+    "none": "There is no active mission on this server."
+  },
+  "objectives": {
+    "title": "Objectives",
+    "zone": "Zone",
+    "coalition": "Coalition",
+    "level": "Level",
+    "state": "State",
+    "hq": "HQ",
+    "atRisk": "At risk",
+    "safe": "Secure"
+  },
+  "ranking": {
+    "title": "Ranking",
+    "sortBy": "Sort by",
+    "points": "Points",
+    "kills": "Kills",
+    "kd": "K/D",
+    "deaths": "Deaths",
+    "rank": "#",
+    "pilot": "Pilot"
+  },
+  "kills": {
+    "title": "Kill log",
+    "time": "Time",
+    "killer": "Shooter",
+    "victim": "Target",
+    "weapon": "Weapon",
+    "ai": "AI",
+    "player": "Pilot",
+    "killed": "{{killer}} shot down {{victim}}",
+    "unknownActor": "Unknown"
+  },
+  "players": {
+    "title": "Pilots",
+    "search": "Search pilots by name",
+    "placeholder": "Type at least 2 characters…",
+    "minChars": "Type at least 2 characters to search.",
+    "noResults": "No pilots match your search.",
+    "lastSeen": "Last seen"
+  },
+  "profile": {
+    "title": "Pilot profile",
+    "myTitle": "My profile",
+    "firstSeen": "First seen",
+    "lastSeen": "Last seen",
+    "discordLinked": "Discord linked",
+    "discordNotLinked": "Discord not linked",
+    "serverStats": "Statistics per server",
+    "noStats": "No statistics recorded for this pilot.",
+    "linkedAccounts": "My linked DCS accounts",
+    "noLinked": "You have not linked any DCS account yet.",
+    "link": {
+      "title": "Link my DCS account",
+      "intro": "Connect your Discord identity with your DCS pilot to see your own statistics.",
+      "generate": "Generate link code",
+      "regenerate": "Generate a new code",
+      "code": "Your code",
+      "expiresIn": "Expires in {{time}}",
+      "expired": "This code has expired.",
+      "instructions": "Join one of our DCS servers and type this code in the in-game chat. Once received, reload this page to see your linked account."
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "tabs": {
+      "servers": "Servers",
+      "agents": "Agents",
+      "users": "Users"
+    },
+    "servers": {
+      "type": "Mission type",
+      "enabled": "Enabled",
+      "new": "New server",
+      "deleteTitle": "Delete server",
+      "deleteConfirm": "Delete \"{{name}}\" and all its data? This cannot be undone.",
+      "empty": "No servers configured.",
+      "address": "Public address",
+      "configure": "Configure",
+      "newTitle": "New server",
+      "newIntro": "Create the server with a name and a type. You then configure everything on its page.",
+      "create": "Create server",
+      "namePlaceholder": "E.g. FOX3 Foothold Caucasus"
+    },
+    "agents": {
+      "agent": "Agent",
+      "server": "Server",
+      "version": "Version",
+      "lastSeen": "Last seen",
+      "state": "State",
+      "active": "Active",
+      "pending": "Pending pairing",
+      "revoked": "Revoked",
+      "revoke": "Revoke",
+      "revokeTitle": "Revoke agent",
+      "revokeConfirm": "Revoke agent \"{{name}}\"? It will stop sending data to FOX3.",
+      "empty": "No agents registered."
+    },
+    "users": {
+      "user": "User",
+      "role": "Role",
+      "lastLogin": "Last sign-in",
+      "empty": "No users yet.",
+      "changeRole": "Change role of {{name}}"
+    },
+    "server": {
+      "back": "Servers",
+      "saveError": "Not saved. Please check the highlighted fields.",
+      "saveFailed": "Could not save. Please try again.",
+      "unsaved": {
+        "title": "Unsaved changes",
+        "message": "You have unsaved changes on this page. If you leave, they will be lost.",
+        "leave": "Leave without saving",
+        "stay": "Keep editing"
+      },
+      "general": {
+        "title": "General",
+        "intro": "Basic server details.",
+        "name": "Name",
+        "nameHelp": "How the server is shown on the website.",
+        "type": "Mission type",
+        "typeHelp": "Foothold enables the dashboard, objectives, ranking and kill log. Generic only shows the map and missions, for servers without Foothold.",
+        "address": "Public address",
+        "addressHelp": "IP and port players use to connect, for example 203.0.113.5:10308. Informational only.",
+        "description": "Description",
+        "descriptionHelp": "Optional short text to introduce the server.",
+        "enabled": "Server enabled",
+        "enabledHelp": "If you disable it, the server is hidden from the website, but nothing is deleted."
+      },
+      "status": {
+        "title": "Connection status",
+        "intro": "Refreshes by itself every few seconds. Here you can see whether the agent on the server PC is connected and whether it needs attention.",
+        "agentVersion": "Agent version",
+        "lastSeen": "Last signal",
+        "queue": "Queued messages",
+        "queueHelp": "Data the agent has not been able to send yet. It should be 0 or very low.",
+        "noAgent": "No agent has connected yet. Use “Connect an agent” below.",
+        "noWarnings": "All good: the agent has not reported any warnings.",
+        "warnings": "Agent warnings",
+        "whatToDo": "What to do",
+        "technical": "Technical message"
+      },
+      "foothold": {
+        "title": "Foothold",
+        "intro": "Campaign progress (zones, objectives). It is read from the Foothold save file on the server PC.",
+        "enabled": "Read Foothold data",
+        "enabledHelp": "Turn it off if this server does not use Foothold.",
+        "dir": "Saves folder",
+        "dirHelp": "Usually Saved Games\\<server>\\Missions\\Saves on the server PC."
+      },
+      "tacview": {
+        "title": "Tacview",
+        "intro": "Files stay on the server PC; FOX3 only indexes which pilots appear in each recording and downloads files on demand when someone asks for them.",
+        "enabled": "Index Tacview recordings",
+        "enabledHelp": "Lets people search for pilots and download their recordings from the website.",
+        "folder": "Recordings folder",
+        "folderHelp": "Folder with the .acmi or .zip.acmi files, on the server PC."
+      },
+      "missions": {
+        "title": "Missions",
+        "intro": "Reserved for a future feature (mission list). You can leave it blank.",
+        "reserved": "Reserved for an upcoming feature",
+        "folder": "Missions folder",
+        "folderHelp": "Folder with the server's .miz files. Not used yet."
+      },
+      "dcsbot": {
+        "title": "DCSServerBot",
+        "intro": "Connection to DCSServerBot to know who is online and in which aircraft.",
+        "secrets": "The API key and the database password are NOT configured here: for security they stay on the server PC.",
+        "secretsWhere": "Where to set them: docs/FASE2-PROVES-REALS.md",
+        "restEnabled": "Use the DCSServerBot REST API",
+        "restEnabledHelp": "Required to see online players and their aircraft.",
+        "restUrl": "REST API URL",
+        "restUrlHelp": "Address of the DCSServerBot API as seen from the server PC, for example http://localhost:9876.",
+        "restPrefix": "API prefix",
+        "restPrefixHelp": "Leave blank unless your installation uses a prefix (letters, numbers, / _ - only).",
+        "serverName": "Server name in the bot",
+        "serverNameHelp": "Must be exactly the same as in DCSServerBot, including capitals.",
+        "dbEnabled": "Use database events",
+        "dbEnabledHelp": "Reads events (take-offs, kills…) from the DCSServerBot database. The password is set on the server PC.",
+        "detected": "DCSServerBot detected on the server"
+      },
+      "detected": {
+        "title": "Detected on the server",
+        "none": "The agent has not detected any folders for this field yet.",
+        "pick": "Use {{path}}"
+      },
+      "connect": {
+        "title": "Connect an agent",
+        "intro": "The agent is a small program installed on the DCS server PC that sends data to FOX3. It only needs outbound HTTPS connections: no ports have to be opened.",
+        "generate": "Create pairing code",
+        "codeWarning": "Copy this code now. It is shown only once and cannot be recovered.",
+        "expires": "Valid for {{minutes}} minutes.",
+        "stepsTitle": "On the server PC, run:",
+        "stepPair": "1. Pair (only once)",
+        "stepRun": "2. Start the agent",
+        "copyCommands": "Copy commands",
+        "agents": "Agents of this server",
+        "noAgents": "This server has no agents yet.",
+        "revokeConfirm": "Revoke agent “{{name}}”? It will stop sending data to FOX3 and you will have to pair a new one."
+      },
+      "danger": {
+        "title": "Danger zone",
+        "intro": "Deleting the server also deletes its statistics, events, Tacview index and agents. This cannot be undone.",
+        "button": "Delete this server…",
+        "confirmTitle": "Delete server",
+        "typeName": "To confirm, type the server name: {{name}}",
+        "confirm": "Delete permanently"
+      },
+      "wizard": {
+        "title": "Connect an agent",
+        "help": "The agent is a small program installed on the DCS server PC that sends its data to FOX3. This guide takes you step by step; no technical knowledge needed.",
+        "showGuide": "Show the full guide",
+        "hideGuide": "Hide the guide",
+        "done": {
+          "title": "Agent connected",
+          "info": "Version {{version}} · last seen {{seen}}",
+          "more": "Install on another PC or pair again",
+          "moveNote": "To move the agent to another PC, download again: the old agent keeps working until you revoke it in the list below."
+        },
+        "s1": {
+          "title": "Download the installer",
+          "help": "It is a ZIP file made for this server. You download it here and take it to the PC where DCS runs.",
+          "what": "The installer is a small program that sends this server's data to FOX3. It already includes everything it needs; nothing else has to be installed.",
+          "safe1": "It only makes outgoing internet connections.",
+          "safe2": "It needs no open ports on the router or the firewall.",
+          "safe3": "It needs no Windows administrator rights."
+        },
+        "dl": {
+          "button": "Download the installer for this server",
+          "busy": "Preparing the download…",
+          "again": "Download again",
+          "version": "Version {{version}}",
+          "code": "The file contains a one-time code, valid for {{minutes}} minutes after the download. Do not share it.",
+          "started": "Download started: {{name}}. Look in your Downloads folder.",
+          "countdown": "The code expires in",
+          "expired": "The code has expired. Click \"Download again\" to get a new one."
+        },
+        "nb": {
+          "title": "The installer has not been prepared on this FOX3 server yet.",
+          "body": "It is not your fault. Whoever installed FOX3 must run this command on the FOX3 server and then click \"Check again\":",
+          "check": "Check again"
+        },
+        "s2": {
+          "title": "Install it on the DCS server PC",
+          "help": "You only do this once and it takes a couple of minutes.",
+          "step1": "Copy the ZIP to the PC where DCS runs.",
+          "hint1": "A USB stick, a shared folder or emailing it to yourself all work. Log in to that PC with the Windows user that runs DCS.",
+          "step2": "Unzip it.",
+          "hint2": "Right-click the ZIP, choose \"Extract all…\" and then \"Extract\". Do not run anything from inside the ZIP.",
+          "step3": "Double-click INSTALAR.cmd.",
+          "hint3": "It is inside the folder you just unzipped, next to the other files.",
+          "step4": "If Windows says \"Windows protected your PC\": click \"More info\" and then \"Run anyway\".",
+          "hint4": "The program is not digitally signed yet, so Windows warns about any new program. This is normal and expected.",
+          "step5": "Wait until the black window ends with \"OK\".",
+          "hint5": "You will see it make progress. Keep it open until it says \"OK\"; then you can close it.",
+          "whatTitle": "What does the installer do?",
+          "what1": "It pairs the agent with this FOX3 server using the one-time code.",
+          "what2": "It copies the agent to a folder of your Windows user (it does not touch the system).",
+          "what3": "It creates a scheduled task for your user so the agent starts by itself when you log in.",
+          "what4": "It starts the agent and checks that it can reach FOX3. Then it shows up here as \"Online\".",
+          "problemsTitle": "Something went wrong?",
+          "p1": "The code expired (after 15 minutes): download the installer again and repeat.",
+          "p2": "The PC has no internet or a firewall blocks outgoing traffic: open any web page on that PC to check.",
+          "p3": "The antivirus blocked the program: allow it (or add an exception for the folder) and run INSTALAR.cmd again.",
+          "p4": "You installed it with a different Windows user from the one that runs DCS: log in as the DCS user and install again."
+        },
+        "s3": {
+          "title": "Waiting for the agent",
+          "help": "This screen updates by itself every few seconds. You do not need to reload the page.",
+          "waiting": "Waiting for the agent to connect…",
+          "waitingHelp": "It takes a few seconds after the black window ends with \"OK\".",
+          "idle": "This step starts when you download the installer.",
+          "timeoutTitle": "More than 3 minutes have passed and the agent has not connected.",
+          "timeoutBody": "Maybe you have not finished the installation yet, and that is fine: we keep waiting. If you already did, check these common causes:"
+        },
+        "s4": {
+          "title": "Choose the folders",
+          "help": "The agent finds the DCS folders by itself. You only have to confirm them.",
+          "idle": "It will appear here as soon as the agent is connected.",
+          "cta": "Click the Foothold saves folder and the Tacview folder, then Save.",
+          "found": "These are the folders the agent detected. Clicking one takes you to its section, where you pick it and save.",
+          "none": "The agent did not detect any folder. That is fine: go to the sections below and type the path by hand (for example C:\\Users\\YourUser\\Saved Games\\DCS\\Missions\\Saves), then click Save.",
+          "goFoothold": "Go to the Foothold saves",
+          "goTacview": "Go to the Tacview folder"
+        },
+        "guide": {
+          "title": "Full guide for administrators",
+          "intro": "A summary of the whole process, written for people who run the squad without owning the server.",
+          "g1t": "1. What the agent is",
+          "g1": "A small program that runs on the DCS server PC, reads the Foothold and Tacview folders and sends the data to FOX3 over the internet. It only makes outgoing connections: it opens no ports and needs no administrator rights.",
+          "g2t": "2. Before you start",
+          "g2": "You need access to the PC where DCS runs (with the Windows user that runs it) and that PC needs internet. If this page says the installer is not prepared, tell whoever installed FOX3.",
+          "g3t": "3. Install",
+          "g3": "Download the installer, copy it to the DCS PC, unzip it and double-click INSTALAR.cmd. If Windows warns you, click \"More info\" and \"Run anyway\". Wait until the window ends with \"OK\". The code in the file is single-use and expires after 15 minutes.",
+          "g4t": "4. Check that it connects",
+          "g4": "Within seconds the server will turn \"Online\" and you will see the agent version. If it does not within 3 minutes, check: expired code, no internet, antivirus or a different Windows user.",
+          "g5t": "5. Choose the folders",
+          "g5": "Once the agent connects, click the Foothold saves folder and the Tacview folder it detected and save each section. If it detected none, type the path by hand.",
+          "g6t": "6. Moving to another PC or removing an agent",
+          "g6": "To move the agent to another PC, download the installer again and install it there; the old agent keeps working until you revoke it in the \"Agents of this server\" list. A revoked agent stops sending data."
+        },
+        "errors": {
+          "generic": "The action could not be completed. Please try again.",
+          "network": "Cannot reach the server. Check your internet connection.",
+          "unauthorized": "Your session has expired. Please sign in again.",
+          "not_found": "This server was not found. It may have been deleted.",
+          "rate_limited": "You asked for too many downloads in a row. Wait a minute and try again.",
+          "agent_not_built": "The installer has not been prepared on this FOX3 server yet. Tell whoever installed it."
+        }
+      }
+    }
+  },
+  "notFound": {
+    "title": "404 – Off the chart",
+    "text": "The page you are looking for does not exist.",
+    "home": "Back to start"
+  },
+  "warnings": {
+    "FOOTHOLD_FILE_STALE": {
+      "title": "The Foothold file is not being updated",
+      "fix": "Check that the Foothold mission is still running and saving progress. If the server is stopped, this is normal."
+    },
+    "FOOTHOLD_FOLDER_MISSING": {
+      "title": "The Foothold saves folder does not exist",
+      "fix": "Check the path in the Foothold section. You can click one of the folders detected on the server."
+    },
+    "FOOTHOLD_FILE_MISSING": {
+      "title": "The Foothold progress file was not found",
+      "fix": "The folder exists but has no save file in it. Start a Foothold mission so it gets created, or check that the folder is the right one."
+    },
+    "FOOTHOLD_FILE_UNREADABLE": {
+      "title": "The Foothold file cannot be read",
+      "fix": "Check the folder permissions and that no other program has the file locked."
+    },
+    "FOOTHOLD_FILE_INVALID": {
+      "title": "The Foothold file has an unexpected format",
+      "fix": "It may be half-written or damaged. Wait for the next save; if it persists, check your Foothold version."
+    },
+    "FOOTHOLD_FOLDER_NOT_SET": {
+      "title": "The Foothold saves folder is not set",
+      "fix": "Enter the folder in the Foothold section (or click one of the detected ones) and save."
+    },
+    "DCSBOT_UNREACHABLE": {
+      "title": "Cannot reach the DCSServerBot API",
+      "fix": "Check that DCSServerBot is running and that the URL and prefix in the DCSServerBot section are correct."
+    },
+    "DCSBOT_AUTH_FAILED": {
+      "title": "DCSServerBot rejected the API key",
+      "fix": "The key is set on the server PC, not here. Check it in the agent's local configuration (docs/FASE2-PROVES-REALS.md)."
+    },
+    "DCSBOT_SERVER_NOT_FOUND": {
+      "title": "DCSServerBot does not know that server name",
+      "fix": "Type the server name exactly as it appears in DCSServerBot, including capitals and spaces."
+    },
+    "DCSBOT_DB_ERROR": {
+      "title": "Error reading the DCSServerBot database",
+      "fix": "The database password is set on the server PC. Check that PostgreSQL is running and that the agent's local credentials are correct."
+    },
+    "DCSBOT_UCID_UNRESOLVED": {
+      "title": "Some pilot could not be identified",
+      "fix": "DCSServerBot did not return the identifier (UCID) of a player. This usually fixes itself; if it persists, check your DCSServerBot version."
+    },
+    "DCSBOT_CONFIG_INVALID": {
+      "title": "The DCSServerBot settings are not valid",
+      "fix": "Review the DCSServerBot section: URL, prefix and server name."
+    },
+    "TACVIEW_FOLDER_MISSING": {
+      "title": "The Tacview folder does not exist",
+      "fix": "Check the path in the Tacview section. You can click one of the folders detected on the server."
+    },
+    "TACVIEW_FOLDER_UNREADABLE": {
+      "title": "The Tacview folder cannot be read",
+      "fix": "Check the folder permissions for the user running the agent."
+    },
+    "TACVIEW_FILE_FAILED": {
+      "title": "A Tacview recording could not be read",
+      "fix": "That recording is skipped and the rest keep working. It may be damaged or still open in DCS."
+    },
+    "TACVIEW_FORMAT_UNSUPPORTED": {
+      "title": "Unsupported Tacview format",
+      "fix": "Some recordings use a format FOX3 does not understand yet and are skipped. Use standard .acmi or .zip.acmi recordings."
+    },
+    "TACVIEW_INDEXING": {
+      "title": "Indexing Tacview recordings",
+      "fix": "This is normal after enabling Tacview: search will be complete in a few minutes. Nothing to do."
+    },
+    "TACVIEW_APPEARANCES_CAPPED": {
+      "title": "A recording's appearances were capped",
+      "fix": "One recording has so many pilots that only the first appearances are stored, so some searches may not show everything."
+    },
+    "SOURCE_CRASHED": {
+      "title": "An agent module stopped",
+      "fix": "Restart the agent on the server PC. If it happens again, copy the technical message and tell the developer."
+    },
+    "CENTRAL_REJECTED_MESSAGES": {
+      "title": "FOX3 rejected messages from the agent",
+      "fix": "This usually means the agent and FOX3 are on different versions. Update the agent on the server PC."
+    }
+  },
+  "tacview": {
+    "title": "Tacview",
+    "intro": "Search for a pilot to see which recordings they appear in and download the file from the server where it was recorded.",
+    "search": "Pilot name",
+    "placeholder": "Type at least 2 characters…",
+    "minChars": "Type at least 2 characters to search.",
+    "server": "Server",
+    "noResults": "No recordings match that search.",
+    "file": "File",
+    "pilot": "Pilot",
+    "aircraft": "Aircraft",
+    "utc": "UTC time (start – end)",
+    "offset": "Offset in the recording",
+    "partial": "Partial recording",
+    "partialHint": "The recording is incomplete (it may still be recording or it was cut short).",
+    "download": "Download",
+    "asking": "Asking the server… this can take up to 30 seconds.",
+    "downloading": "Downloading… {{percent}}",
+    "downloadingUnknown": "Downloading…",
+    "cancel": "Cancel",
+    "errors": {
+      "server_unreachable": "The server's agent did not answer. The server may be off or disconnected; try again later.",
+      "not_found": "The recording is no longer available on the server (it may have been moved or deleted).",
+      "transfer_busy": "The server is already sending another download. Wait a moment and try again.",
+      "unauthorized": "Your session has expired. Please sign in again.",
+      "network": "The connection was lost during the download. Check your network and try again.",
+      "generic": "The recording could not be downloaded."
+    }
+  },
+  "aircraft": {
+    "layer": "Allied aircraft",
+    "side": "Side",
+    "both": "Both",
+    "count": "{{count}} aircraft",
+    "none": "No aircraft visible right now.",
+    "pilot": "Pilot",
+    "type": "Aircraft",
+    "altitude": "Altitude",
+    "altValue": "{{m}} m / {{ft}} ft",
+    "onGround": "On the ground",
+    "linkAccount": "Link your DCS account to see your allied aircraft.",
+    "linkAction": "Go to my profile to link it",
+    "notOnline": "You must be connected to this server to see allied aircraft."
+  },
+  "dtc": {
+    "title": "DTC generator",
+    "intro": "Build a DTC (Data Transfer Cartridge) file for DCS by clicking on the map. Pick the aircraft and the map, add points, fine-tune them and download the .dtc file.",
+    "steps": {
+      "title": "Setup",
+      "aircraft": "1. Aircraft",
+      "pickAircraft": "Pick an aircraft…",
+      "soon": "coming soon",
+      "terrain": "2. DCS map",
+      "pickTerrain": "Pick a map…",
+      "terrainHelp": "Pick the DCS map you will fly on. Coordinates are converted with that map's projection.",
+      "import": "3. Import a .dtc (optional)",
+      "name": "File name (optional)",
+      "switchTitle": "Change aircraft",
+      "switchAsk": "Changing aircraft starts a new draft and the current points are lost. Continue?",
+      "starting": "Loading the default settings of this aircraft…"
+    },
+    "calibration": {
+      "exact": "Verified",
+      "plausible": "Plausible",
+      "airports": "Airports only",
+      "exactHint": "Projection verified against a real DCS file.",
+      "plausibleHint": "Projection consistent with a real DCS file, but not fully verified.",
+      "airportsHint": "Checked against real airport positions, but not yet confirmed in the game. Double-check the points inside DCS."
+    },
+    "import": {
+      "button": "Import an existing .dtc",
+      "busy": "Reading the file…",
+      "drop": "or drop a .dtc file here",
+      "loaded": "Loaded: {{name}}",
+      "rejected": "This file could not be read as a supported .dtc.",
+      "warnings": "Notes about the imported file ({{count}})"
+    },
+    "preserved": {
+      "title": "Kept as in your file",
+      "body": "These parts exist in the file but cannot be edited here. They are written back unchanged when you download:",
+      "parts": {
+        "threat_points": "Threat points",
+        "destinations": "Destinations",
+        "additional_points": "Additional points",
+        "routes": "Routes",
+        "zones": "Zones",
+        "areas": "Areas",
+        "lines": "Lines",
+        "adf": "ADF"
+      }
+    },
+    "map": {
+      "aria": "DTC editor map",
+      "needAircraft": "Pick an aircraft first to get started.",
+      "needTerrain": "Pick the DCS map to be able to add points.",
+      "help": "Click the map to add a point to the active list. Drag a point to move it; right-click (or long-press) to delete it.",
+      "unnamed": "Unnamed",
+      "noElevation": "unknown"
+    },
+    "lists": {
+      "aria": "Active point list",
+      "steerpoints": "Steerpoints",
+      "route": "Route {{n}}",
+      "routeNamed": "Route {{n}} · {{name}}",
+      "line": "Line {{n}}",
+      "f14line": "Line {{n}} (route {{route}})",
+      "ah64": {
+        "TGT": "Mission {{mission}} · Targets",
+        "WPTHZ": "Mission {{mission}} · Waypoints/hazards",
+        "CTRLM": "Mission {{mission}} · Control measures"
+      }
+    },
+    "f14": {
+      "routeName": "Route name",
+      "asLine": "Draw the route as a line",
+      "asLineHelp": "Besides the waypoints, the route is also shown as a line on the aircraft's map.",
+      "lineOf": "This line belongs to route {{route}}.",
+      "closed": "Closed line (joins the last point to the first)",
+      "deleteLine": "Delete this line",
+      "addLine": "Add line"
+    },
+    "points": {
+      "title": "Points",
+      "pickFirst": "Pick an aircraft to start adding points.",
+      "empty": "This list is empty. Click the map or type some coordinates.",
+      "up": "Move point {{n}} up",
+      "down": "Move point {{n}} down",
+      "delete": "Delete point",
+      "deleteN": "Delete point {{n}}",
+      "addTyped": "Add point"
+    },
+    "fields": {
+      "name": "Name",
+      "note": "Note",
+      "lat": "Latitude",
+      "lon": "Longitude",
+      "elevation": "Elevation (m)",
+      "approx": "approximate",
+      "unknown": "unknown",
+      "autoName": "automatic",
+      "speed": "Speed",
+      "tot": "Time (TOT)",
+      "errors": {
+        "required": "Required.",
+        "invalid": "Enter a decimal number, for example 41.5.",
+        "range": "Out of range (latitude ±90, longitude ±180).",
+        "time": "Use the format HH:MM:SS."
+      }
+    },
+    "issues": {
+      "fix": "Fix this before downloading:",
+      "noAircraft": "Pick an aircraft.",
+      "noTerrain": "Pick the DCS map.",
+      "tooManyWaypoints": "There are {{count}} steerpoints and the maximum is {{limit}}.",
+      "tooManyRoutes": "There are {{count}} routes and the maximum is {{limit}}.",
+      "tooManyLines": "There are {{count}} lines and the maximum is {{limit}}.",
+      "badLat": "Point {{n}}: invalid latitude.",
+      "badLon": "Point {{n}}: invalid longitude.",
+      "badElevation": "Point {{n}}: invalid elevation.",
+      "noPoints": "There are no points yet: the file would be empty.",
+      "unknownElevation": "{{count}} point(s) without elevation: 0 m will be written to the file.",
+      "radioBadFrequency": "{{count}} radio frequency(ies) are not a number greater than 0.",
+      "radioRange": "{{count}} radio frequency(ies) are outside the typical range (just a hint, it does not block the download).",
+      "radioInvalidInput": "{{count}} radio field(s) hold text that is not valid yet."
+    },
+    "server": {
+      "rejected": "The server did not accept the file:"
+    },
+    "download": {
+      "button": "Download .dtc",
+      "busy": "Generating…",
+      "disabled": "Download disabled: {{count}} problem(s) to fix.",
+      "done": "File downloaded. Generation notes, if any:",
+      "expired": "The imported file has expired on the server (it is kept for one hour). Import it again or continue with the aircraft's built-in template.",
+      "useBuiltin": "Use the built-in template"
+    },
+    "draft": {
+      "clear": "Clear draft",
+      "clearAsk": "All points and the imported file will be discarded. Continue?",
+      "saved": "Your draft is saved automatically in this browser."
+    },
+    "howto": {
+      "title": "How do I use it in DCS?",
+      "body": "Copy the .dtc file into the aircraft's DTC folder inside DCS' Saved Games, or import it from the game's DTC import dialog. We are not sure of the exact path on your installation: check the DTC import dialog inside DCS."
+    },
+    "elevation": {
+      "attribution": "Approximate elevations: Copernicus DEM GLO-90 via Open-Meteo.com (not the DCS terrain). Check them if you need accuracy.",
+      "loading": "Looking up elevations…",
+      "disabled": "Elevation lookup is not available: type the elevation by hand.",
+      "failed": "Could not look up the elevation: type it by hand."
+    },
+    "layers": {
+      "title": "Map layers",
+      "airports": "Airports",
+      "front": "Front line and zones",
+      "farps": "FARPs",
+      "server": "Reference server",
+      "noServer": "No Foothold server is playing this map right now; airports are still shown.",
+      "note": "Layers are for orientation only and are not written to the DTC file.",
+      "addPoint": "Add as point",
+      "civil": "Civil airfield",
+      "military": "Military airfield",
+      "farp": "FARP",
+      "airportsError": "Could not load the airports of this map.",
+      "stateError": "Could not refresh the reference server state."
+    },
+    "radios": {
+      "title": "Radios",
+      "intro": "Radio frequencies written into the DTC. Only what you change is modified; everything else stays as in the file or the default.",
+      "none": "The DTC of this aircraft does not include radios.",
+      "empty": "This draft has no radio data.",
+      "changed": "Changed from the original",
+      "reset": "Reset to defaults",
+      "resetFile": "Restore the values of your file",
+      "band": "Typical {{band}} range: {{min}}-{{max}} MHz (documented, not verified in the game).",
+      "channel": "Ch {{n}}",
+      "channelName": "{{radio}} channel {{n}}",
+      "freqAria": "{{name}} frequency, MHz",
+      "outOfRange": "Outside the typical range {{min}}-{{max}} MHz.",
+      "fraction": "Not confirmed in DCS yet: whole MHz is known to work.",
+      "errors": {
+        "required": "Required.",
+        "invalid": "Enter a number in MHz, for example 251 or 127.5.",
+        "positive": "The frequency must be greater than 0.",
+        "int": "Whole number from {{min}} to {{max}}."
+      },
+      "f16": {
+        "aria": "Radio",
+        "COMM1": "COMM1 (UHF)",
+        "COMM2": "COMM2 (VHF)"
+      },
+      "ah64": {
+        "tabsAria": "Part of the radios",
+        "tabPresets": "Presets",
+        "tabInitial": "Initial settings",
+        "presetPick": "Preset",
+        "presetN": "Preset {{n}}",
+        "unit_id": "Unit ID",
+        "call_sign": "Call sign",
+        "unit_idAria": "Preset {{n}} unit ID",
+        "call_signAria": "Preset {{n}} call sign",
+        "frequency": "Frequency, MHz",
+        "modulation": "Modulation",
+        "modAria": "{{name}} modulation",
+        "encryption": "Encryption",
+        "encAria": "{{name}} encryption code",
+        "encryptionHint": "Raw DCS code. 0 = none.",
+        "hfModulationHint": "Raw code. Its meaning is unverified, so it is shown as a number.",
+        "codesHelp": "Modulation and encryption are raw DCS codes: AM = 0, FM = 1 (standard DCS values); encryption 0 = none.",
+        "mod": {
+          "0": "AM (0)",
+          "1": "FM (1)",
+          "other": "Code {{code}}"
+        },
+        "presetRadioName": "preset {{n}} {{radio}}",
+        "initialName": "initial {{radio}}",
+        "initialHelp": "What each radio is set to when the helicopter starts: its frequency and the preset number it begins on.",
+        "startPreset": "Starts on preset",
+        "startPresetAria": "{{name}} starting preset",
+        "guard": "UHF guard receiver on",
+        "guardHelp": "Listens on the UHF guard frequency in addition to the selected one.",
+        "radio": {
+          "FM1": "FM1",
+          "FM2": "FM2",
+          "UHF": "UHF",
+          "VHF": "VHF",
+          "HF": "HF",
+          "HF_RX": "HF Rx",
+          "HF_TX": "HF Tx"
+        }
+      },
+      "missing": "This draft was created before radios existed and has no radio data.",
+      "loading": "Loading the default radios…",
+      "loadDefaults": "Load the default radios",
+      "missingFile": "This draft comes from a file imported before radios existed. Import your file again to edit its radios, or load the default radios (they will replace those of your file when you download).",
+      "loadDefaultsFile": "Load default radios (replaces the file's)"
+    }
+  }
+}

@@ -1,0 +1,821 @@
+{
+  "common": {
+    "loading": "Carregant…",
+    "retry": "Torna-ho a provar",
+    "empty": "Encara no hi ha res per mostrar.",
+    "cancel": "Cancel·la",
+    "confirm": "Confirma",
+    "save": "Desa",
+    "close": "Tanca",
+    "delete": "Elimina",
+    "edit": "Edita",
+    "create": "Crea",
+    "copy": "Copia",
+    "copied": "Copiat",
+    "loadMore": "Carrega'n més",
+    "noMore": "No hi ha més entrades",
+    "yes": "Sí",
+    "no": "No",
+    "never": "Mai",
+    "actions": "Accions",
+    "name": "Nom",
+    "status": "Estat",
+    "live": "En directe",
+    "stale": "Reconnectant…",
+    "saved": "Desat",
+    "dirty": "Canvis sense desar",
+    "back": "Tornar",
+    "all": "Tots",
+    "details": "Detalls",
+    "online": "En línia",
+    "offline": "Sense connexió",
+    "optional": "opcional"
+  },
+  "errors": {
+    "generic": "Alguna cosa ha anat malament.",
+    "network": "No es pot contactar amb el servidor. Revisa la connexió.",
+    "unauthorized": "La sessió ha caducat. Torna a iniciar sessió.",
+    "forbidden": "No tens permís per fer això.",
+    "not_found": "No hem trobat el que buscaves.",
+    "rate_limited": "Massa peticions. Espera un moment i torna-ho a provar.",
+    "server": "El servidor ha tingut un problema. Torna-ho a provar més tard."
+  },
+  "nav": {
+    "main": "Navegació principal",
+    "dashboard": "Tauler",
+    "map": "Mapa en directe",
+    "missions": "Missions",
+    "objectives": "Objectius",
+    "ranking": "Classificació",
+    "kills": "Registre d'abats",
+    "players": "Pilots",
+    "profile": "El meu perfil",
+    "admin": "Administració",
+    "tacview": "Tacview",
+    "dtc": "DTC"
+  },
+  "header": {
+    "skip": "Salta al contingut",
+    "language": "Idioma",
+    "server": "Servidor",
+    "noServers": "No hi ha servidors disponibles",
+    "userMenu": "Menú d'usuari",
+    "login": "Inicia sessió",
+    "logout": "Tanca la sessió",
+    "offline": "sense connexió"
+  },
+  "auth": {
+    "title": "Inicia sessió a FOX3",
+    "intro": "El mapa i les missions són públics. Tota la resta (estadístiques, classificació, registre d'abats, pilots) requereix iniciar sessió.",
+    "needLogin": "Inicia sessió per veure aquesta secció.",
+    "discord": "Entra amb Discord",
+    "discordUnavailable": "L'accés amb Discord no està configurat en aquesta instal·lació.",
+    "demoTitle": "Accés de demostració",
+    "demoNote": "Només demo: aquest accés sense contrasenya existeix per a la demostració local i no està disponible en producció.",
+    "demoPilot": "Pilot demo",
+    "demoAdmin": "Admin demo",
+    "role": {
+      "user": "Pilot",
+      "admin": "Administrador"
+    }
+  },
+  "coalition": {
+    "red": "Vermell",
+    "blue": "Blau",
+    "neutral": "Neutral"
+  },
+  "missionType": {
+    "foothold": "Foothold",
+    "generic": "Genèrica"
+  },
+  "dashboard": {
+    "title": "Resum de la situació",
+    "kpi": {
+      "online": "En línia",
+      "airborne": "En vol",
+      "objectives": "Objectius",
+      "atRisk": "En risc",
+      "kills1h": "Abats (1 h)",
+      "pilots": "Pilots"
+    },
+    "weather": "Meteorologia",
+    "temperature": "Temperatura",
+    "qnh": "QNH",
+    "wind": "Vent",
+    "visibility": "Visibilitat",
+    "noWeather": "No hi ha dades meteorològiques.",
+    "frontMap": "Mapa tàctic",
+    "openMap": "Obre el mapa complet",
+    "topShooters": "Top 5 tiradors",
+    "feed": "Activitat de combat",
+    "news": "Notícies de guerra",
+    "noNews": "Encara no hi ha notícies.",
+    "noKills": "Encara no hi ha combats registrats."
+  },
+  "news": {
+    "zone_captured": "{{coalition}} ha capturat {{zone}}",
+    "zone_lost": "{{coalition}} ha perdut {{zone}}",
+    "mission_start": "Ha començat una missió nova",
+    "mission_end": "La missió ha acabat",
+    "unknown": "Esdeveniment: {{type}}",
+    "by": "per {{actor}}"
+  },
+  "map": {
+    "title": "Mapa en directe",
+    "aria": "Mapa tàctic del teatre d'operacions",
+    "notCalibrated": "Aquest terreny encara no està calibrat, així que no es poden mostrar les posicions de les zones al mapa.",
+    "noZones": "Aquest servidor encara no ha comunicat cap zona.",
+    "legend": "Llegenda",
+    "hq": "Quarter general",
+    "atRisk": "En risc",
+    "front": "Línia del front",
+    "link": "Connexió",
+    "level": "Nivell",
+    "terrain": "Terreny",
+    "zones": "{{count}} zones"
+  },
+  "missions": {
+    "title": "Missions",
+    "current": "Missió actual",
+    "terrain": "Terreny",
+    "type": "Tipus",
+    "started": "Inici",
+    "none": "No hi ha cap missió activa en aquest servidor."
+  },
+  "objectives": {
+    "title": "Objectius",
+    "zone": "Zona",
+    "coalition": "Coalició",
+    "level": "Nivell",
+    "state": "Estat",
+    "hq": "QG",
+    "atRisk": "En risc",
+    "safe": "Assegurada"
+  },
+  "ranking": {
+    "title": "Classificació",
+    "sortBy": "Ordena per",
+    "points": "Punts",
+    "kills": "Abats",
+    "kd": "K/D",
+    "deaths": "Morts",
+    "rank": "N.º",
+    "pilot": "Pilot"
+  },
+  "kills": {
+    "title": "Registre d'abats",
+    "time": "Hora",
+    "killer": "Tirador",
+    "victim": "Objectiu",
+    "weapon": "Arma",
+    "ai": "IA",
+    "player": "Pilot",
+    "killed": "{{killer}} ha abatut {{victim}}",
+    "unknownActor": "Desconegut"
+  },
+  "players": {
+    "title": "Pilots",
+    "search": "Cerca pilots pel nom",
+    "placeholder": "Escriu almenys 2 caràcters…",
+    "minChars": "Escriu almenys 2 caràcters per cercar.",
+    "noResults": "Cap pilot coincideix amb la cerca.",
+    "lastSeen": "Vist per última vegada"
+  },
+  "profile": {
+    "title": "Perfil de pilot",
+    "myTitle": "El meu perfil",
+    "firstSeen": "Vist per primera vegada",
+    "lastSeen": "Vist per última vegada",
+    "discordLinked": "Discord vinculat",
+    "discordNotLinked": "Discord sense vincular",
+    "serverStats": "Estadístiques per servidor",
+    "noStats": "No hi ha estadístiques registrades per a aquest pilot.",
+    "linkedAccounts": "Els meus comptes de DCS vinculats",
+    "noLinked": "Encara no has vinculat cap compte de DCS.",
+    "link": {
+      "title": "Vincula el meu compte de DCS",
+      "intro": "Connecta la teva identitat de Discord amb el teu pilot de DCS per veure les teves estadístiques.",
+      "generate": "Genera un codi de vinculació",
+      "regenerate": "Genera un codi nou",
+      "code": "El teu codi",
+      "expiresIn": "Caduca d'aquí a {{time}}",
+      "expired": "Aquest codi ha caducat.",
+      "instructions": "Entra en un dels nostres servidors de DCS i escriu aquest codi al xat del joc. Quan es rebi, recarrega aquesta pàgina per veure el teu compte vinculat."
+    }
+  },
+  "admin": {
+    "title": "Administració",
+    "tabs": {
+      "servers": "Servidors",
+      "agents": "Agents",
+      "users": "Usuaris"
+    },
+    "servers": {
+      "type": "Tipus de missió",
+      "enabled": "Actiu",
+      "new": "Servidor nou",
+      "deleteTitle": "Elimina el servidor",
+      "deleteConfirm": "Vols eliminar \"{{name}}\" i totes les seves dades? Aquesta acció no es pot desfer.",
+      "empty": "No hi ha servidors configurats.",
+      "address": "Adreça pública",
+      "configure": "Configurar",
+      "newTitle": "Servidor nou",
+      "newIntro": "Crea el servidor amb un nom i un tipus. Després ho configures tot a la seva pàgina.",
+      "create": "Crear servidor",
+      "namePlaceholder": "Ex.: FOX3 Foothold Caucas"
+    },
+    "agents": {
+      "agent": "Agent",
+      "server": "Servidor",
+      "version": "Versió",
+      "lastSeen": "Darrera activitat",
+      "state": "Estat",
+      "active": "Actiu",
+      "pending": "Aparellament pendent",
+      "revoked": "Revocat",
+      "revoke": "Revoca",
+      "revokeTitle": "Revoca l'agent",
+      "revokeConfirm": "Vols revocar l'agent \"{{name}}\"? Deixarà d'enviar dades a FOX3.",
+      "empty": "No hi ha agents registrats."
+    },
+    "users": {
+      "user": "Usuari",
+      "role": "Rol",
+      "lastLogin": "Darrer accés",
+      "empty": "Encara no hi ha usuaris.",
+      "changeRole": "Canvia el rol de {{name}}"
+    },
+    "server": {
+      "back": "Servidors",
+      "saveError": "No s'ha desat. Revisa els camps marcats.",
+      "saveFailed": "No s'ha pogut desar. Torna-ho a provar.",
+      "unsaved": {
+        "title": "Canvis sense desar",
+        "message": "Tens canvis sense desar en aquesta pàgina. Si surts, es perdran.",
+        "leave": "Sortir sense desar",
+        "stay": "Continuar editant"
+      },
+      "general": {
+        "title": "General",
+        "intro": "Dades bàsiques del servidor.",
+        "name": "Nom",
+        "nameHelp": "Com es mostra el servidor al web.",
+        "type": "Tipus de missió",
+        "typeHelp": "Foothold activa el panell, els objectius, la classificació i el registre d'abats. Genèrica només mostra el mapa i les missions, per a servidors sense Foothold.",
+        "address": "Adreça pública",
+        "addressHelp": "IP i port amb què es connecten els jugadors, per exemple 203.0.113.5:10308. Només és informativa.",
+        "description": "Descripció",
+        "descriptionHelp": "Text breu opcional per presentar el servidor.",
+        "enabled": "Servidor actiu",
+        "enabledHelp": "Si el desactives, el servidor deixa de mostrar-se al web, però no s'esborra res."
+      },
+      "status": {
+        "title": "Estat de la connexió",
+        "intro": "S'actualitza sol cada pocs segons. Aquí veus si l'agent del PC del servidor està connectat i si necessita atenció.",
+        "agentVersion": "Versió de l'agent",
+        "lastSeen": "Darrer senyal",
+        "queue": "Missatges en cua",
+        "queueHelp": "Dades que l'agent encara no ha pogut enviar. Hauria de ser 0 o molt baix.",
+        "noAgent": "Encara no s'ha connectat cap agent. Usa «Connectar un agent» més avall.",
+        "noWarnings": "Tot en ordre: l'agent no ha comunicat cap avís.",
+        "warnings": "Avisos de l'agent",
+        "whatToDo": "Què fer",
+        "technical": "Missatge tècnic"
+      },
+      "foothold": {
+        "title": "Foothold",
+        "intro": "Progrés de la campanya (zones, objectius). Es llegeix de l'arxiu de desat de Foothold al PC del servidor.",
+        "enabled": "Llegir dades de Foothold",
+        "enabledHelp": "Desactiva-ho si aquest servidor no usa Foothold.",
+        "dir": "Carpeta de desats",
+        "dirHelp": "Sol ser Saved Games\\<servidor>\\Missions\\Saves al PC del servidor."
+      },
+      "tacview": {
+        "title": "Tacview",
+        "intro": "Els arxius es queden al PC del servidor; FOX3 només indexa a quins enregistraments apareix cada pilot i els descarrega sota demanda quan algú els demana.",
+        "enabled": "Indexar enregistraments de Tacview",
+        "enabledHelp": "Permet cercar pilots i descarregar els seus enregistraments des del web.",
+        "folder": "Carpeta d'enregistraments",
+        "folderHelp": "Carpeta amb els arxius .acmi o .zip.acmi, al PC del servidor."
+      },
+      "missions": {
+        "title": "Missions",
+        "intro": "Reservat per a una funció futura (llista de missions). Pots deixar-ho en blanc.",
+        "reserved": "Reservat per a una propera funció",
+        "folder": "Carpeta de missions",
+        "folderHelp": "Carpeta amb els arxius .miz del servidor. Encara no s'usa."
+      },
+      "dcsbot": {
+        "title": "DCSServerBot",
+        "intro": "Connexió amb DCSServerBot per saber qui és connectat i amb quin avió.",
+        "secrets": "La clau d'API i la contrasenya de la base de dades NO es configuren aquí: per seguretat es queden al PC del servidor.",
+        "secretsWhere": "On configurar-les: docs/FASE2-PROVES-REALS.md",
+        "restEnabled": "Usar l'API REST de DCSServerBot",
+        "restEnabledHelp": "Necessària per veure jugadors en línia i els seus avions.",
+        "restUrl": "URL de l'API REST",
+        "restUrlHelp": "Adreça de l'API de DCSServerBot vista des del PC del servidor, per exemple http://localhost:9876.",
+        "restPrefix": "Prefix de l'API",
+        "restPrefixHelp": "Deixa'l en blanc tret que la teva instal·lació usi un prefix (només lletres, números, / _ -).",
+        "serverName": "Nom del servidor al bot",
+        "serverNameHelp": "Ha de ser exactament igual que a DCSServerBot, majúscules incloses.",
+        "dbEnabled": "Usar esdeveniments de la base de dades",
+        "dbEnabledHelp": "Llegeix els esdeveniments (enlairaments, abats…) de la base de dades de DCSServerBot. La contrasenya es configura al PC del servidor.",
+        "detected": "DCSServerBot detectat al servidor"
+      },
+      "detected": {
+        "title": "Detectat al servidor",
+        "none": "L'agent encara no ha detectat carpetes per a aquest camp.",
+        "pick": "Usar {{path}}"
+      },
+      "connect": {
+        "title": "Connectar un agent",
+        "intro": "L'agent és un programa petit que s'instal·la al PC del servidor DCS i envia les dades a FOX3. Només necessita connexions sortints per HTTPS: no cal obrir ports.",
+        "generate": "Crear codi d'aparellament",
+        "codeWarning": "Copia aquest codi ara. Només es mostra una vegada i no es pot recuperar.",
+        "expires": "Vàlid durant {{minutes}} minuts.",
+        "stepsTitle": "Al PC del servidor, executa:",
+        "stepPair": "1. Aparellar (només una vegada)",
+        "stepRun": "2. Iniciar l'agent",
+        "copyCommands": "Copiar comandes",
+        "agents": "Agents d'aquest servidor",
+        "noAgents": "Aquest servidor encara no té agents.",
+        "revokeConfirm": "Revocar l'agent «{{name}}»? Deixarà d'enviar dades a FOX3 i hauràs d'aparellar-ne un de nou."
+      },
+      "danger": {
+        "title": "Zona de perill",
+        "intro": "Eliminar el servidor també esborra les seves estadístiques, esdeveniments, índex de Tacview i agents. No es pot desfer.",
+        "button": "Eliminar aquest servidor…",
+        "confirmTitle": "Eliminar servidor",
+        "typeName": "Per confirmar, escriu el nom del servidor: {{name}}",
+        "confirm": "Eliminar definitivament"
+      },
+      "wizard": {
+        "title": "Connectar un agent",
+        "help": "L'agent és un programa petit que s'instal·la al PC del servidor de DCS i envia les seves dades a FOX3. Aquesta guia et porta pas a pas; no cal saber d'informàtica.",
+        "showGuide": "Mostra la guia completa",
+        "hideGuide": "Amaga la guia",
+        "done": {
+          "title": "Agent connectat",
+          "info": "Versió {{version}} · vist per última vegada {{seen}}",
+          "more": "Instal·lar en un altre PC o tornar a aparellar",
+          "moveNote": "Per moure l'agent a un altre PC, descarrega l'instal·lador de nou: l'agent antic continuarà funcionant fins que el revoquis a la llista de més avall."
+        },
+        "s1": {
+          "title": "Descarrega l'instal·lador",
+          "help": "És un fitxer ZIP fet a mida per a aquest servidor. El descarregues aquí i el portes al PC on corre DCS.",
+          "what": "L'instal·lador és un programa petit que envia les dades d'aquest servidor a FOX3. Ja inclou tot el necessari, no cal instal·lar res més.",
+          "safe1": "Només fa connexions de sortida a internet.",
+          "safe2": "No cal obrir ports al router ni al tallafocs.",
+          "safe3": "No necessita permisos d'administrador de Windows."
+        },
+        "dl": {
+          "button": "Descarrega l'instal·lador per a aquest servidor",
+          "busy": "Preparant la descàrrega…",
+          "again": "Descarrega de nou",
+          "version": "Versió {{version}}",
+          "code": "El fitxer conté un codi d'un sol ús, vàlid durant {{minutes}} minuts des de la descàrrega. No el comparteixis.",
+          "started": "Descàrrega iniciada: {{name}}. Busca-la a la carpeta de Descàrregues.",
+          "countdown": "El codi caduca d'aquí a",
+          "expired": "El codi ha caducat. Prem «Descarrega de nou» per obtenir-ne un de nou."
+        },
+        "nb": {
+          "title": "L'instal·lador encara no està preparat en aquest servidor FOX3.",
+          "body": "No és culpa teva. Qui va instal·lar FOX3 ha d'executar aquesta ordre al servidor de FOX3 i, després, prémer «Torna a comprovar»:",
+          "check": "Torna a comprovar"
+        },
+        "s2": {
+          "title": "Instal·la'l al PC del servidor de DCS",
+          "help": "Es fa una sola vegada i porta un parell de minuts.",
+          "step1": "Copia el ZIP al PC on corre DCS.",
+          "hint1": "Serveix un llapis USB, una carpeta compartida o enviar-te'l per correu. Entra a aquest PC amb l'usuari de Windows amb què s'executa DCS.",
+          "step2": "Descomprimeix-lo.",
+          "hint2": "Clic dret sobre el ZIP, «Extreu-ho tot…» i «Extreu». No executis res des de dins del ZIP.",
+          "step3": "Fes doble clic a INSTALAR.cmd.",
+          "hint3": "Està dins de la carpeta que acabes de descomprimir, al costat de la resta de fitxers.",
+          "step4": "Si Windows diu «Windows ha protegit el vostre equip»: prem «Més informació» i després «Executa igualment».",
+          "hint4": "El programa encara no està signat digitalment, per això Windows avisa amb qualsevol programa nou. És normal i esperat.",
+          "step5": "Espera que la finestra negra acabi amb «OK».",
+          "hint5": "Veuràs com avança. No la tanquis fins que digui «OK»; després ja la pots tancar.",
+          "whatTitle": "Què fa l'instal·lador?",
+          "what1": "Aparella l'agent amb aquest servidor FOX3 amb el codi d'un sol ús.",
+          "what2": "Copia l'agent a una carpeta del teu usuari de Windows (no toca res del sistema).",
+          "what3": "Crea una tasca programada del teu usuari perquè l'agent s'iniciï sol en entrar a la sessió.",
+          "what4": "Inicia l'agent i comprova que pot connectar amb FOX3. Després apareixerà aquí com a «En línia».",
+          "problemsTitle": "Alguna cosa ha anat malament?",
+          "p1": "El codi ha caducat (passats 15 minuts): descarrega l'instal·lador de nou i repeteix.",
+          "p2": "El PC no té internet o un tallafocs bloqueja la sortida: obre qualsevol pàgina web en aquest PC per comprovar-ho.",
+          "p3": "L'antivirus ha bloquejat el programa: permet-lo (o afegeix una excepció per a la carpeta) i torna a executar INSTALAR.cmd.",
+          "p4": "L'has instal·lat amb un usuari de Windows diferent del que executa DCS: inicia sessió amb l'usuari de DCS i repeteix la instal·lació."
+        },
+        "s3": {
+          "title": "Esperant l'agent",
+          "help": "Aquesta pantalla s'actualitza sola cada pocs segons. No cal recarregar la pàgina.",
+          "waiting": "Esperant que l'agent es connecti…",
+          "waitingHelp": "Triga uns segons des que la finestra negra acaba amb «OK».",
+          "idle": "Aquest pas comença quan descarregues l'instal·lador.",
+          "timeoutTitle": "Han passat més de 3 minuts i l'agent no s'ha connectat.",
+          "timeoutBody": "Potser encara no has acabat la instal·lació, i no passa res: continuem esperant. Si ja l'has feta, revisa aquestes causes habituals:"
+        },
+        "s4": {
+          "title": "Tria les carpetes",
+          "help": "L'agent troba sol les carpetes de DCS. Tu només les has de confirmar.",
+          "idle": "Apareixerà aquí tan bon punt l'agent estigui connectat.",
+          "cta": "Prem la carpeta de partides desades de Foothold i la carpeta de Tacview, i després «Desa».",
+          "found": "Aquestes són les carpetes que ha detectat l'agent. En prémer-ne una, et portem al seu apartat, on la tries i la deses.",
+          "none": "L'agent no ha detectat cap carpeta. No passa res: ves als apartats de sota i escriu la ruta a mà (per exemple C:\\Users\\ElTeuUsuari\\Saved Games\\DCS\\Missions\\Saves), després prem «Desa».",
+          "goFoothold": "Ves a les partides desades de Foothold",
+          "goTacview": "Ves a la carpeta de Tacview"
+        },
+        "guide": {
+          "title": "Guia completa per a administradors",
+          "intro": "Resum de tot el procés, pensat per a qui administra l'esquadró sense ser el propietari del servidor.",
+          "g1t": "1. Què és l'agent",
+          "g1": "Un programa petit que s'executa al PC del servidor de DCS, llegeix les carpetes de Foothold i Tacview i envia les dades a FOX3 per internet. Només fa connexions de sortida: no obre ports ni necessita permisos d'administrador.",
+          "g2t": "2. Abans de començar",
+          "g2": "Necessites accés al PC on corre DCS (amb l'usuari de Windows que l'executa) i que aquest PC tingui internet. Si aquí apareix que l'instal·lador no està preparat, avisa qui va instal·lar FOX3.",
+          "g3t": "3. Instal·lar",
+          "g3": "Descarrega l'instal·lador, copia'l al PC de DCS, descomprimeix-lo i fes doble clic a INSTALAR.cmd. Si Windows avisa, prem «Més informació» i «Executa igualment». Espera que la finestra acabi amb «OK». El codi del fitxer és d'un sol ús i caduca als 15 minuts.",
+          "g4t": "4. Comprovar que connecta",
+          "g4": "En pocs segons el servidor passarà a «En línia» i veuràs la versió de l'agent. Si no passa en 3 minuts, revisa: codi caducat, sense internet, antivirus o usuari de Windows diferent.",
+          "g5t": "5. Triar les carpetes",
+          "g5": "Quan l'agent connecti, prem la carpeta de partides desades de Foothold i la de Tacview que ha detectat i desa cada apartat. Si no n'ha detectat cap, escriu la ruta a mà.",
+          "g6t": "6. Canviar de PC o donar de baixa un agent",
+          "g6": "Per moure l'agent a un altre PC, descarrega l'instal·lador de nou i instal·la'l allà; l'agent antic continua funcionant fins que el revoquis a la llista «Agents d'aquest servidor». Un agent revocat deixa d'enviar dades."
+        },
+        "errors": {
+          "generic": "No s'ha pogut completar l'acció. Torna-ho a provar.",
+          "network": "No hi ha connexió amb el servidor. Comprova la teva connexió a internet.",
+          "unauthorized": "La teva sessió ha caducat. Torna a iniciar sessió.",
+          "not_found": "No s'ha trobat aquest servidor. Potser s'ha eliminat.",
+          "rate_limited": "Has demanat massa descàrregues seguides. Espera un minut i torna-ho a provar.",
+          "agent_not_built": "L'instal·lador encara no està preparat en aquest servidor FOX3. Avisa qui el va instal·lar."
+        }
+      }
+    }
+  },
+  "notFound": {
+    "title": "404 – Fora de carta",
+    "text": "La pàgina que busques no existeix.",
+    "home": "Torna a l'inici"
+  },
+  "warnings": {
+    "FOOTHOLD_FILE_STALE": {
+      "title": "L'arxiu de Foothold no s'actualitza",
+      "fix": "Comprova que la missió de Foothold continua en marxa i desant el progrés. Si el servidor està aturat, és normal."
+    },
+    "FOOTHOLD_FOLDER_MISSING": {
+      "title": "La carpeta de desats de Foothold no existeix",
+      "fix": "Revisa la ruta a la secció Foothold. Pots prémer una de les carpetes detectades al servidor."
+    },
+    "FOOTHOLD_FILE_MISSING": {
+      "title": "No es troba l'arxiu de progrés de Foothold",
+      "fix": "La carpeta existeix però no conté l'arxiu de desat. Inicia una missió Foothold perquè es generi o comprova que la carpeta és la correcta."
+    },
+    "FOOTHOLD_FILE_UNREADABLE": {
+      "title": "No es pot llegir l'arxiu de Foothold",
+      "fix": "Comprova els permisos de la carpeta i que cap altre programa tingui l'arxiu bloquejat."
+    },
+    "FOOTHOLD_FILE_INVALID": {
+      "title": "L'arxiu de Foothold té un format inesperat",
+      "fix": "Pot estar a mig escriure o malmès. Espera al proper desat; si persisteix, revisa la versió de Foothold."
+    },
+    "FOOTHOLD_FOLDER_NOT_SET": {
+      "title": "Falta la carpeta de desats de Foothold",
+      "fix": "Indica la carpeta a la secció Foothold (o prem una de les detectades) i desa."
+    },
+    "DCSBOT_UNREACHABLE": {
+      "title": "No es pot contactar amb l'API de DCSServerBot",
+      "fix": "Comprova que DCSServerBot està en marxa i que l'URL i el prefix de la secció DCSServerBot són correctes."
+    },
+    "DCSBOT_AUTH_FAILED": {
+      "title": "DCSServerBot ha rebutjat la clau d'API",
+      "fix": "La clau es configura al PC del servidor, no aquí. Revisa-la a la configuració local de l'agent (docs/FASE2-PROVES-REALS.md)."
+    },
+    "DCSBOT_SERVER_NOT_FOUND": {
+      "title": "DCSServerBot no coneix aquest nom de servidor",
+      "fix": "Escriu el nom del servidor exactament igual que a DCSServerBot, incloses majúscules i espais."
+    },
+    "DCSBOT_DB_ERROR": {
+      "title": "Error en llegir la base de dades de DCSServerBot",
+      "fix": "La contrasenya de la base de dades es configura al PC del servidor. Comprova que PostgreSQL està actiu i que les credencials locals de l'agent són correctes."
+    },
+    "DCSBOT_UCID_UNRESOLVED": {
+      "title": "No s'ha pogut identificar algun pilot",
+      "fix": "DCSServerBot no ha retornat l'identificador (UCID) d'algun jugador. Sol resoldre's sol; si persisteix, revisa la versió de DCSServerBot."
+    },
+    "DCSBOT_CONFIG_INVALID": {
+      "title": "La configuració de DCSServerBot no és vàlida",
+      "fix": "Revisa la secció DCSServerBot: URL, prefix i nom del servidor."
+    },
+    "TACVIEW_FOLDER_MISSING": {
+      "title": "La carpeta de Tacview no existeix",
+      "fix": "Revisa la ruta a la secció Tacview. Pots prémer una de les carpetes detectades al servidor."
+    },
+    "TACVIEW_FOLDER_UNREADABLE": {
+      "title": "No es pot llegir la carpeta de Tacview",
+      "fix": "Comprova els permisos de la carpeta per a l'usuari que executa l'agent."
+    },
+    "TACVIEW_FILE_FAILED": {
+      "title": "No s'ha pogut llegir un enregistrament de Tacview",
+      "fix": "Aquest enregistrament s'omet i la resta continua funcionant. Pot estar malmès o encara obert per DCS."
+    },
+    "TACVIEW_FORMAT_UNSUPPORTED": {
+      "title": "Format de Tacview no compatible",
+      "fix": "Alguns enregistraments usen un format que FOX3 encara no entén i s'ometen. Usa enregistraments .acmi o .zip.acmi estàndard."
+    },
+    "TACVIEW_INDEXING": {
+      "title": "Indexant enregistraments de Tacview",
+      "fix": "És normal després d'activar Tacview: la cerca estarà completa en uns minuts. No cal fer res."
+    },
+    "TACVIEW_APPEARANCES_CAPPED": {
+      "title": "S'han limitat les aparicions d'un enregistrament",
+      "fix": "Un enregistrament té tants pilots que només es desen les primeres aparicions, així que alguna cerca pot no mostrar-ho tot."
+    },
+    "SOURCE_CRASHED": {
+      "title": "Un mòdul de l'agent s'ha aturat",
+      "fix": "Reinicia l'agent al PC del servidor. Si es repeteix, copia el missatge tècnic i avisa el desenvolupador."
+    },
+    "CENTRAL_REJECTED_MESSAGES": {
+      "title": "FOX3 ha rebutjat missatges de l'agent",
+      "fix": "Sol indicar que l'agent i FOX3 tenen versions diferents. Actualitza l'agent al PC del servidor."
+    }
+  },
+  "tacview": {
+    "title": "Tacview",
+    "intro": "Cerca un pilot per veure a quins enregistraments apareix i descarrega l'arxiu des del servidor on es va gravar.",
+    "search": "Nom del pilot",
+    "placeholder": "Escriu almenys 2 caràcters…",
+    "minChars": "Escriu almenys 2 caràcters per cercar.",
+    "server": "Servidor",
+    "noResults": "No hi ha enregistraments que coincideixin amb la cerca.",
+    "file": "Arxiu",
+    "pilot": "Pilot",
+    "aircraft": "Avió",
+    "utc": "Hora UTC (inici – final)",
+    "offset": "Desfasament a l'enregistrament",
+    "partial": "Enregistrament parcial",
+    "partialHint": "L'enregistrament és incomplet (potser encara s'està gravant o es va tallar).",
+    "download": "Descarregar",
+    "asking": "Preguntant al servidor… pot trigar fins a 30 segons.",
+    "downloading": "Descarregant… {{percent}}",
+    "downloadingUnknown": "Descarregant…",
+    "cancel": "Cancel·lar",
+    "errors": {
+      "server_unreachable": "L'agent del servidor no ha respost. Pot ser que el servidor estigui apagat o desconnectat; torna-ho a provar més tard.",
+      "not_found": "L'enregistrament ja no és disponible al servidor (potser s'ha mogut o esborrat).",
+      "transfer_busy": "El servidor ja està enviant una altra descàrrega. Espera un moment i torna-ho a provar.",
+      "unauthorized": "La teva sessió ha caducat. Torna a iniciar sessió.",
+      "network": "S'ha tallat la connexió durant la descàrrega. Revisa la teva xarxa i torna-ho a provar.",
+      "generic": "No s'ha pogut descarregar l'enregistrament."
+    }
+  },
+  "aircraft": {
+    "layer": "Avions aliats",
+    "side": "Bàndol",
+    "both": "Ambdós",
+    "count": "{{count}} avions",
+    "none": "No hi ha avions visibles ara mateix.",
+    "pilot": "Pilot",
+    "type": "Avió",
+    "altitude": "Altitud",
+    "altValue": "{{m}} m / {{ft}} ft",
+    "onGround": "A terra",
+    "linkAccount": "Vincula el teu compte de DCS per veure els teus avions aliats.",
+    "linkAction": "Anar al meu perfil per vincular-lo",
+    "notOnline": "Has d'estar connectat a aquest servidor per veure els avions aliats."
+  },
+  "dtc": {
+    "title": "Generador de DTC",
+    "intro": "Crea un fitxer DTC (cartutx de transferència de dades) per a DCS fent clic al mapa. Tria l'avió i el mapa, afegeix punts, ajusta'ls i descarrega el fitxer .dtc.",
+    "steps": {
+      "title": "Preparació",
+      "aircraft": "1. Avió",
+      "pickAircraft": "Tria un avió…",
+      "soon": "aviat",
+      "terrain": "2. Mapa de DCS",
+      "pickTerrain": "Tria un mapa…",
+      "terrainHelp": "Tria el mapa de DCS on volaràs. Les coordenades es converteixen amb la projecció d'aquest mapa.",
+      "import": "3. Importar un .dtc (opcional)",
+      "name": "Nom del fitxer (opcional)",
+      "switchTitle": "Canviar d'avió",
+      "switchAsk": "Canviar d'avió comença un esborrany nou i es perden els punts actuals. Continuar?",
+      "starting": "Carregant els ajustos per defecte d'aquest avió…"
+    },
+    "calibration": {
+      "exact": "Verificat",
+      "plausible": "Plausible",
+      "airports": "Només aeroports",
+      "exactHint": "Projecció verificada amb un fitxer real de DCS.",
+      "plausibleHint": "Projecció coherent amb un fitxer real de DCS, però no del tot verificada.",
+      "airportsHint": "Comprovat amb posicions reals d'aeroports, però encara no confirmat al joc. Revisa els punts dins de DCS."
+    },
+    "import": {
+      "button": "Importar un .dtc existent",
+      "busy": "Llegint el fitxer…",
+      "drop": "o arrossega aquí un fitxer .dtc",
+      "loaded": "Carregat: {{name}}",
+      "rejected": "No s'ha pogut llegir aquest fitxer com a .dtc compatible.",
+      "warnings": "Avisos del fitxer importat ({{count}})"
+    },
+    "preserved": {
+      "title": "Es conserven com al teu fitxer",
+      "body": "Aquestes parts existeixen al fitxer però no es poden editar aquí. Es guarden tal qual en descarregar:",
+      "parts": {
+        "threat_points": "Punts d'amenaça",
+        "destinations": "Destinacions",
+        "additional_points": "Punts addicionals",
+        "routes": "Rutes",
+        "zones": "Zones",
+        "areas": "Àrees",
+        "lines": "Línies",
+        "adf": "ADF"
+      }
+    },
+    "map": {
+      "aria": "Mapa de l'editor de DTC",
+      "needAircraft": "Tria primer un avió per començar.",
+      "needTerrain": "Tria el mapa de DCS per poder afegir punts.",
+      "help": "Fes clic al mapa per afegir un punt a la llista activa. Arrossega un punt per moure'l; clic dret (o premsa llarga) per esborrar-lo.",
+      "unnamed": "Sense nom",
+      "noElevation": "desconeguda"
+    },
+    "lists": {
+      "aria": "Llista de punts activa",
+      "steerpoints": "Steerpoints",
+      "route": "Ruta {{n}}",
+      "routeNamed": "Ruta {{n}} · {{name}}",
+      "line": "Línia {{n}}",
+      "f14line": "Línia {{n}} (ruta {{route}})",
+      "ah64": {
+        "TGT": "Missió {{mission}} · Objectius",
+        "WPTHZ": "Missió {{mission}} · Waypoints/perills",
+        "CTRLM": "Missió {{mission}} · Mesures de control"
+      }
+    },
+    "f14": {
+      "routeName": "Nom de la ruta",
+      "asLine": "Dibuixar la ruta com a línia",
+      "asLineHelp": "A més dels waypoints, la ruta apareix com a línia al mapa de l'avió.",
+      "lineOf": "Aquesta línia pertany a la ruta {{route}}.",
+      "closed": "Línia tancada (uneix l'últim punt amb el primer)",
+      "deleteLine": "Esborrar aquesta línia",
+      "addLine": "Afegir línia"
+    },
+    "points": {
+      "title": "Punts",
+      "pickFirst": "Tria un avió per començar a afegir punts.",
+      "empty": "Aquesta llista és buida. Fes clic al mapa o escriu unes coordenades.",
+      "up": "Pujar el punt {{n}}",
+      "down": "Baixar el punt {{n}}",
+      "delete": "Esborrar punt",
+      "deleteN": "Esborrar el punt {{n}}",
+      "addTyped": "Afegir punt"
+    },
+    "fields": {
+      "name": "Nom",
+      "note": "Nota",
+      "lat": "Latitud",
+      "lon": "Longitud",
+      "elevation": "Elevació (m)",
+      "approx": "aproximada",
+      "unknown": "desconeguda",
+      "autoName": "automàtic",
+      "speed": "Velocitat",
+      "tot": "Hora (TOT)",
+      "errors": {
+        "required": "Obligatori.",
+        "invalid": "Escriu un nombre decimal, per exemple 41.5.",
+        "range": "Fora de rang (latitud ±90, longitud ±180).",
+        "time": "Fes servir el format HH:MM:SS."
+      }
+    },
+    "issues": {
+      "fix": "Corregeix això abans de descarregar:",
+      "noAircraft": "Tria un avió.",
+      "noTerrain": "Tria el mapa de DCS.",
+      "tooManyWaypoints": "Hi ha {{count}} steerpoints i el màxim és {{limit}}.",
+      "tooManyRoutes": "Hi ha {{count}} rutes i el màxim és {{limit}}.",
+      "tooManyLines": "Hi ha {{count}} línies i el màxim és {{limit}}.",
+      "badLat": "Punt {{n}}: latitud no vàlida.",
+      "badLon": "Punt {{n}}: longitud no vàlida.",
+      "badElevation": "Punt {{n}}: elevació no vàlida.",
+      "noPoints": "Encara no hi ha punts: el fitxer sortiria buit.",
+      "unknownElevation": "{{count}} punt(s) sense elevació: s'escriurà 0 m al fitxer.",
+      "radioBadFrequency": "{{count}} freqüència(es) de ràdio no són un nombre més gran que 0.",
+      "radioRange": "{{count}} freqüència(es) de ràdio són fora del rang habitual (només un avís, no bloqueja la baixada).",
+      "radioInvalidInput": "{{count}} camp(s) de ràdio tenen un text que encara no és vàlid."
+    },
+    "server": {
+      "rejected": "El servidor no ha acceptat el fitxer:"
+    },
+    "download": {
+      "button": "Descarregar .dtc",
+      "busy": "Generant…",
+      "disabled": "Descàrrega desactivada: hi ha {{count}} problema(es) per corregir.",
+      "done": "Fitxer descarregat. Avisos de la generació, si n'hi ha:",
+      "expired": "El fitxer importat ha caducat al servidor (es guarda una hora). Torna'l a importar o continua amb la plantilla de l'avió.",
+      "useBuiltin": "Usar la plantilla de l'avió"
+    },
+    "draft": {
+      "clear": "Esborrar esborrany",
+      "clearAsk": "S'esborraran tots els punts i el fitxer importat. Continuar?",
+      "saved": "El teu esborrany es guarda automàticament en aquest navegador."
+    },
+    "howto": {
+      "title": "Com ho faig servir a DCS?",
+      "body": "Copia el fitxer .dtc a la carpeta de DTC de l'avió dins de Saved Games de DCS, o importa'l des del diàleg d'importació de DTC del joc. No estem segurs de la ruta exacta a la teva instal·lació: comprova el diàleg d'importació de DTC dins de DCS."
+    },
+    "elevation": {
+      "attribution": "Elevacions aproximades: Copernicus DEM GLO-90 via Open-Meteo.com (no és el terreny de DCS). Revisa-les si necessites precisió.",
+      "loading": "Consultant elevacions…",
+      "disabled": "La consulta d'elevació no està disponible: escriu l'elevació a mà.",
+      "failed": "No s'ha pogut consultar l'elevació: escriu-la a mà."
+    },
+    "layers": {
+      "title": "Capes del mapa",
+      "airports": "Aeroports",
+      "front": "Línia del front i zones",
+      "farps": "FARPs",
+      "server": "Servidor de referència",
+      "noServer": "Cap servidor Foothold està jugant aquest mapa ara mateix; els aeroports es mostren igualment.",
+      "note": "Les capes són només d'orientació i no s'escriuen a l'arxiu DTC.",
+      "addPoint": "Afegeix com a punt",
+      "civil": "Aeròdrom civil",
+      "military": "Aeròdrom militar",
+      "farp": "FARP",
+      "airportsError": "No s'han pogut carregar els aeroports d'aquest mapa.",
+      "stateError": "No s'ha pogut actualitzar l'estat del servidor de referència."
+    },
+    "radios": {
+      "title": "Ràdios",
+      "intro": "Freqüències de ràdio que s'escriuen al DTC. Només es modifica el que canviïs; la resta queda com al fitxer o per defecte.",
+      "none": "El DTC d'aquest avió no inclou ràdios.",
+      "empty": "Aquest esborrany no té dades de ràdio.",
+      "changed": "Canviat respecte a l'original",
+      "reset": "Restableix els valors per defecte",
+      "resetFile": "Restaura els valors del teu fitxer",
+      "band": "Rang habitual {{band}}: {{min}}-{{max}} MHz (documentat, no verificat al joc).",
+      "channel": "Can. {{n}}",
+      "channelName": "{{radio}} canal {{n}}",
+      "freqAria": "Freqüència de {{name}}, MHz",
+      "outOfRange": "Fora del rang habitual {{min}}-{{max}} MHz.",
+      "fraction": "Encara no confirmat a DCS: se sap que els MHz enters funcionen.",
+      "errors": {
+        "required": "Obligatori.",
+        "invalid": "Escriu un nombre en MHz, per exemple 251 o 127,5.",
+        "positive": "La freqüència ha de ser més gran que 0.",
+        "int": "Nombre enter de {{min}} a {{max}}."
+      },
+      "f16": {
+        "aria": "Ràdio",
+        "COMM1": "COMM1 (UHF)",
+        "COMM2": "COMM2 (VHF)"
+      },
+      "ah64": {
+        "tabsAria": "Part de les ràdios",
+        "tabPresets": "Presets",
+        "tabInitial": "Ajustos inicials",
+        "presetPick": "Preset",
+        "presetN": "Preset {{n}}",
+        "unit_id": "Unit ID",
+        "call_sign": "Indicatiu",
+        "unit_idAria": "Unit ID del preset {{n}}",
+        "call_signAria": "Indicatiu del preset {{n}}",
+        "frequency": "Freqüència, MHz",
+        "modulation": "Modulació",
+        "modAria": "Modulació de {{name}}",
+        "encryption": "Xifrat",
+        "encAria": "Codi de xifrat de {{name}}",
+        "encryptionHint": "Codi DCS en brut. 0 = cap.",
+        "hfModulationHint": "Codi en brut. El seu significat no està verificat, per això es mostra com a nombre.",
+        "codesHelp": "Modulació i xifrat són codis DCS en brut: AM = 0, FM = 1 (valors estàndard de DCS); xifrat 0 = cap.",
+        "mod": {
+          "0": "AM (0)",
+          "1": "FM (1)",
+          "other": "Codi {{code}}"
+        },
+        "presetRadioName": "preset {{n}} {{radio}}",
+        "initialName": "inicial {{radio}}",
+        "initialHelp": "Com està cada ràdio en arrencar l'helicòpter: la seva freqüència i el número de preset amb què comença.",
+        "startPreset": "Comença al preset",
+        "startPresetAria": "{{name}}, preset inicial",
+        "guard": "Receptor de guàrdia UHF activat",
+        "guardHelp": "Escolta també la freqüència de guàrdia UHF.",
+        "radio": {
+          "FM1": "FM1",
+          "FM2": "FM2",
+          "UHF": "UHF",
+          "VHF": "VHF",
+          "HF": "HF",
+          "HF_RX": "HF Rx",
+          "HF_TX": "HF Tx"
+        }
+      },
+      "missing": "Aquest esborrany es va crear abans que existissin les ràdios i no té dades de ràdio.",
+      "loading": "Carregant les ràdios per defecte…",
+      "loadDefaults": "Carregar les ràdios per defecte",
+      "missingFile": "Aquest esborrany ve d'un fitxer importat abans que existissin les ràdios. Torna a importar el teu fitxer per editar-ne les ràdios, o carrega les ràdios per defecte (substituiran les del teu fitxer en descarregar).",
+      "loadDefaultsFile": "Carregar ràdios per defecte (substitueix les del fitxer)"
+    }
+  }
+}

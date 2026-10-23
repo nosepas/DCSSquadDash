@@ -1,0 +1,43 @@
+.plane-icon {
+  background: none;
+  border: 0;
+}
+
+.plane-icon svg {
+  display: block;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 70%));
+}
+
+.plane-blue {
+  color: var(--blue);
+}
+
+.plane-red {
+  color: var(--red);
+}
+
+.plane-ground {
+  opacity: 0.6;
+}
+
+.plane-legend {
+  display: inline-flex;
+  color: var(--muted);
+}
+
+.plane-legend svg {
+  width: 18px;
+  height: 18px;
+}
+
+.legend-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.legend-toggle select {
+  min-height: 30px;
+  padding: 2px 8px;
+}

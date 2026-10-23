@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/discord_links.json",
+  "title": "discord_links payload (Discord <-> UCID pairs already verified by DCSServerBot)",
+  "description": "Claimed pairs read from DCSServerBot's players table (discord_id > 0). Central trusts them only because the agent is authenticated. Incremental: only new or changed pairs, plus a periodic full resend.",
+  "type": "object",
+  "required": ["links"],
+  "properties": {
+    "links": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["ucid", "discord_id"],
+        "properties": {
+          "ucid": { "$ref": "common.json#/$defs/ucid" },
+          "discord_id": { "type": "string", "pattern": "^[1-9][0-9]{16,19}$", "description": "Discord snowflake as a decimal string (JSON numbers lose precision above 2^53)." }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

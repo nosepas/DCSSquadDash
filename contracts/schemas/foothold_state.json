@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/foothold_state.json",
+  "title": "foothold_state payload (NORMALISED model)",
+  "description": "Neutral model the agent builds from Foothold's zonePersistance Lua file. The mapping from the real Lua keys (zones, zonesDetails, playerStats, missions, connections...) is NOT verified yet: it is fixed in Phase 2 against a real file from Foothold 5.3.5. 'extra'/'raw' keep unmapped data so nothing is lost.",
+  "type": "object",
+  "required": [
+    "snapshot_at",
+    "zones"
+  ],
+  "properties": {
+    "snapshot_at": {
+      "$ref": "common.json#/$defs/utc"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "source_mtime": {
+      "$ref": "common.json#/$defs/utc"
+    },
+    "foothold_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mission_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "coalition"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "coalition": {
+            "$ref": "common.json#/$defs/coalition"
+          },
+          "position": {
+            "$ref": "common.json#/$defs/dcs_xy"
+          },
+          "is_hq": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "at_risk": {
+            "type": "boolean"
+          },
+          "level": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "upgrades": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extra": {
+            "type": "object"
+          },
+          "geo": {
+            "type": "object",
+            "description": "Position straight from the Foothold file (lat_long). Preferred over 'position'; no projection needed.",
+            "required": [
+              "lat",
+              "lon"
+            ],
+            "properties": {
+              "lat": {
+                "$ref": "common.json#/$defs/lat"
+              },
+              "lon": {
+                "$ref": "common.json#/$defs/lon"
+              },
+              "alt_m": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false
+          },
+          "logistic_center": {
+            "type": "boolean"
+          },
+          "units_remaining": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Count of units still deployed in the zone."
+          },
+          "upgrades_used": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "missions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "state"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "coalition": {
+            "$ref": "common.json#/$defs/coalition"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "available",
+              "active",
+              "completed",
+              "failed",
+              "unknown"
+            ]
+          },
+          "zone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "extra": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "player_stats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "ucid": {
+            "oneOf": [
+              {
+                "$ref": "common.json#/$defs/ucid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Null if Foothold keys stats by name only; central resolves it via DCSServerBot data."
+          },
+          "points": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "identifier": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Foothold player identifier (key of playerStats in the identity layout). Whether it equals the UCID is NOT verified."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "raw": {
+      "type": "object",
+      "description": "Unmapped Foothold data. Optional; size-limited by central (max_raw_bytes)."
+    },
+    "accounts": {
+      "type": "object",
+      "description": "Coalition credits.",
+      "properties": {
+        "red": {
+          "type": "number"
+        },
+        "blue": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ejected_pilots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lat": {
+            "$ref": "common.json#/$defs/lat"
+          },
+          "lon": {
+            "$ref": "common.json#/$defs/lon"
+          },
+          "alt_m": {
+            "type": "number"
+          },
+          "lost_credits": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "format_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Parser remarks (unknown keys, layout variant), for diagnostics."
+    },
+    "farps": {
+      "type": "array",
+      "maxItems": 200,
+      "description": "FARPs built by players (CTLD). Position as lat/lon when the file has it, else DCS x/y (converted by central with the map projection).",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "geo": {
+            "type": "object",
+            "required": [
+              "lat",
+              "lon"
+            ],
+            "properties": {
+              "lat": {
+                "$ref": "common.json#/$defs/lat"
+              },
+              "lon": {
+                "$ref": "common.json#/$defs/lon"
+              }
+            },
+            "additionalProperties": false
+          },
+          "position": {
+            "$ref": "common.json#/$defs/dcs_xy"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

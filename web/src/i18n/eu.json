@@ -1,0 +1,821 @@
+{
+  "common": {
+    "loading": "Kargatzen…",
+    "retry": "Saiatu berriro",
+    "empty": "Oraindik ez dago ezer erakusteko.",
+    "cancel": "Utzi",
+    "confirm": "Berretsi",
+    "save": "Gorde",
+    "close": "Itxi",
+    "delete": "Ezabatu",
+    "edit": "Editatu",
+    "create": "Sortu",
+    "copy": "Kopiatu",
+    "copied": "Kopiatuta",
+    "loadMore": "Kargatu gehiago",
+    "noMore": "Ez dago sarrera gehiagorik",
+    "yes": "Bai",
+    "no": "Ez",
+    "never": "Inoiz ez",
+    "actions": "Ekintzak",
+    "name": "Izena",
+    "status": "Egoera",
+    "live": "Zuzenean",
+    "stale": "Berriro konektatzen…",
+    "saved": "Gordeta",
+    "dirty": "Gorde gabeko aldaketak",
+    "back": "Itzuli",
+    "all": "Denak",
+    "details": "Xehetasunak",
+    "online": "Linean",
+    "offline": "Lineaz kanpo",
+    "optional": "aukerakoa"
+  },
+  "errors": {
+    "generic": "Zerbait gaizki atera da.",
+    "network": "Ezin da zerbitzariarekin konektatu. Egiaztatu zure konexioa.",
+    "unauthorized": "Zure saioa iraungi da. Hasi saioa berriro.",
+    "forbidden": "Ez duzu horretarako baimenik.",
+    "not_found": "Ez dugu bilatzen ari zinena aurkitu.",
+    "rate_limited": "Eskaera gehiegi. Itxaron une bat eta saiatu berriro.",
+    "server": "Zerbitzariak arazo bat izan du. Saiatu berriro geroago."
+  },
+  "nav": {
+    "main": "Nabigazio nagusia",
+    "dashboard": "Panela",
+    "map": "Mapa zuzenean",
+    "missions": "Misioak",
+    "objectives": "Helburuak",
+    "ranking": "Sailkapena",
+    "kills": "Eraisteen erregistroa",
+    "players": "Pilotuak",
+    "profile": "Nire profila",
+    "admin": "Administrazioa",
+    "tacview": "Tacview",
+    "dtc": "DTC"
+  },
+  "header": {
+    "skip": "Joan edukira",
+    "language": "Hizkuntza",
+    "server": "Zerbitzaria",
+    "noServers": "Ez dago zerbitzaririk eskuragarri",
+    "userMenu": "Erabiltzaile-menua",
+    "login": "Hasi saioa",
+    "logout": "Itxi saioa",
+    "offline": "lineaz kanpo"
+  },
+  "auth": {
+    "title": "Hasi saioa FOX3n",
+    "intro": "Mapa eta misioak publikoak dira. Gainerako guztia (estatistikak, sailkapena, eraisteen erregistroa, pilotuak) saioa hasi beharra dago.",
+    "needLogin": "Hasi saioa atal hau ikusteko.",
+    "discord": "Sartu Discord bidez",
+    "discordUnavailable": "Discord bidezko sarbidea ez dago konfiguratuta instalazio honetan.",
+    "demoTitle": "Demo sarbidea",
+    "demoNote": "Demoa soilik: pasahitzik gabeko sarbide hau tokiko demorako da eta ez dago erabilgarri produkzioan.",
+    "demoPilot": "Demo pilotua",
+    "demoAdmin": "Demo admina",
+    "role": {
+      "user": "Pilotua",
+      "admin": "Administratzailea"
+    }
+  },
+  "coalition": {
+    "red": "Gorria",
+    "blue": "Urdina",
+    "neutral": "Neutroa"
+  },
+  "missionType": {
+    "foothold": "Foothold",
+    "generic": "Generikoa"
+  },
+  "dashboard": {
+    "title": "Egoeraren laburpena",
+    "kpi": {
+      "online": "Linean",
+      "airborne": "Airean",
+      "objectives": "Helburuak",
+      "atRisk": "Arriskuan",
+      "kills1h": "Eraisteak (1 h)",
+      "pilots": "Pilotuak"
+    },
+    "weather": "Eguraldia",
+    "temperature": "Tenperatura",
+    "qnh": "QNH",
+    "wind": "Haizea",
+    "visibility": "Ikusgarritasuna",
+    "noWeather": "Ez dago eguraldi-daturik.",
+    "frontMap": "Mapa taktikoa",
+    "openMap": "Ireki mapa osoa",
+    "topShooters": "Top 5 tiratzaileak",
+    "feed": "Borroka-jarduera",
+    "news": "Gerra-albisteak",
+    "noNews": "Oraindik ez dago albisterik.",
+    "noKills": "Oraindik ez dago borrokarik erregistratuta."
+  },
+  "news": {
+    "zone_captured": "{{coalition}}(e)k {{zone}} hartu du",
+    "zone_lost": "{{coalition}}(e)k {{zone}} galdu du",
+    "mission_start": "Misio berri bat hasi da",
+    "mission_end": "Misioa amaitu da",
+    "unknown": "Gertaera: {{type}}",
+    "by": "{{actor}}(r)en eskutik"
+  },
+  "map": {
+    "title": "Mapa zuzenean",
+    "aria": "Operazio-eremuaren mapa taktikoa",
+    "notCalibrated": "Lur-eremu hau ez dago kalibratuta oraindik, beraz ezin dira zonen posizioak mapan erakutsi.",
+    "noZones": "Zerbitzari honek ez du oraindik zonarik jakinarazi.",
+    "legend": "Legenda",
+    "hq": "Egoitza nagusia",
+    "atRisk": "Arriskuan",
+    "front": "Frontea",
+    "link": "Konexioa",
+    "level": "Maila",
+    "terrain": "Lur-eremua",
+    "zones": "{{count}} zona"
+  },
+  "missions": {
+    "title": "Misioak",
+    "current": "Uneko misioa",
+    "terrain": "Lur-eremua",
+    "type": "Mota",
+    "started": "Hasiera",
+    "none": "Ez dago misio aktiborik zerbitzari honetan."
+  },
+  "objectives": {
+    "title": "Helburuak",
+    "zone": "Zona",
+    "coalition": "Koalizioa",
+    "level": "Maila",
+    "state": "Egoera",
+    "hq": "EN",
+    "atRisk": "Arriskuan",
+    "safe": "Segurua"
+  },
+  "ranking": {
+    "title": "Sailkapena",
+    "sortBy": "Ordenatu honen arabera",
+    "points": "Puntuak",
+    "kills": "Eraisteak",
+    "kd": "K/D",
+    "deaths": "Heriotzak",
+    "rank": "Zk.",
+    "pilot": "Pilotua"
+  },
+  "kills": {
+    "title": "Eraisteen erregistroa",
+    "time": "Ordua",
+    "killer": "Tiratzailea",
+    "victim": "Helburua",
+    "weapon": "Armak",
+    "ai": "AI",
+    "player": "Pilotua",
+    "killed": "{{killer}}(e)k {{victim}} eraitsi du",
+    "unknownActor": "Ezezaguna"
+  },
+  "players": {
+    "title": "Pilotuak",
+    "search": "Bilatu pilotuak izenaren bidez",
+    "placeholder": "Idatzi gutxienez 2 karaktere…",
+    "minChars": "Idatzi gutxienez 2 karaktere bilatzeko.",
+    "noResults": "Ez dago zure bilaketarekin bat datorren pilotorik.",
+    "lastSeen": "Azken aldiz ikusia"
+  },
+  "profile": {
+    "title": "Pilotuaren profila",
+    "myTitle": "Nire profila",
+    "firstSeen": "Lehen aldiz ikusia",
+    "lastSeen": "Azken aldiz ikusia",
+    "discordLinked": "Discord lotuta",
+    "discordNotLinked": "Discord lotu gabe",
+    "serverStats": "Zerbitzari bakoitzeko estatistikak",
+    "noStats": "Pilotu honek ez du estatistikarik erregistratuta.",
+    "linkedAccounts": "Nire DCS kontu lotuak",
+    "noLinked": "Oraindik ez duzu DCS konturik lotu.",
+    "link": {
+      "title": "Lotu nire DCS kontua",
+      "intro": "Konektatu zure Discord identitatea zure DCS pilotuarekin zure estatistikak ikusteko.",
+      "generate": "Sortu lotura-kodea",
+      "regenerate": "Sortu kode berri bat",
+      "code": "Zure kodea",
+      "expiresIn": "{{time}} barru iraungiko da",
+      "expired": "Kode hau iraungi da.",
+      "instructions": "Sartu gure DCS zerbitzarietako batean eta idatzi kode hau jokoko txatean. Jasotzen denean, birkargatu orri hau lotutako kontua ikusteko."
+    }
+  },
+  "admin": {
+    "title": "Administrazioa",
+    "tabs": {
+      "servers": "Zerbitzariak",
+      "agents": "Agenteak",
+      "users": "Erabiltzaileak"
+    },
+    "servers": {
+      "type": "Misio mota",
+      "enabled": "Aktibo",
+      "new": "Zerbitzari berria",
+      "deleteTitle": "Ezabatu zerbitzaria",
+      "deleteConfirm": "\"{{name}}\" eta bere datu guztiak ezabatu nahi dituzu? Ekintza hau ezin da desegin.",
+      "empty": "Ez dago zerbitzaririk konfiguratuta.",
+      "address": "Helbide publikoa",
+      "configure": "Konfiguratu",
+      "newTitle": "Zerbitzari berria",
+      "newIntro": "Sortu zerbitzaria izen eta mota batekin. Gero dena bere orrian konfiguratzen duzu.",
+      "create": "Sortu zerbitzaria",
+      "namePlaceholder": "Adib.: FOX3 Foothold Kaukasoa"
+    },
+    "agents": {
+      "agent": "Agentea",
+      "server": "Zerbitzaria",
+      "version": "Bertsioa",
+      "lastSeen": "Azken jarduera",
+      "state": "Egoera",
+      "active": "Aktibo",
+      "pending": "Parekatzea zain",
+      "revoked": "Ezeztatua",
+      "revoke": "Ezeztatu",
+      "revokeTitle": "Ezeztatu agentea",
+      "revokeConfirm": "\"{{name}}\" agentea ezeztatu nahi duzu? FOX3ra datuak bidaltzeari utziko dio.",
+      "empty": "Ez dago agenterik erregistratuta."
+    },
+    "users": {
+      "user": "Erabiltzailea",
+      "role": "Rola",
+      "lastLogin": "Azken sarbidea",
+      "empty": "Oraindik ez dago erabiltzailerik.",
+      "changeRole": "Aldatu {{name}}(r)en rola"
+    },
+    "server": {
+      "back": "Zerbitzariak",
+      "saveError": "Ez da gorde. Berrikusi markatutako eremuak.",
+      "saveFailed": "Ezin izan da gorde. Saiatu berriro.",
+      "unsaved": {
+        "title": "Gorde gabeko aldaketak",
+        "message": "Orri honetan gorde gabeko aldaketak dituzu. Irtetzen bazara, galdu egingo dira.",
+        "leave": "Irten gorde gabe",
+        "stay": "Editatzen jarraitu"
+      },
+      "general": {
+        "title": "Orokorra",
+        "intro": "Zerbitzariaren oinarrizko datuak.",
+        "name": "Izena",
+        "nameHelp": "Zerbitzaria webean nola erakusten den.",
+        "type": "Misio mota",
+        "typeHelp": "Foothold-ek panela, helburuak, sailkapena eta jaitsiera-erregistroa aktibatzen ditu. Generikoak mapa eta misioak soilik erakusten ditu, Foothold gabeko zerbitzarientzat.",
+        "address": "Helbide publikoa",
+        "addressHelp": "Jokalariek konektatzeko erabiltzen duten IP eta ataka, adibidez 203.0.113.5:10308. Informazio hutsa da.",
+        "description": "Deskribapena",
+        "descriptionHelp": "Zerbitzaria aurkezteko aukerako testu laburra.",
+        "enabled": "Zerbitzaria aktibo",
+        "enabledHelp": "Desaktibatzen baduzu, zerbitzaria webetik ezkutatzen da, baina ez da ezer ezabatzen."
+      },
+      "status": {
+        "title": "Konexioaren egoera",
+        "intro": "Segundo gutxiro berez eguneratzen da. Hemen ikusten duzu zerbitzariaren PCko agentea konektatuta dagoen eta arretarik behar duen.",
+        "agentVersion": "Agentearen bertsioa",
+        "lastSeen": "Azken seinalea",
+        "queue": "Ilaran dauden mezuak",
+        "queueHelp": "Agenteak oraindik bidali ezin izan dituen datuak. 0 edo oso baxua izan beharko luke.",
+        "noAgent": "Oraindik ez da agenterik konektatu. Erabili beheko «Konektatu agente bat».",
+        "noWarnings": "Dena ondo: agenteak ez du abisurik jakinarazi.",
+        "warnings": "Agentearen abisuak",
+        "whatToDo": "Zer egin",
+        "technical": "Mezu teknikoa"
+      },
+      "foothold": {
+        "title": "Foothold",
+        "intro": "Kanpainaren aurrerapena (guneak, helburuak). Zerbitzariaren PCko Foothold gordetze-fitxategitik irakurtzen da.",
+        "enabled": "Irakurri Foothold datuak",
+        "enabledHelp": "Desaktibatu zerbitzari honek Foothold erabiltzen ez badu.",
+        "dir": "Gordetze-karpeta",
+        "dirHelp": "Normalean Saved Games\\<zerbitzaria>\\Missions\\Saves zerbitzariaren PCan."
+      },
+      "tacview": {
+        "title": "Tacview",
+        "intro": "Fitxategiak zerbitzariaren PCan geratzen dira; FOX3-k pilotu bakoitza zein grabaziotan agertzen den soilik indexatzen du eta fitxategiak eskatzen direnean deskargatzen ditu.",
+        "enabled": "Indexatu Tacview grabazioak",
+        "enabledHelp": "Pilotuak bilatzeko eta haien grabazioak webetik deskargatzeko aukera ematen du.",
+        "folder": "Grabazioen karpeta",
+        "folderHelp": ".acmi edo .zip.acmi fitxategien karpeta, zerbitzariaren PCan."
+      },
+      "missions": {
+        "title": "Misioak",
+        "intro": "Etorkizuneko funtzio baterako gordeta (misio-zerrenda). Hutsik utz dezakezu.",
+        "reserved": "Hurrengo funtzio baterako gordeta",
+        "folder": "Misioen karpeta",
+        "folderHelp": "Zerbitzariaren .miz fitxategien karpeta. Oraindik ez da erabiltzen."
+      },
+      "dcsbot": {
+        "title": "DCSServerBot",
+        "intro": "DCSServerBot-ekiko konexioa, nor dagoen konektatuta eta zein hegazkinekin jakiteko.",
+        "secrets": "API gakoa eta datu-basearen pasahitza EZ dira hemen konfiguratzen: segurtasunagatik zerbitzariaren PCan geratzen dira.",
+        "secretsWhere": "Non konfiguratu: docs/FASE2-PROVES-REALS.md",
+        "restEnabled": "Erabili DCSServerBot REST APIa",
+        "restEnabledHelp": "Beharrezkoa linean dauden jokalariak eta haien hegazkinak ikusteko.",
+        "restUrl": "REST APIaren URLa",
+        "restUrlHelp": "DCSServerBot APIaren helbidea zerbitzariaren PCtik ikusita, adibidez http://localhost:9876.",
+        "restPrefix": "APIaren aurrizkia",
+        "restPrefixHelp": "Utzi hutsik zure instalazioak aurrizkirik erabiltzen ez badu (letrak, zenbakiak, / _ - soilik).",
+        "serverName": "Zerbitzariaren izena botean",
+        "serverNameHelp": "DCSServerBot-en dagoen bezala izan behar da, maiuskulak barne.",
+        "dbEnabled": "Erabili datu-baseko gertaerak",
+        "dbEnabledHelp": "DCSServerBot datu-baseko gertaerak (aireratzeak, jaitsierak…) irakurtzen ditu. Pasahitza zerbitzariaren PCan konfiguratzen da.",
+        "detected": "DCSServerBot zerbitzarian detektatu da"
+      },
+      "detected": {
+        "title": "Zerbitzarian detektatuta",
+        "none": "Agenteak oraindik ez du eremu honetarako karpetarik detektatu.",
+        "pick": "Erabili {{path}}"
+      },
+      "connect": {
+        "title": "Konektatu agente bat",
+        "intro": "Agentea DCS zerbitzariaren PCan instalatzen den programa txiki bat da, FOX3-ra datuak bidaltzen dituena. HTTPS bidezko irteerako konexioak soilik behar ditu: ez da atakarik ireki behar.",
+        "generate": "Sortu parekatze-kodea",
+        "codeWarning": "Kopiatu kode hau orain. Behin bakarrik erakusten da eta ezin da berreskuratu.",
+        "expires": "{{minutes}} minutuz baliozkoa.",
+        "stepsTitle": "Zerbitzariaren PCan, exekutatu:",
+        "stepPair": "1. Parekatu (behin bakarrik)",
+        "stepRun": "2. Hasi agentea",
+        "copyCommands": "Kopiatu komandoak",
+        "agents": "Zerbitzari honen agenteak",
+        "noAgents": "Zerbitzari honek oraindik ez dauka agenterik.",
+        "revokeConfirm": "«{{name}}» agentea baliogabetu? FOX3-ra datuak bidaltzeari utziko dio eta berri bat parekatu beharko duzu."
+      },
+      "danger": {
+        "title": "Arrisku-eremua",
+        "intro": "Zerbitzaria ezabatzean bere estatistikak, gertaerak, Tacview indizea eta agenteak ere ezabatzen dira. Ezin da desegin.",
+        "button": "Ezabatu zerbitzari hau…",
+        "confirmTitle": "Ezabatu zerbitzaria",
+        "typeName": "Berresteko, idatzi zerbitzariaren izena: {{name}}",
+        "confirm": "Ezabatu behin betiko"
+      },
+      "wizard": {
+        "title": "Agente bat konektatu",
+        "help": "Agentea DCS zerbitzariaren PCan instalatzen den programa txiki bat da, eta bere datuak FOX3ra bidaltzen ditu. Gida honek pausoz pauso gidatzen zaitu; ez duzu informatika jakin beharrik.",
+        "showGuide": "Erakutsi gida osoa",
+        "hideGuide": "Ezkutatu gida",
+        "done": {
+          "title": "Agentea konektatuta",
+          "info": "{{version}} bertsioa · azken aldiz ikusia: {{seen}}",
+          "more": "Beste PC batean instalatu edo berriro parekatu",
+          "moveNote": "Agentea beste PC batera eramateko, deskargatu instalatzailea berriro: agente zaharrak funtzionatzen jarraituko du beheko zerrendan indargabetu arte."
+        },
+        "s1": {
+          "title": "Deskargatu instalatzailea",
+          "help": "Zerbitzari honetarako neurrira egindako ZIP fitxategi bat da. Hemen deskargatzen duzu eta DCS exekutatzen den PCra eramaten duzu.",
+          "what": "Instalatzailea zerbitzari honen datuak FOX3ra bidaltzen dituen programa txiki bat da. Behar den guztia dakar; ez da beste ezer instalatu behar.",
+          "safe1": "Interneterako irteerako konexioak soilik egiten ditu.",
+          "safe2": "Ez du portuak irekitzeko beharrik routerrean edo suebakian.",
+          "safe3": "Ez du Windows-eko administratzaile baimenik behar."
+        },
+        "dl": {
+          "button": "Deskargatu zerbitzari honetarako instalatzailea",
+          "busy": "Deskarga prestatzen…",
+          "again": "Deskargatu berriro",
+          "version": "{{version}} bertsioa",
+          "code": "Fitxategiak aldi bakarreko kode bat dauka, deskargatzen denetik {{minutes}} minutuz balio duena. Ez partekatu.",
+          "started": "Deskarga hasi da: {{name}}. Bilatu Deskargak karpetan.",
+          "countdown": "Kodea iraungitzeko falta da",
+          "expired": "Kodea iraungi da. Sakatu «Deskargatu berriro» berri bat lortzeko."
+        },
+        "nb": {
+          "title": "Instalatzailea ez dago oraindik prestatuta FOX3 zerbitzari honetan.",
+          "body": "Ez da zure errua. FOX3 instalatu zuenak komando hau exekutatu behar du FOX3 zerbitzarian eta, gero, «Egiaztatu berriro» sakatu:",
+          "check": "Egiaztatu berriro"
+        },
+        "s2": {
+          "title": "Instalatu DCS zerbitzariaren PCan",
+          "help": "Behin bakarrik egiten da eta pare bat minutu behar dira.",
+          "step1": "Kopiatu ZIPa DCS exekutatzen den PCra.",
+          "hint1": "USB memoria, partekatutako karpeta bat edo zeure buruari posta bidez bidaltzea balio du. Sartu PC horretan DCS exekutatzen duen Windows-eko erabiltzailearekin.",
+          "step2": "Deskonprimatu.",
+          "hint2": "Egin klik eskuineko botoiarekin ZIParen gainean, aukeratu «Atera guztia…» eta gero «Atera». Ez exekutatu ezer ZIParen barrutik.",
+          "step3": "Egin klik bikoitza INSTALAR.cmd fitxategian.",
+          "hint3": "Deskonprimatu berri duzun karpetaren barruan dago, gainerako fitxategien ondoan.",
+          "step4": "Windowsek «Windowsek zure PC babestu du» esaten badu: sakatu «Informazio gehiago» eta gero «Exekutatu hala ere».",
+          "hint4": "Programa ez dago oraindik digitalki sinatuta, eta horregatik Windowsek programa berri guztiekin ohartarazten du. Normala eta espero dena da.",
+          "step5": "Itxaron leiho beltzak «OK» mezuarekin amaitu arte.",
+          "hint5": "Aurrera doala ikusiko duzu. Ez itxi «OK» esan arte; gero itxi dezakezu.",
+          "whatTitle": "Zer egiten du instalatzaileak?",
+          "what1": "Agentea FOX3 zerbitzari honekin parekatzen du aldi bakarreko kodearekin.",
+          "what2": "Agentea zure Windows erabiltzailearen karpeta batean kopiatzen du (sistemari ez dio ezertan eragiten).",
+          "what3": "Zure erabiltzaileko ataza programatu bat sortzen du, agentea saioa hastean bere kabuz abia dadin.",
+          "what4": "Agentea abiarazten du eta FOX3rekin konekta daitekeela egiaztatzen du. Gero hemen «Linean» agertuko da.",
+          "problemsTitle": "Zerbait gaizki atera da?",
+          "p1": "Kodea iraungi da (15 minutu pasatuta): deskargatu instalatzailea berriro eta errepikatu.",
+          "p2": "PCak ez du internetik edo suebaki batek irteera blokeatzen du: ireki edozein web orri PC horretan egiaztatzeko.",
+          "p3": "Antibirusak programa blokeatu du: baimendu (edo gehitu salbuespen bat karpetarako) eta exekutatu INSTALAR.cmd berriro.",
+          "p4": "DCS exekutatzen duena ez den beste Windows erabiltzaile batekin instalatu duzu: hasi saioa DCSren erabiltzailearekin eta errepikatu instalazioa."
+        },
+        "s3": {
+          "title": "Agentearen zain",
+          "help": "Pantaila hau bere kabuz eguneratzen da segundo gutxiro. Ez da orria birkargatu beharrik.",
+          "waiting": "Agentea konektatzearen zain…",
+          "waitingHelp": "Segundo batzuk behar ditu leiho beltzak «OK» mezuarekin amaitzen duenetik.",
+          "idle": "Pauso hau instalatzailea deskargatzen duzunean hasten da.",
+          "timeoutTitle": "3 minutu baino gehiago igaro dira eta agentea ez da konektatu.",
+          "timeoutBody": "Agian ez duzu instalazioa amaitu oraindik, eta ez da ezer gertatzen: itxaroten jarraitzen dugu. Egin baduzu, egiaztatu ohiko arrazoi hauek:"
+        },
+        "s4": {
+          "title": "Aukeratu karpetak",
+          "help": "Agenteak berak aurkitzen ditu DCSren karpetak. Zuk baieztatu besterik ez duzu egin behar.",
+          "idle": "Agentea konektatu bezain pronto agertuko da hemen.",
+          "cta": "Sakatu Foothold-en gordetako partiden karpeta eta Tacview-ren karpeta, eta gero «Gorde».",
+          "found": "Hauek dira agenteak detektatutako karpetak. Batean sakatuz gero, bere atalera eramango zaitugu, han aukeratu eta gordetzeko.",
+          "none": "Agenteak ez du karpetarik detektatu. Ez da ezer gertatzen: joan beheko ataletara eta idatzi bidea eskuz (adibidez C:\\Users\\ZureErabiltzailea\\Saved Games\\DCS\\Missions\\Saves), gero sakatu «Gorde».",
+          "goFoothold": "Joan Foothold-en gordetako partidetara",
+          "goTacview": "Joan Tacview karpetara"
+        },
+        "guide": {
+          "title": "Administratzaileentzako gida osoa",
+          "intro": "Prozesu osoaren laburpena, eskuadroia administratzen duten baina zerbitzariaren jabe ez diren pertsonentzat.",
+          "g1t": "1. Zer da agentea",
+          "g1": "DCS zerbitzariaren PCan exekutatzen den programa txiki bat da: Foothold eta Tacview karpetak irakurtzen ditu eta datuak FOX3ra bidaltzen ditu internet bidez. Irteerako konexioak soilik egiten ditu: ez du portuak irekitzen eta ez du administratzaile baimenik behar.",
+          "g2t": "2. Hasi aurretik",
+          "g2": "DCS exekutatzen den PCrako sarbidea behar duzu (hura exekutatzen duen Windows erabiltzailearekin) eta PC horrek internet izan behar du. Hemen instalatzailea prestatu gabe dagoela agertzen bada, jakinarazi FOX3 instalatu zuenari.",
+          "g3t": "3. Instalatu",
+          "g3": "Deskargatu instalatzailea, kopiatu DCSren PCra, deskonprimatu eta egin klik bikoitza INSTALAR.cmd fitxategian. Windowsek ohartarazten badu, sakatu «Informazio gehiago» eta «Exekutatu hala ere». Itxaron leihoa «OK» mezuarekin amaitu arte. Fitxategiko kodea aldi bakarrekoa da eta 15 minututan iraungitzen da.",
+          "g4t": "4. Konektatzen dela egiaztatu",
+          "g4": "Segundo gutxitan zerbitzaria «Linean» jarriko da eta agentearen bertsioa ikusiko duzu. 3 minututan gertatzen ez bada, egiaztatu: kodea iraungita, internetik gabe, antibirusa edo Windows erabiltzaile desberdina.",
+          "g5t": "5. Karpetak aukeratu",
+          "g5": "Agentea konektatzen denean, sakatu detektatu dituen Foothold-en gordetako partiden karpeta eta Tacview-rena, eta gorde atal bakoitza. Bat ere detektatu ez badu, idatzi bidea eskuz.",
+          "g6t": "6. PC aldatu edo agente bat baja eman",
+          "g6": "Agentea beste PC batera eramateko, deskargatu instalatzailea berriro eta instalatu han; agente zaharrak funtzionatzen jarraitzen du «Zerbitzari honen agenteak» zerrendan indargabetu arte. Indargabetutako agenteak datuak bidaltzeari uzten dio."
+        },
+        "errors": {
+          "generic": "Ezin izan da ekintza osatu. Saiatu berriro.",
+          "network": "Ezin da zerbitzariarekin konektatu. Egiaztatu zure internet konexioa.",
+          "unauthorized": "Zure saioa iraungi da. Hasi saioa berriro.",
+          "not_found": "Ez da zerbitzari hau aurkitu. Agian ezabatu egin da.",
+          "rate_limited": "Deskarga gehiegi eskatu dituzu jarraian. Itxaron minutu bat eta saiatu berriro.",
+          "agent_not_built": "Instalatzailea ez dago oraindik prestatuta FOX3 zerbitzari honetan. Jakinarazi instalatu zuenari."
+        }
+      }
+    }
+  },
+  "notFound": {
+    "title": "404 – Kartatik kanpo",
+    "text": "Bilatzen ari zaren orria ez dago.",
+    "home": "Itzuli hasierara"
+  },
+  "warnings": {
+    "FOOTHOLD_FILE_STALE": {
+      "title": "Foothold fitxategia ez da eguneratzen",
+      "fix": "Egiaztatu Foothold misioa martxan dagoela eta aurrerapena gordetzen ari dela. Zerbitzaria geldituta badago, normala da."
+    },
+    "FOOTHOLD_FOLDER_MISSING": {
+      "title": "Foothold gordetze-karpeta ez dago",
+      "fix": "Berrikusi bidea Foothold atalean. Zerbitzarian detektatutako karpeta bat sakatu dezakezu."
+    },
+    "FOOTHOLD_FILE_MISSING": {
+      "title": "Ez da Foothold aurrerapen-fitxategia aurkitu",
+      "fix": "Karpeta badago baina ez dauka gordetze-fitxategirik. Hasi Foothold misio bat sor dadin edo egiaztatu karpeta zuzena dela."
+    },
+    "FOOTHOLD_FILE_UNREADABLE": {
+      "title": "Ezin da Foothold fitxategia irakurri",
+      "fix": "Egiaztatu karpetaren baimenak eta beste inongo programak ez duela fitxategia blokeatuta."
+    },
+    "FOOTHOLD_FILE_INVALID": {
+      "title": "Foothold fitxategiak ustekabeko formatua dauka",
+      "fix": "Erdi idatzita edo hondatuta egon daiteke. Itxaron hurrengo gordetzera; jarraitzen badu, berrikusi Foothold bertsioa."
+    },
+    "FOOTHOLD_FOLDER_NOT_SET": {
+      "title": "Foothold gordetze-karpeta falta da",
+      "fix": "Adierazi karpeta Foothold atalean (edo sakatu detektatutako bat) eta gorde."
+    },
+    "DCSBOT_UNREACHABLE": {
+      "title": "Ezin da DCSServerBot APIarekin harremanetan jarri",
+      "fix": "Egiaztatu DCSServerBot martxan dagoela eta DCSServerBot ataleko URLa eta aurrizkia zuzenak direla."
+    },
+    "DCSBOT_AUTH_FAILED": {
+      "title": "DCSServerBot-ek API gakoa baztertu du",
+      "fix": "Gakoa zerbitzariaren PCan konfiguratzen da, ez hemen. Berrikusi agentearen tokiko konfigurazioan (docs/FASE2-PROVES-REALS.md)."
+    },
+    "DCSBOT_SERVER_NOT_FOUND": {
+      "title": "DCSServerBot-ek ez du zerbitzari-izen hori ezagutzen",
+      "fix": "Idatzi zerbitzariaren izena DCSServerBot-en agertzen den bezala, maiuskulak eta zuriuneak barne."
+    },
+    "DCSBOT_DB_ERROR": {
+      "title": "Errorea DCSServerBot datu-basea irakurtzean",
+      "fix": "Datu-basearen pasahitza zerbitzariaren PCan konfiguratzen da. Egiaztatu PostgreSQL aktibo dagoela eta agentearen tokiko kredentzialak zuzenak direla."
+    },
+    "DCSBOT_UCID_UNRESOLVED": {
+      "title": "Pilotu bat ezin izan da identifikatu",
+      "fix": "DCSServerBot-ek ez du jokalari baten identifikatzailea (UCID) itzuli. Normalean berez konpontzen da; jarraitzen badu, berrikusi DCSServerBot bertsioa."
+    },
+    "DCSBOT_CONFIG_INVALID": {
+      "title": "DCSServerBot konfigurazioa ez da baliozkoa",
+      "fix": "Berrikusi DCSServerBot atala: URLa, aurrizkia eta zerbitzariaren izena."
+    },
+    "TACVIEW_FOLDER_MISSING": {
+      "title": "Tacview karpeta ez dago",
+      "fix": "Berrikusi bidea Tacview atalean. Zerbitzarian detektatutako karpeta bat sakatu dezakezu."
+    },
+    "TACVIEW_FOLDER_UNREADABLE": {
+      "title": "Ezin da Tacview karpeta irakurri",
+      "fix": "Egiaztatu karpetaren baimenak agentea exekutatzen duen erabiltzailearentzat."
+    },
+    "TACVIEW_FILE_FAILED": {
+      "title": "Tacview grabazio bat ezin izan da irakurri",
+      "fix": "Grabazio hori saltatu egiten da eta gainerakoek funtzionatzen jarraitzen dute. Hondatuta edo DCS-k irekita izan dezake."
+    },
+    "TACVIEW_FORMAT_UNSUPPORTED": {
+      "title": "Tacview formatu bateraezina",
+      "fix": "Grabazio batzuek FOX3-k oraindik ulertzen ez duen formatua erabiltzen dute eta saltatu egiten dira. Erabili .acmi edo .zip.acmi grabazio estandarrak."
+    },
+    "TACVIEW_INDEXING": {
+      "title": "Tacview grabazioak indexatzen",
+      "fix": "Normala da Tacview aktibatu ondoren: bilaketa minutu gutxi barru osatuta egongo da. Ez da ezer egin behar."
+    },
+    "TACVIEW_APPEARANCES_CAPPED": {
+      "title": "Grabazio baten agerraldiak mugatu dira",
+      "fix": "Grabazio batek hainbeste pilotu ditu non lehen agerraldiak soilik gordetzen diren, beraz bilaketaren batek ez du dena erakutsiko."
+    },
+    "SOURCE_CRASHED": {
+      "title": "Agentearen modulu bat gelditu da",
+      "fix": "Berrabiarazi agentea zerbitzariaren PCan. Berriro gertatzen bada, kopiatu mezu teknikoa eta abisatu garatzaileari."
+    },
+    "CENTRAL_REJECTED_MESSAGES": {
+      "title": "FOX3-k agentearen mezuak baztertu ditu",
+      "fix": "Normalean agentea eta FOX3 bertsio desberdinetan daudela esan nahi du. Eguneratu agentea zerbitzariaren PCan."
+    }
+  },
+  "tacview": {
+    "title": "Tacview",
+    "intro": "Bilatu pilotu bat zein grabaziotan agertzen den ikusteko eta deskargatu fitxategia grabatu zen zerbitzaritik.",
+    "search": "Pilotuaren izena",
+    "placeholder": "Idatzi gutxienez 2 karaktere…",
+    "minChars": "Idatzi gutxienez 2 karaktere bilatzeko.",
+    "server": "Zerbitzaria",
+    "noResults": "Ez dago bilaketarekin bat datorren grabaziorik.",
+    "file": "Fitxategia",
+    "pilot": "Pilotua",
+    "aircraft": "Hegazkina",
+    "utc": "UTC ordua (hasiera – amaiera)",
+    "offset": "Grabazioko desplazamendua",
+    "partial": "Grabazio partziala",
+    "partialHint": "Grabazioa osatu gabe dago (agian oraindik grabatzen ari da edo moztu zen).",
+    "download": "Deskargatu",
+    "asking": "Zerbitzariari galdetzen… 30 segundo arte behar ditzake.",
+    "downloading": "Deskargatzen… {{percent}}",
+    "downloadingUnknown": "Deskargatzen…",
+    "cancel": "Utzi",
+    "errors": {
+      "server_unreachable": "Zerbitzariaren agenteak ez du erantzun. Agian zerbitzaria itzalita edo deskonektatuta dago; saiatu berriro geroago.",
+      "not_found": "Grabazioa ez dago jada zerbitzarian eskuragarri (agian mugitu edo ezabatu da).",
+      "transfer_busy": "Zerbitzaria beste deskarga bat bidaltzen ari da jada. Itxaron une bat eta saiatu berriro.",
+      "unauthorized": "Zure saioa iraungi da. Hasi saioa berriro.",
+      "network": "Konexioa eten da deskargan zehar. Egiaztatu zure sarea eta saiatu berriro.",
+      "generic": "Ezin izan da grabazioa deskargatu."
+    }
+  },
+  "aircraft": {
+    "layer": "Hegazkin aliatuak",
+    "side": "Alderdia",
+    "both": "Biak",
+    "count": "{{count}} hegazkin",
+    "none": "Ez dago hegazkinik ikusgai orain.",
+    "pilot": "Pilotua",
+    "type": "Hegazkina",
+    "altitude": "Altitudea",
+    "altValue": "{{m}} m / {{ft}} ft",
+    "onGround": "Lurrean",
+    "linkAccount": "Lotu zure DCS kontua zure hegazkin aliatuak ikusteko.",
+    "linkAction": "Joan nire profilera lotzeko",
+    "notOnline": "Zerbitzari honetara konektatuta egon behar duzu hegazkin aliatuak ikusteko."
+  },
+  "dtc": {
+    "title": "DTC sortzailea",
+    "intro": "Sortu DCS-rako DTC fitxategi bat (datu-transferentziako kartutxoa) mapan klik eginez. Aukeratu hegazkina eta mapa, gehitu puntuak, doitu eta deskargatu .dtc fitxategia.",
+    "steps": {
+      "title": "Prestaketa",
+      "aircraft": "1. Hegazkina",
+      "pickAircraft": "Aukeratu hegazkin bat…",
+      "soon": "laster",
+      "terrain": "2. DCS mapa",
+      "pickTerrain": "Aukeratu mapa bat…",
+      "terrainHelp": "Aukeratu hegan egingo duzun DCS mapa. Koordenatuak mapa horren proiekzioarekin bihurtzen dira.",
+      "import": "3. Inportatu .dtc bat (aukerakoa)",
+      "name": "Fitxategiaren izena (aukerakoa)",
+      "switchTitle": "Aldatu hegazkina",
+      "switchAsk": "Hegazkina aldatzean zirriborro berri bat hasten da eta uneko puntuak galtzen dira. Jarraitu?",
+      "starting": "Hegazkin honen balio lehenetsiak kargatzen…"
+    },
+    "calibration": {
+      "exact": "Egiaztatua",
+      "plausible": "Sinesgarria",
+      "airports": "Aireportuak soilik",
+      "exactHint": "Proiekzioa DCS-ko benetako fitxategi batekin egiaztatua.",
+      "plausibleHint": "Proiekzioa DCS-ko benetako fitxategi batekin bat dator, baina ez guztiz egiaztatua.",
+      "airportsHint": "Aireportuen benetako posizioekin egiaztatua, baina oraindik ez da jokoan baieztatu. Berrikusi puntuak DCS barruan."
+    },
+    "import": {
+      "button": "Inportatu dagoen .dtc bat",
+      "busy": "Fitxategia irakurtzen…",
+      "drop": "edo jaregin hemen .dtc fitxategi bat",
+      "loaded": "Kargatuta: {{name}}",
+      "rejected": "Fitxategi hau ezin izan da .dtc bateragarri gisa irakurri.",
+      "warnings": "Inportatutako fitxategiaren oharrak ({{count}})"
+    },
+    "preserved": {
+      "title": "Zure fitxategian bezala gordetzen dira",
+      "body": "Zati hauek fitxategian daude baina ezin dira hemen editatu. Deskargatzean aldatu gabe idazten dira:",
+      "parts": {
+        "threat_points": "Mehatxu-puntuak",
+        "destinations": "Helmugak",
+        "additional_points": "Puntu gehigarriak",
+        "routes": "Ibilbideak",
+        "zones": "Eremuak",
+        "areas": "Areak",
+        "lines": "Lerroak",
+        "adf": "ADF"
+      }
+    },
+    "map": {
+      "aria": "DTC editorearen mapa",
+      "needAircraft": "Aukeratu lehenik hegazkin bat hasteko.",
+      "needTerrain": "Aukeratu DCS mapa puntuak gehitu ahal izateko.",
+      "help": "Egin klik mapan puntu bat zerrenda aktiboan gehitzeko. Arrastatu puntu bat mugitzeko; eskuineko klika (edo sakatze luzea) ezabatzeko.",
+      "unnamed": "Izenik gabe",
+      "noElevation": "ezezaguna"
+    },
+    "lists": {
+      "aria": "Puntu-zerrenda aktiboa",
+      "steerpoints": "Steerpoints",
+      "route": "{{n}}. ibilbidea",
+      "routeNamed": "{{n}}. ibilbidea · {{name}}",
+      "line": "{{n}}. lerroa",
+      "f14line": "{{n}}. lerroa ({{route}}. ibilbidea)",
+      "ah64": {
+        "TGT": "{{mission}}. misioa · Helburuak",
+        "WPTHZ": "{{mission}}. misioa · Waypoints/arriskuak",
+        "CTRLM": "{{mission}}. misioa · Kontrol-neurriak"
+      }
+    },
+    "f14": {
+      "routeName": "Ibilbidearen izena",
+      "asLine": "Marraztu ibilbidea lerro gisa",
+      "asLineHelp": "Waypoints-ez gain, ibilbidea lerro gisa ere agertzen da hegazkinaren mapan.",
+      "lineOf": "Lerro hau {{route}}. ibilbidekoa da.",
+      "closed": "Lerro itxia (azken puntua lehenarekin lotzen du)",
+      "deleteLine": "Ezabatu lerro hau",
+      "addLine": "Gehitu lerroa"
+    },
+    "points": {
+      "title": "Puntuak",
+      "pickFirst": "Aukeratu hegazkin bat puntuak gehitzen hasteko.",
+      "empty": "Zerrenda hau hutsik dago. Egin klik mapan edo idatzi koordenatu batzuk.",
+      "up": "Igo {{n}}. puntua",
+      "down": "Jaitsi {{n}}. puntua",
+      "delete": "Ezabatu puntua",
+      "deleteN": "Ezabatu {{n}}. puntua",
+      "addTyped": "Gehitu puntua"
+    },
+    "fields": {
+      "name": "Izena",
+      "note": "Oharra",
+      "lat": "Latitudea",
+      "lon": "Longitudea",
+      "elevation": "Garaiera (m)",
+      "approx": "gutxi gorabehera",
+      "unknown": "ezezaguna",
+      "autoName": "automatikoa",
+      "speed": "Abiadura",
+      "tot": "Ordua (TOT)",
+      "errors": {
+        "required": "Derrigorrezkoa.",
+        "invalid": "Idatzi zenbaki hamartar bat, adibidez 41.5.",
+        "range": "Tartetik kanpo (latitudea ±90, longitudea ±180).",
+        "time": "Erabili HH:MM:SS formatua."
+      }
+    },
+    "issues": {
+      "fix": "Konpondu hau deskargatu aurretik:",
+      "noAircraft": "Aukeratu hegazkin bat.",
+      "noTerrain": "Aukeratu DCS mapa.",
+      "tooManyWaypoints": "{{count}} steerpoint daude eta gehienekoa {{limit}} da.",
+      "tooManyRoutes": "{{count}} ibilbide daude eta gehienekoa {{limit}} da.",
+      "tooManyLines": "{{count}} lerro daude eta gehienekoa {{limit}} da.",
+      "badLat": "{{n}}. puntua: latitude baliogabea.",
+      "badLon": "{{n}}. puntua: longitude baliogabea.",
+      "badElevation": "{{n}}. puntua: garaiera baliogabea.",
+      "noPoints": "Oraindik ez dago punturik: fitxategia hutsik aterako litzateke.",
+      "unknownElevation": "{{count}} punturi ez zaio garaierarik jarri: 0 m idatziko da fitxategian.",
+      "radioBadFrequency": "{{count}} irrati-maiztasun ez dira 0 baino handiagoa den zenbaki bat.",
+      "radioRange": "{{count}} irrati-maiztasun ohiko tartetik kanpo daude (abisu bat besterik ez, ez du deskarga blokeatzen).",
+      "radioInvalidInput": "{{count}} irrati-eremuk oraindik baliozkoa ez den testua dute."
+    },
+    "server": {
+      "rejected": "Zerbitzariak ez du fitxategia onartu:"
+    },
+    "download": {
+      "button": "Deskargatu .dtc",
+      "busy": "Sortzen…",
+      "disabled": "Deskarga desgaituta: konpontzeko {{count}} arazo daude.",
+      "done": "Fitxategia deskargatu da. Sorreraren oharrak, baldin badaude:",
+      "expired": "Inportatutako fitxategia iraungi da zerbitzarian (ordubetez gordetzen da). Inportatu berriro edo jarraitu hegazkinaren txantiloiarekin.",
+      "useBuiltin": "Erabili hegazkinaren txantiloia"
+    },
+    "draft": {
+      "clear": "Ezabatu zirriborroa",
+      "clearAsk": "Puntu guztiak eta inportatutako fitxategia ezabatuko dira. Jarraitu?",
+      "saved": "Zure zirriborroa automatikoki gordetzen da nabigatzaile honetan."
+    },
+    "howto": {
+      "title": "Nola erabiltzen dut DCS-n?",
+      "body": "Kopiatu .dtc fitxategia hegazkinaren DTC karpetara, DCS-ren Saved Games barruan, edo inportatu jokoaren DTC inportazio-elkarrizketatik. Ez gaude ziur zure instalazioko ibilbide zehatzaz: begiratu DCS barruko DTC inportazio-elkarrizketa."
+    },
+    "elevation": {
+      "attribution": "Gutxi gorabeherako garaierak: Copernicus DEM GLO-90, Open-Meteo.com bidez (ez da DCS-ren lurzorua). Berrikusi zehaztasuna behar baduzu.",
+      "loading": "Garaierak kontsultatzen…",
+      "disabled": "Garaiera kontsultatzeko aukera ez dago erabilgarri: idatzi garaiera eskuz.",
+      "failed": "Ezin izan da garaiera kontsultatu: idatzi eskuz."
+    },
+    "layers": {
+      "title": "Mapako geruzak",
+      "airports": "Aireportuak",
+      "front": "Frontea eta guneak",
+      "farps": "FARPak",
+      "server": "Erreferentziako zerbitzaria",
+      "noServer": "Ez dago Foothold zerbitzaririk mapa hau jolasten une honetan; aireportuak erakusten dira hala ere.",
+      "note": "Geruzak orientaziorako baino ez dira eta ez dira DTC fitxategian idazten.",
+      "addPoint": "Gehitu puntu gisa",
+      "civil": "Aerodromo zibila",
+      "military": "Aerodromo militarra",
+      "farp": "FARP",
+      "airportsError": "Ezin izan dira mapa honetako aireportuak kargatu.",
+      "stateError": "Ezin izan da erreferentziako zerbitzariaren egoera eguneratu."
+    },
+    "radios": {
+      "title": "Irratiak",
+      "intro": "DTCn idazten diren irrati-maiztasunak. Aldatzen duzuna bakarrik aldatzen da; gainerakoa fitxategian edo lehenetsita bezala geratzen da.",
+      "none": "Hegazkin honen DTCak ez ditu irratiak barne hartzen.",
+      "empty": "Zirriborro honek ez du irrati-daturik.",
+      "changed": "Jatorrizkoarekin alderatuta aldatua",
+      "reset": "Berrezarri balio lehenetsiak",
+      "resetFile": "Berreskuratu zure fitxategiaren balioak",
+      "band": "{{band}} ohiko tartea: {{min}}-{{max}} MHz (dokumentatua, jokoan egiaztatu gabe).",
+      "channel": "{{n}}. kanala",
+      "channelName": "{{radio}} {{n}}. kanala",
+      "freqAria": "{{name}}: maiztasuna, MHz",
+      "outOfRange": "Ohiko tartetik kanpo {{min}}-{{max}} MHz.",
+      "fraction": "DCSn oraindik egiaztatu gabe: MHz osoek funtzionatzen dutela dakigu.",
+      "errors": {
+        "required": "Derrigorrezkoa.",
+        "invalid": "Idatzi zenbaki bat MHz-tan, adibidez 251 edo 127,5.",
+        "positive": "Maiztasunak 0 baino handiagoa izan behar du.",
+        "int": "{{min}} eta {{max}} arteko zenbaki osoa."
+      },
+      "f16": {
+        "aria": "Irratia",
+        "COMM1": "COMM1 (UHF)",
+        "COMM2": "COMM2 (VHF)"
+      },
+      "ah64": {
+        "tabsAria": "Irratien atala",
+        "tabPresets": "Presetak",
+        "tabInitial": "Hasierako ezarpenak",
+        "presetPick": "Presetak",
+        "presetN": "{{n}}. presetak",
+        "unit_id": "Unit ID",
+        "call_sign": "Dei-izena",
+        "unit_idAria": "{{n}}. presetaren Unit ID",
+        "call_signAria": "{{n}}. presetaren dei-izena",
+        "frequency": "Maiztasuna, MHz",
+        "modulation": "Modulazioa",
+        "modAria": "{{name}}: modulazioa",
+        "encryption": "Zifratzea",
+        "encAria": "{{name}}: zifratze-kodea",
+        "encryptionHint": "DCS kode gordina. 0 = bat ere ez.",
+        "hfModulationHint": "Kode gordina. Bere esanahia egiaztatu gabe dago, beraz zenbaki gisa erakusten da.",
+        "codesHelp": "Modulazioa eta zifratzea DCS kode gordinak dira: AM = 0, FM = 1 (DCS balio estandarrak); zifratzea 0 = bat ere ez.",
+        "mod": {
+          "0": "AM (0)",
+          "1": "FM (1)",
+          "other": "{{code}} kodea"
+        },
+        "presetRadioName": "{{n}}. presetaren {{radio}}",
+        "initialName": "hasierako {{radio}}",
+        "initialHelp": "Helikopteroa abiatzean irrati bakoitzak duena: bere maiztasuna eta hasten den preset zenbakia.",
+        "startPreset": "Presetean hasten da",
+        "startPresetAria": "{{name}}: hasierako presetak",
+        "guard": "UHF zaintza-hargailua aktibatuta",
+        "guardHelp": "UHF zaintza-maiztasuna ere entzuten du.",
+        "radio": {
+          "FM1": "FM1",
+          "FM2": "FM2",
+          "UHF": "UHF",
+          "VHF": "VHF",
+          "HF": "HF",
+          "HF_RX": "HF Rx",
+          "HF_TX": "HF Tx"
+        }
+      },
+      "missing": "Zirriborro hau irratiak existitu baino lehen sortu zen eta ez dauka irratien daturik.",
+      "loading": "Irrati lehenetsiak kargatzen…",
+      "loadDefaults": "Kargatu irrati lehenetsiak",
+      "missingFile": "Zirriborro hau irratiak existitu baino lehen inportatutako fitxategi batetik dator. Inportatu berriro zure fitxategia bere irratiak editatzeko, edo kargatu irrati lehenetsiak (deskargatzean zure fitxategikoak ordezkatuko dituzte).",
+      "loadDefaultsFile": "Kargatu irrati lehenetsiak (fitxategikoak ordezkatzen ditu)"
+    }
+  }
+}

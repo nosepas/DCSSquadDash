@@ -1,0 +1,40 @@
+# secrets and local config
+central.toml
+agent.toml
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+# runtime
+*.sqlite
+*.db
+logs/
+# python
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+# node
+node_modules/
+web/dist/
+# installer output
+installer/out/
+# real DCS data (review before publishing; may contain personal notes/callsigns)
+samples/
+*.acmi
+
+# demo / tooling output
+demo-data/
+demo-*.log
+.playwright-mcp/
+
+# generated / local-only (never publish)
+demo-data*/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+*.sqlite-wal
+*.sqlite-shm
+web/screenshots/

@@ -1,0 +1,401 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/dtc_mission.json",
+  "title": "Neutral DTC mission model",
+  "description": "Aircraft-independent source of truth for the DTC generator. Positions are lat/lon (WGS84); each serialiser converts to DCS x/y with the terrain projection. Each serialiser declares which parts it supports. Fields that no verified sample shows (F-16 threat points/destinations, F-14 additional points, AH-64 routes/zones/areas) are intentionally generic until a sample exists.",
+  "type": "object",
+  "required": [
+    "model_version",
+    "terrain",
+    "aircraft"
+  ],
+  "properties": {
+    "model_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "terrain": {
+      "$ref": "common.json#/$defs/terrain"
+    },
+    "aircraft": {
+      "type": "string",
+      "enum": [
+        "F-16C_50",
+        "F-14BU",
+        "AH-64D_BLK_II",
+        "FA-18C_hornet"
+      ],
+      "description": "FA-18C_hornet is reserved; module hidden until a sample file exists."
+    },
+    "dcs_version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "DCS version targeted by the output (formats change between versions)."
+    },
+    "name": {
+      "type": "string"
+    },
+    "waypoints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/point"
+      }
+    },
+    "routes": {
+      "type": "array",
+      "description": "Named ordered groups of points (F-14 routes, AH-64 routes). F-16 uses a single implicit route.",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "points"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/point"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "points"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "closed": {
+            "type": "boolean"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/point"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "threat_points": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/point"
+      },
+      "description": "Structure unverified (empty in samples)."
+    },
+    "zones": {
+      "type": "array",
+      "description": "Structure unverified (empty in AH-64 sample).",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "points"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/point"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "aircraft_extra": {
+      "type": "object",
+      "description": "Aircraft-specific fields (e.g. F-16 speed/TOS, AH-64 point text) kept as-is."
+    },
+    "radios": {
+      "$ref": "#/$defs/radios"
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "required": [
+        "lat",
+        "lon"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "lat": {
+          "$ref": "common.json#/$defs/lat"
+        },
+        "lon": {
+          "$ref": "common.json#/$defs/lon"
+        },
+        "elevation_m": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Null = unknown; user must edit or accept default."
+        },
+        "kind": {
+          "type": "string",
+          "description": "Role of the point (waypoint, target, hazard...)."
+        },
+        "extra": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "radio_settings": {
+      "type": "object",
+      "properties": {
+        "frequency_mhz": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Frequency in decimal MHz (e.g. 251.075). Written as an integer when integral. Fractional values are not confirmed in the F-16 sample (integers only)."
+        },
+        "modulation": {
+          "type": "integer",
+          "description": "Raw DCS modulation code (AH-64: UHF/VHF 0, FM 1 seen; HF 2 seen, meaning unverified)."
+        },
+        "encryption": {
+          "type": "integer",
+          "description": "Raw DCS encryption code (0 in the sample)."
+        },
+        "extra": {
+          "type": "object",
+          "description": "Uninterpreted DCS keys, written back unchanged."
+        }
+      },
+      "additionalProperties": false
+    },
+    "radio_initial": {
+      "type": "object",
+      "properties": {
+        "frequency_mhz": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Frequency in decimal MHz (e.g. 251.075). Written as an integer when integral. Fractional values are not confirmed in the F-16 sample (integers only)."
+        },
+        "modulation": {
+          "type": "integer",
+          "description": "Raw DCS modulation code (AH-64: UHF/VHF 0, FM 1 seen; HF 2 seen, meaning unverified)."
+        },
+        "encryption": {
+          "type": "integer",
+          "description": "Raw DCS encryption code (0 in the sample)."
+        },
+        "extra": {
+          "type": "object",
+          "description": "Uninterpreted DCS keys, written back unchanged."
+        },
+        "mode": {
+          "type": "integer"
+        },
+        "preset": {
+          "type": "integer",
+          "description": "Preset number the radio starts on."
+        }
+      },
+      "additionalProperties": false
+    },
+    "radios": {
+      "type": "object",
+      "description": "Optional. Radio configuration; absent = radios of the template stay as they are. F-16C_50 uses `radios`; AH-64D_BLK_II uses `presets`, `initial`, `guard_receiver`. Not supported for F-14BU (rejected). Unlisted fields stay untouched in the template.",
+      "properties": {
+        "radios": {
+          "type": "array",
+          "description": "Channelised radios (F-16C_50): COMM1 = UHF, COMM2 = VHF, up to 20 channels each. Channels left out stay as in the template.",
+          "items": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "COMM1",
+                  "COMM2"
+                ]
+              },
+              "label": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "channelised"
+                ]
+              },
+              "channels": {
+                "type": "array",
+                "maxItems": 20,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "channel",
+                    "frequency_mhz"
+                  ],
+                  "properties": {
+                    "channel": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 20
+                    },
+                    "frequency_mhz": {
+                      "type": "number",
+                      "exclusiveMinimum": 0,
+                      "description": "Frequency in decimal MHz (e.g. 251.075). Written as an integer when integral. Fractional values are not confirmed in the F-16 sample (integers only)."
+                    },
+                    "extra": {
+                      "type": "object",
+                      "description": "DCS keys kept as-is, e.g. modulation (1 in the sample, meaning unknown)."
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "extra": {
+                "type": "object",
+                "description": "e.g. mirror (DCS mirror_COMMx flag, meaning unknown)."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "presets": {
+          "type": "array",
+          "description": "AH-64D COMM presets; exactly 10, index 1-10.",
+          "items": {
+            "type": "object",
+            "required": [
+              "index"
+            ],
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "call_sign": {
+                "type": "string"
+              },
+              "unit_id": {
+                "type": "string"
+              },
+              "primary_frequency": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Index of the primary frequency (1-4 or 0 in the sample; 0 probably means none, unverified)."
+              },
+              "dl_net": {
+                "type": "boolean"
+              },
+              "radios": {
+                "type": "object",
+                "properties": {
+                  "FM1": {
+                    "$ref": "#/$defs/radio_settings"
+                  },
+                  "FM2": {
+                    "$ref": "#/$defs/radio_settings"
+                  },
+                  "UHF": {
+                    "$ref": "#/$defs/radio_settings"
+                  },
+                  "VHF": {
+                    "$ref": "#/$defs/radio_settings"
+                  },
+                  "HF_RX": {
+                    "$ref": "#/$defs/radio_settings"
+                  },
+                  "HF_TX": {
+                    "$ref": "#/$defs/radio_settings"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "extra": {
+                "type": "object",
+                "description": "Raw DCS: COMMS {HF_ALE, HF_Pre, ...}, DoNotUploadTabData; written back unchanged."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "initial": {
+          "type": "object",
+          "description": "AH-64D Radios.InitialRadioSettings.",
+          "properties": {
+            "FM1": {
+              "$ref": "#/$defs/radio_initial"
+            },
+            "FM2": {
+              "$ref": "#/$defs/radio_initial"
+            },
+            "UHF": {
+              "$ref": "#/$defs/radio_initial"
+            },
+            "VHF": {
+              "$ref": "#/$defs/radio_initial"
+            },
+            "HF": {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "type": "integer"
+                },
+                "preset": {
+                  "type": "integer"
+                },
+                "rx": {
+                  "$ref": "#/$defs/radio_settings"
+                },
+                "tx": {
+                  "$ref": "#/$defs/radio_settings"
+                },
+                "extra": {
+                  "type": "object",
+                  "description": "Uninterpreted DCS keys."
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "guard_receiver": {
+          "type": "boolean",
+          "description": "AH-64D UHF guard receiver on/off."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

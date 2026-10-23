@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fox3.local/schemas/tacview_index.json",
+  "title": "tacview_index payload (one message per indexed .acmi file)",
+  "description": "ACMI files stay on the DCS server; only this index is sent. Offsets are seconds from the file ReferenceTime (the '#' time marks). UTC of an appearance = reference_time + offset.",
+  "type": "object",
+  "required": [
+    "index_version",
+    "file",
+    "appearances"
+  ],
+  "properties": {
+    "index_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "file": {
+      "type": "object",
+      "required": [
+        "relative_path",
+        "size_bytes",
+        "mtime"
+      ],
+      "properties": {
+        "relative_path": {
+          "type": "string",
+          "description": "Relative to the configured Tacview folder. Never absolute."
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mtime": {
+          "$ref": "common.json#/$defs/utc"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "reference_time": {
+          "oneOf": [
+            {
+              "$ref": "common.json#/$defs/utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration_s": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "data_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "complete": {
+          "type": "boolean",
+          "description": "False if the file was still being written (partial index)."
+        }
+      },
+      "additionalProperties": false
+    },
+    "appearances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "pilot",
+          "first_offset_s",
+          "last_offset_s"
+        ],
+        "properties": {
+          "pilot": {
+            "type": "string",
+            "description": "ACMI Pilot property."
+          },
+          "aircraft": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ACMI Name property."
+          },
+          "coalition": {
+            "$ref": "common.json#/$defs/coalition"
+          },
+          "group": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "object_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Hex ACMI object id."
+          },
+          "first_offset_s": {
+            "type": "number"
+          },
+          "last_offset_s": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false
+      },
+      "maxItems": 5000
+    }
+  },
+  "additionalProperties": false
+}

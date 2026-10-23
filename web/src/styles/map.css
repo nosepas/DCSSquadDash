@@ -1,0 +1,136 @@
+.tmap {
+  width: 100%;
+  background: #0b1019;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  z-index: 0;
+}
+
+.tmap-full {
+  height: min(72vh, 720px);
+  min-height: 360px;
+}
+
+.tmap-mini {
+  height: 320px;
+}
+
+.map-wrap {
+  position: relative;
+}
+
+.zone-icon {
+  background: none;
+  border: 0;
+}
+
+.zone-dot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 85%);
+  background: var(--neutral);
+  box-shadow: 0 0 6px rgb(0 0 0 / 70%);
+}
+
+.zone-dot.zone-red {
+  background: var(--red);
+}
+
+.zone-dot.zone-blue {
+  background: var(--blue);
+}
+
+.zone-dot.hq {
+  border-radius: 3px;
+  border: 3px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+.zone-dot.at-risk {
+  animation: pulse 1.4s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(245 185 66 / 80%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 14px rgb(245 185 66 / 0%);
+  }
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zone-dot.static {
+  width: 14px;
+  height: 14px;
+  animation: none;
+}
+
+.zone-dot.static.at-risk {
+  box-shadow: 0 0 0 4px rgb(245 185 66 / 35%);
+}
+
+.legend-line {
+  width: 26px;
+  border-top: 2px solid #5f7396;
+}
+
+.legend-line.front {
+  border-top: 3px dashed var(--accent);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip,
+.leaflet-tooltip {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: var(--border-strong);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--muted);
+}
+
+.zone-popup {
+  min-width: 150px;
+  font: 14px/1.5 var(--font-sans);
+}
+
+.popup-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.conn-front {
+  animation: dash 1.2s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
