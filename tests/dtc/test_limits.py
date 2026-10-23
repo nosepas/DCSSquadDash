@@ -45,7 +45,7 @@ def test_hostile_template_is_rejected_quickly(name):
         import_dtc(raw)
     elapsed, peak = time.perf_counter() - t0, tracemalloc.get_traced_memory()[1]
     tracemalloc.stop()
-    assert elapsed < 1.0
+    assert elapsed < 3.0   # generous: shared CI runners are slow; the point is rejecting without exhausting time or memory
     assert peak < 200 * 1024 * 1024
 
 

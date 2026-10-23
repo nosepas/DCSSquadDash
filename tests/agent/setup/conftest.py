@@ -36,6 +36,13 @@ def http_error(status: int) -> httpx.HTTPStatusError:
     return httpx.HTTPStatusError("boom", request=req, response=httpx.Response(status, request=req))
 
 
+@pytest.fixture(autouse=True)
+def windows_user(monkeypatch):
+    """The installer builds the task for the current Windows user; CI on Linux has no USERNAME."""
+    monkeypatch.setenv("USERNAME", "tester")
+    monkeypatch.setenv("USERDOMAIN", "PC")
+
+
 @pytest.fixture
 def calls(monkeypatch):
     log: list[list[str]] = []

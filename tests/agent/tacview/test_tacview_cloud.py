@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 
 import pytest
@@ -193,8 +194,9 @@ def test_live_sources_passes_cloud_files(tmp_path):
 
 
 # --- service-account trap / Google Drive recognition ---------------------------------------------------------------------------
+@pytest.mark.skipif(sys.platform != "win32", reason="drive letters only exist on Windows")
 def test_missing_folder_message_adds_service_hint_for_drive_paths():
-    hint = "reinstall with -ServiceUser"
+    hint = "install it again while logged in as that user"
     assert hint in folder_missing_message(Path("G:/My Drive/Tacview"), drive_ready=lambda p: True)
     assert hint in folder_missing_message(Path("C:/Users/x/Google Drive/Tacview"), drive_ready=lambda p: True)
     assert hint in folder_missing_message(Path("Z:/anything"), drive_ready=lambda p: False)
@@ -207,7 +209,7 @@ def test_missing_folder_message_plain_when_drive_is_fine():
 def test_worker_reports_hint_for_missing_drive_folder(tmp_path):
     src = TacviewSource(Cfg(Path("G:/My Drive/Tacview-nope")), tmp_path / "state", rescan_s=0, clock=lambda: NOW)
     drain_once(src)
-    assert "-ServiceUser" in codes(src)["TACVIEW_FOLDER_MISSING"]
+    assert "logged in as that user" in codes(src)["TACVIEW_FOLDER_MISSING"]
     src.stop()
 
 

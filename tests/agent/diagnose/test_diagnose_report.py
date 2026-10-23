@@ -147,7 +147,7 @@ def test_tacview_missing_folder_with_drive_hint(tmp_path):
     from pathlib import PureWindowsPath
 
     text = run_diagnose(ctx_for(tmp_path, tv=tmp_path / "Google Drive" / "x"))
-    assert "-ServiceUser" in text and str(PureWindowsPath("x")) == "x"
+    assert "logged in as that user" in text and str(PureWindowsPath("x")) == "x"
 
 
 # --- versions / config / pairing ----------------------------------------------------------------------------------------------

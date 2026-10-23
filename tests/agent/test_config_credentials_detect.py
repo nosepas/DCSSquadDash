@@ -33,6 +33,7 @@ def test_load_config_reports_unreadable_file(tmp_path):
         load_config(tmp_path / "missing.toml")
 
 
+@pytest.mark.skipif(sys.platform != "win32", reason="without DPAPI the credentials file is stored in plain text (and says so)")
 def test_credentials_round_trip_and_env_override(tmp_path, monkeypatch):
     store = CredentialStore(tmp_path, env_var="FOX3_TEST_KEY")
     creds = Credentials("aid", "aid.secret", "sid")

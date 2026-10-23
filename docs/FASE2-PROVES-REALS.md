@@ -46,7 +46,7 @@ L'script comprova Python 3.12+, crea el `.venv`, et demana (sense eco) el codi i
 `agent.toml` (`fox3-agent init`), mostra què troba al PC (`discover`), aparella, comprova la connexió i instal·la el servei de
 Windows amb NSSM (necessita `nssm.exe` al PATH, https://nssm.cc/download). La clau de DCSServerBot només es guarda a l'entorn del
 servei; el codi d'aparellament no es desa enlloc. Si les gravacions de Tacview són en una carpeta de Google Drive, afegeix
-`-ServiceUser "PC\elteuusuari"` (vegeu `docs/TACVIEW-GOOGLE-DRIVE.md`). **L'script sencer no s'ha provat en un PC real**
+`-ServiceUser "PC\elteuusuari"` (camí antic; el paquet descarregat del web ja s'instal·la com a tasca de l'usuari: vegeu `docs/TACVIEW-GOOGLE-DRIVE.md`). **L'script sencer no s'ha provat en un PC real**
 (sí les ordres de Python que crida i el `-DryRun`).
 
 **Camí manual** (equivalent):

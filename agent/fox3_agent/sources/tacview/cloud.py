@@ -16,8 +16,8 @@ TRANSIENT_PREFIXES = (".~lock",)
 CLOUD_CHOICES = ("read", "skip")
 _DRIVE_NAMES = ("google drive", "my drive")
 
-DRIVE_HINT = ("If this is a Google Drive for desktop folder, the service must run as the Windows user that is signed in to Drive: "
-              "reinstall with -ServiceUser.")
+DRIVE_HINT = ("If this is a Google Drive for desktop folder, the agent must run as the Windows user that is signed in to Drive: "
+              "install it again while logged in as that user.")
 
 
 def is_online_only(file_attributes: int) -> bool:

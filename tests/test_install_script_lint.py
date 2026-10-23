@@ -1,6 +1,7 @@
 """Static checks of the Windows installer scripts (they cannot be run in CI: they need admin, nssm and caddy)."""
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -9,6 +10,7 @@ SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 FILES = [SCRIPTS / "install-central.ps1", *sorted((SCRIPTS / "lib").glob("*.ps1"))]
 PWSH = shutil.which("powershell") or shutil.which("pwsh")
 pytestmark = pytest.mark.skipif(PWSH is None, reason="PowerShell not available")
+WINDOWS_ONLY = pytest.mark.skipif(sys.platform != "win32", reason="the dry run reads Windows paths and environment")
 
 
 def _ps(command: str) -> subprocess.CompletedProcess:
@@ -30,6 +32,7 @@ def test_no_control_characters(path):
     assert not bad
 
 
+@WINDOWS_ONLY
 def test_dry_run_install_shows_hardening_steps_and_no_secrets():
     r = _ps(f"& '{SCRIPTS / 'install-central.ps1'}' -Hostname fox3.example.org -DryRun")
     out = r.stdout
@@ -40,6 +43,7 @@ def test_dry_run_install_shows_hardening_steps_and_no_secrets():
     assert "FOX3_DATABASE_URL=" not in out
 
 
+@WINDOWS_ONLY
 def test_dry_run_uninstall_keeps_data_unless_purge():
     keep = _ps(f"& '{SCRIPTS / 'install-central.ps1'}' -Uninstall -DryRun").stdout
     purge = _ps(f"& '{SCRIPTS / 'install-central.ps1'}' -Uninstall -PurgeData -DryRun").stdout

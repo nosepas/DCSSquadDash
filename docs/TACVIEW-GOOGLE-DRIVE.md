@@ -27,15 +27,11 @@ com una carpeta normal de Windows, i li dius a FOX3 aquesta carpeta des del pane
    `C:\Users\<tu>\Google Drive\Tacview` (segons la versió i el mode).
 5. **Al panell d'admin** de FOX3, secció **Tacview**: posa-hi aquesta ruta (o fes clic al suggeriment de "carpetes detectades",
    que marcarà les de Google Drive) i desa.
-6. **Instal·la l'agent amb el teu usuari de Windows.** Les unitats de Google Drive són **per sessió d'usuari**: un servei que
-   corre com a `LocalSystem` (el per defecte) **no veu la unitat `G:`**. Cal executar l'instal·lador amb `-ServiceUser`:
-
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File scripts\install-agent.ps1 -CentralUrl https://EL-TEU-CENTRAL -ServiceUser "NOMPC\elteuusuari"
-   ```
-
-   Et demanarà la contrasenya de Windows d'aquest usuari (sense eco). L'usuari ha de tenir la sessió de Drive iniciada
-   (Drive per a escriptori s'engega amb la sessió; si l'usuari no ha iniciat sessió, la carpeta pot no estar disponible).
+6. **Instal·la l'agent amb el teu usuari de Windows.** Les unitats de Google Drive són **per sessió d'usuari**: un servei de
+   Windows (`LocalSystem`) **no veu la unitat `G:`**. L'agent descarregat des del web (`INSTALAR.cmd`) s'instal·la com a
+   **tasca programada de l'usuari que l'executa** i s'engega en iniciar sessió, així que veu les mateixes unitats que tu.
+   Fes doble clic a `INSTALAR.cmd` **amb l'usuari que té Google Drive iniciat**. L'agent només funciona mentre aquest usuari
+   té la sessió iniciada (Drive per a escriptori també s'engega amb la sessió).
 7. **Verifica**: `fox3-agent check --config <agent.toml>` ha de dir `tacview: OK`. Si hi ha avisos, surten amb el seu codi.
 
 ## Opcions de l'agent (només locals)
@@ -59,7 +55,7 @@ normal. Amb Mirror això gairebé no passa.
   cada 30 s). Així no llegeix un fitxer que Drive encara està copiant.
 - Ignora els noms temporals: `*.tmp`, `*.crdownload`, `*.part`, `*.gdownload` i `.~lock*`.
 - Si la carpeta no existeix i sembla de Google Drive (o la lletra d'unitat no està llesta), l'avís `TACVIEW_FOLDER_MISSING`
-  afegeix la pista: *el servei s'ha d'executar com l'usuari de Windows que té Drive iniciat: reinstal·la amb -ServiceUser*.
+  afegeix la pista: *el servei s'ha d'executar com l'usuari de Windows que té Drive iniciat: torna a instal·lar l'agent iniciant sessió amb aquest usuari*.
 
 ## Límits
 
@@ -76,12 +72,11 @@ normal. Amb Mirror això gairebé no passa.
 
 | Símptoma | Causa probable | Què fer |
 |---|---|---|
-| `TACVIEW_FOLDER_MISSING` amb la pista de Drive | El servei corre com a `LocalSystem` o l'usuari no té Drive iniciat | Reinstal·la amb `-ServiceUser`; comprova que l'usuari ha iniciat sessió i que `G:` existeix per a ell |
+| `TACVIEW_FOLDER_MISSING` amb la pista de Drive | L'agent corre amb un altre usuari o l'usuari no té Drive iniciat | Torna a executar `INSTALAR.cmd` amb l'usuari de Drive; comprova que ha iniciat sessió i que `G:` existeix per a ell |
 | Carpeta correcta però `0` gravacions | La carpeta compartida no té la drecera a "El meu Drive" | Pas 3 |
 | `TACVIEW_CLOUD_FILES` constant | Mode Streaming (fitxers només en línia) | Passa a Mirror, o `cloud_files = "skip"` |
 | Les gravacions triguen a sortir | Drive encara sincronitza, o el fitxer es va modificant | Espera; comprova que la mida no canvia |
 | `TACVIEW_FILE_FAILED` en un fitxer | Fitxer incomplet o dany | Torna a copiar-lo; si persisteix, envia `diagnose` |
-| El servei no s'inicia amb `-ServiceUser` | Contrasenya errònia o l'usuari no pot iniciar com a servei | Torna a executar l'instal·lador; NSSM hauria de concedir el dret (no verificat) |
 
 ## Què NO està verificat
 
